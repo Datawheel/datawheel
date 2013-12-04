@@ -1,0 +1,61 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  color: #333;
+  font-family: "HelveticaNeue","Helvetica-Neue","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+div#teaser {
+  display: block;
+  height: 80px;
+  left: 50%;
+  margin: -40px auto auto -200px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 400px;
+}
+
+div#logo {
+  font-size: 48px;
+}
+
+.bold {
+  font-family: "HelveticaNeueBold","Helvetica-Neue Bold","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: bold;
+}
+
+.light {
+  font-family: "HelveticaNeueLight","Helvetica-Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: lighter;
+}
+
+.accent {
+  color: #3333cc;
+}
+
+#comparison {
+  display: block;
+  height: 200px;
+  left: 50%;
+  margin: -100px auto auto -500px;
+  position: absolute;
+  top: 50%;
+  width: 1000px;
+}
+
+#square {
+  cursor: pointer;
+  display: inline-block;
+  height: 200px;
+  margin: 0px 150px;
+  width: 200px;
+}
