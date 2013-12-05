@@ -1,0 +1,13 @@
+# Flask framework
+Jinja2==2.6
+Werkzeug==0.8.3
+flask==0.9
+
+# DB libs for connecting to MySQL
+# WARNING: Must have MySQL server installed!
+MySQL-python
+sqlalchemy
+flask-sqlalchemy
+
+# Better JSON serializer that knows how to handle Decimal types
+simplejson

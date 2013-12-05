@@ -21,11 +21,18 @@
     return (r*d) + (w*i) + (s*i)
   }
   
+  // var favs = [7,10,6]
+  var favs = null
+  
   var logos = [],
       spacings = [5,10,15],
       donuts = [.2,.3,.4,.5],
       color = "#3333cc",
-      positions = [.25,.5,.75]
+      positions = [.5],
+      viewed = [],
+      number = 12
+      
+  var scores = []
       
   function getCombinations(arr, n) {
       if(n == 1)
@@ -129,7 +136,15 @@
             }
           })
           if (!linedup) {
+            paths.forEach(function(p,i){
+              p.id = "path"+i+logos.length
+            })
+            lg.forEach(function(l,i){
+              l.id = "line"+i+logos.length
+            })
             logos.push({
+              "spacing": spacing,
+              "donut": donut,
               "paths": paths,
               "lines": lg
             })
@@ -141,29 +156,78 @@
   
   console.log(logos.length+" combinations")
   
+  function submit_score(l) {
+    
+    // console.log("Spacing: "+ logos[l].spacing)
+    // console.log("Donut: "+ logos[l].donut)
+    
+    var match = false
+    scores.forEach(function(s){
+      if (s.id == l) {
+        s.votes++
+        match = true
+      }
+    })
+    if (!match) {
+      scores.push({
+        "id": l,
+        "votes": 1
+      })
+    }
+    
+    scores = scores.sort(function (a, b) {
+        return b.votes - a.votes;
+    });
+    
+    console.log("Scores: "+JSON.stringify(scores).substr(0,100))
+    
+  }
+  
   function draw(i) {
     
     var group = d3.select("g#group"+i)
     
-    group.selectAll("path").transition().duration(1000)
-      .attr("fill","white")
-      .remove()
-    
-    group.selectAll("lines").transition().duration(1000)
-      .remove()
+    d3.select(group.node().parentNode.parentNode).on("click",function(){
+      submit_score(start)
+      // if (i) draw(0)
+      // else draw(1)
+      draw(0)
+      draw(1)
+    })
       
-    var start = Math.floor(logos.length*Math.random())
+    function find_logo() {
+      if ((favs && viewed.length == favs.length) || (!favs && viewed.length == logos.length)) viewed = []
+      var rand = Math.floor(logos.length*Math.random())
+      if (viewed.indexOf(rand) >= 0 || (favs && favs.indexOf(rand) < 0)) return find_logo()
+      else {
+        viewed.push(rand)
+        return rand
+      }
+    }
+    var start = find_logo()
     
     var paths = group.selectAll("path")
-      .data(logos[start].paths).enter().append("path")
-        .attr("fill","white")
+      .data(logos[start].paths,function(p){return p.id})
+      
+    paths.enter().append("path")
+        .attr("opacity",0)
+        .attr("fill",color)
         .each(function(p){
           d3.select(this).attr("d",p.arc)
         })
-        console.log(paths,color)
+        
+    paths.transition().duration(1000)
+      .attr("opacity",1)
+    
+    paths.exit().transition().duration(1000)
+      .attr("opacity",0)
+      .remove()
 
-    group.selectAll("line")
-      .data(logos[start].lines).enter().append("line")
+    var lines = group.selectAll("line")
+      .data(logos[start].lines,function(l){return l.id})
+      
+    lines.enter().append("line")
+        .attr("opacity",0)
         .attr("stroke","white")
         .attr("stroke-width",function(l){return l.width;})
         .attr("x1",function(l){return (l.ir-(l.width/2))*Math.cos(l.r);})
@@ -171,12 +235,22 @@
         .attr("y1",function(l){return (l.ir-(l.width/2))*Math.sin(l.r);})
         .attr("y2",function(l){return (l.or+(l.width/2))*Math.sin(l.r);})
         
-    paths.transition().duration(1000).attr("fill",color)
+    lines.transition().duration(1000)
+      .attr("opacity",1)
+        
+    lines.exit().transition().duration(1000)
+      .attr("opacity",0)
+      .remove()
     
   }
   
+  var data = []
+  for (var i = 0; i < number; i++) {
+    data.push(i)
+  }
+  
   var group = d3.select("#comparison").selectAll("div#square")
-    .data([0,1]).enter().append("div").attr("id","square").append("svg").append("g")
+    .data(data).enter().append("div").attr("id","square").append("svg").append("g")
     .attr("id",function(g){return "group"+g;})
     .attr("transform","translate("+radius+","+radius+")")
     .each(function(g){

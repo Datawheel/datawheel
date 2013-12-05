@@ -15,9 +15,9 @@ body {
 
 div#teaser {
   display: block;
-  height: 80px;
+  height: 20px;
   left: 50%;
-  margin: -40px auto auto -200px;
+  margin: -10px auto auto -200px;
   position: absolute;
   text-align: center;
   top: 50%;
@@ -39,23 +39,19 @@ div#logo {
 }
 
 .accent {
-  color: #3333cc;
+  color: #688e43;
 }
 
 #comparison {
-  display: block;
-  height: 200px;
-  left: 50%;
-  margin: -100px auto auto -500px;
   position: absolute;
-  top: 50%;
-  width: 1000px;
+  text-align: center;
+  width: 100%;
 }
 
 #square {
   cursor: pointer;
   display: inline-block;
   height: 200px;
-  margin: 0px 150px;
+  margin: 50px;
   width: 200px;
 }
