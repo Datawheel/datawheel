@@ -14,18 +14,17 @@ body {
 }
 
 div#teaser {
+  background-image: url("../img/datawheel-square-orange-512.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   display: block;
-  height: 20px;
+  height: 256px;
   left: 50%;
-  margin: -10px auto auto -200px;
+  margin: -130px auto auto -128px;
   position: absolute;
   text-align: center;
   top: 50%;
-  width: 400px;
-}
-
-div#logo {
-  font-size: 48px;
+  width: 256px;
 }
 
 .bold {
