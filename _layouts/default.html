@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Datawheel {{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" type="image/png" href="img/favicon.ico">
+        <link rel="apple-touch-icon" sizes="256x256" href="img/datawheel-icon-orange-ko-256.jpg">
+        
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/general.css">
+        <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css' />
+
+    </head>
+    <body>
+
+      <div class="site">
+        
+        <header id="header-main">
+          <div class="container">
+            <a href="/" id="logo"></a>
+            
+            <nav class="collapse navbar-collapse">
+              <div class="menu-header-navigation-container">
+                <ul id="menu-nav">
+                  <li><a href="/product/">Product</a></li>
+                  <li><a href="/company/">About Us</a></li>
+                  <li><a href="/blog/">Blog</a></li>
+                  <li><a href="/contact-us/">Contact Us</a></li>
+                </ul>
+              </div>
+            </nav> <!--// end nav -->    
+            
+          </div> <!--// end container -->
+        </header>
+        
+          <!-- <div class="header">
+            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            <a class="extra" href="/">home</a>
+          </div> -->
+            
+            
+
+        {{ content }}
+
+        <footer>
+          <div class="container">
+            <div class="contact logo">
+              <p>
+                <img src="/img/datawheel-square-orange-512.png" />
+              </p>
+            </div>
+            <div class="contact links">
+              <p>
+                <a href="https://github.com/datawheel">github.com/datawheel</a><br />
+                <a href="https://twitter.com/datawheel">twitter.com/datawheel</a><br />
+              </p>
+            </div>
+          </div>
+        </footer>
+          
+      </div> <!--// end site -->
+
+    </body>
+</html>

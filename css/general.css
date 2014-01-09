@@ -1,31 +1,35 @@
-html, body {
-  height: 100%;
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
   margin: 0;
   padding: 0;
-  width: 100%;
 }
+
+html, body { height: 100%; }
 
 body {
-  background-color: white;
   color: #333;
-  font-family: "HelveticaNeue","Helvetica-Neue","Helvetica Neue","Helvetica","Arial",sans-serif;
-  font-size: 12px;
-  font-weight: normal;
+  background-color: #FFF;
+  font: 13.34px "HelveticaNeue","Helvetica-Neue","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: small;
+  text-align: center;
 }
 
-div#teaser {
-  background-image: url("../img/datawheel-square-orange-512.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  display: block;
-  height: 256px;
-  left: 50%;
-  margin: -130px auto auto -128px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 256px;
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; 
 }
+
+h1 { margin-bottom: 1em; }
+p { margin: 1em 0; }
+
+a         { color: #e59e00; text-decoration: none;}
+a:hover   { color: #b7841d; }
+a:visited { color: #b7841d; }
 
 .bold {
   font-family: "HelveticaNeueBold","Helvetica-Neue Bold","Helvetica Neue","Helvetica","Arial",sans-serif;
@@ -41,6 +45,30 @@ div#teaser {
   color: #688e43;
 }
 
+.container {
+  max-width: 998px;
+  margin: 0 auto;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+div#teaser {
+  background-image: url("../img/datawheel-square-orange-512.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  height: 256px;
+  left: 50%;
+  margin: -130px auto auto -128px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 256px;
+}
+
 #comparison {
   position: absolute;
   text-align: center;
@@ -54,3 +82,188 @@ div#teaser {
   margin: 50px;
   width: 200px;
 }
+
+.banner {
+  background: #737374;
+  background-size: cover;
+  background-position: top right;
+  height: 462px !important;
+  width: 100%;
+}
+
+.banner h1 {
+  background: rgba(73,62,35,0.85);
+  color: #eeeeee;
+  float: right;
+  font-size: 44px;
+  height: 442px;
+  line-height: 130%;
+  padding: 10px;
+  text-align: left;
+  width: 400px;
+  font-weight: 300 !important;
+  font-style: normal;
+  font-family: 'Muli', serif, 'Times';
+}
+
+.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+.posts li {
+  line-height: 1.75em;
+}
+
+.posts span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 115%;
+/*  width: 42em;*/
+  margin: 1em 0 2em 0;
+  line-height: 1.5em;
+}
+
+.header a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#header-main .container {
+  height: 103px;
+  position: relative;
+}
+
+#header-main #logo {
+  width: 247px;
+  height: 79px;
+  background-size: contain;
+  background-image: url("/img/datawheel-horizontal-orange-256.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  bottom: 23px;
+}
+
+#header-main nav {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+#menu-nav {
+  float: left;
+  list-style-style: none;
+}
+
+#menu-nav li {
+  display: inline-block;
+  margin: 0 0 0 20px;
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.title a {
+  color: #a00;
+}
+
+.title a:hover {
+  color: #000;
+}
+
+.header a.extra {
+  color: #aaa;
+  margin-left: 1em;
+}
+
+.header a.extra:hover {
+  color: #000;
+}
+
+.meta {
+  color: #aaa;
+}
+
+footer {
+  border-top: 4px solid #eee;
+  clear: both;
+  color: #666;
+  font-size: 80%;
+  margin-top: 2em;
+  overflow: hidden;
+}
+
+footer .contact.logo {
+  float: left;
+}
+
+footer .contact.links {
+  float: right;
+  margin: 20px 0 0 0;
+}
+
+footer .contact img {
+  width: 100px;
+}
+
+footer .rss {
+  margin-top: 1.1em;
+  margin-right: -.2em;
+  float: right;
+}
+
+footer .rss img {
+  border: 0;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+/* standard */
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4em;
+}
+
+.post ul, .post ol {
+  margin-left: 1.35em;
+}
+
+.post code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2em;
+}
+
+.post pre code {
+  border: none;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
+
