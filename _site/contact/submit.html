@@ -8,7 +8,7 @@
     <meta name="keywords" content="Visualization, Visualizations, Big Data, Database, Design, Web, Website, Platform"/>
     <meta name="author" content="Datawheel, LLC"/>
     
-    <title>Datawheel{% if page.title %} | {{ page.title }}{% endif %}</title>
+    <title>Datawheel | Form Submitted</title>
 
     <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="apple-touch-icon" sizes="256x256" href="/img/datawheel-icon-orange-ko-256.jpg">
@@ -24,18 +24,18 @@
     <header>
 
       <nav>
-        <a href="/" id="logo"{% if page.title == null %} style="opacity:0;visibility:hidden;"{% endif %}></a>
+        <a href="/" id="logo"></a>
         <ul>
           <li>
-            <a {% if page.title == 'Portfolio' %}class="active"{% else %}href="/portfolio/"{% endif %}>
+            <a href="/portfolio/">
               Portfolio
             </a>
           </li><li>
-            <a {% if page.title == 'Company' %}class="active"{% else %}href="/company/"{% endif %}>
+            <a href="/company/">
               Company
             </a>
           </li><li>
-            <a {% if page.title == 'Contact' %}class="active"{% else %}href="/contact/"{% endif %}>
+            <a href="/contact/">
               Contact
             </a>
           </li>
@@ -48,7 +48,10 @@
     
       <div id="content">
 
-        {{ content }}
+        <section id="contact" class="bg">
+  <h1>Thank you</h1>
+  <p>We'll get back to you as soon as we can.</p>
+</section>
     
       </div>
     

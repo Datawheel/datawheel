@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="description" content="Custom web solutions for big data."/>
+    <meta name="keywords" content="Visualization, Visualizations, Big Data, Database, Design, Web, Website, Platform"/>
+    <meta name="author" content="Datawheel, LLC"/>
+    
+    <title>Datawheel</title>
+
+    <link rel="icon" type="image/png" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="256x256" href="/img/datawheel-icon-orange-ko-256.jpg">
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/font-awesome-4.0.3/css/font-awesome.min.css">
+    
+    <script src="/js/d3.v3.min.js"></script>
+
+  </head>
+  <body>
+
+    <header>
+
+      <nav>
+        <a href="/" id="logo" style="opacity:0;visibility:hidden;"></a>
+        <ul>
+          <li>
+            <a href="/portfolio/">
+              Portfolio
+            </a>
+          </li><li>
+            <a href="/company/">
+              Company
+            </a>
+          </li><li>
+            <a href="/contact/">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    
+    </header>
+    
+    <div id="site">
+    
+      <div id="content">
+
+        <script>
+
+  document.onscroll = function() {
+    var visible = d3.select("a#logo").style("visibility") == "visible",
+        cutoff = 500
+    if (document.documentElement.scrollTop > cutoff && !visible) {
+      d3.select("a#logo")
+        .style("visibility","visible")
+        .transition().duration(300)
+        .style("opacity",0.85)
+    }
+    else if (document.documentElement.scrollTop <= cutoff && visible) {
+      d3.select("a#logo").transition().duration(300)
+        .style("opacity",0)
+        .transition()
+        .style("visibility","hidden")
+    }
+  }
+  
+</script>
+
+<section>
+  <div id="logo"></div>
+  <h1 class="sub">Big ideas, big data.</h1>
+</section>
+
+<section>
+  <h2>From the database to the final font</h2>
+  <i class="fa fa-code"></i>
+  <i class="fa fa-th-list"></i>
+  <i class="fa fa-font"></i>
+  <p>What is "big data" and how can we learn from it? We strive to answer that question by building large custom web platforms that are tailored to the specific needs of the data.</p>
+  <a class="button" href="/portfolio/">
+    What have we done?
+    <i class="fa fa-angle-right"></i>
+  </a>
+</section>
+
+<section>
+  <h2>No two data sources are created equal</h2>
+  <i class="fa fa-medkit"></i>
+  <i class="fa fa-users"></i>
+  <i class="fa fa-globe"></i>
+  <p>Whether your data is about health, customer activities, or the economy: we can calculate custom measures that are unique to you and your data. These calculations can help you gain insights that you may not have been able to see otherwise.</p>
+  <a class="button" href="/company/">
+    Who are we?
+    <i class="fa fa-angle-right"></i>
+  </a>
+</section>
+
+    
+      </div>
+    
+    </div>
+
+    <footer>
+      
+      With great data, comes great responsibility.
+      <br><br>
+      &copy; 2014 Datawheel, LLC<br>
+      All rights reserved.
+      
+    </footer>
+    
+    <script>
+
+      d3.select("a#logo").on("mouseover",function(){
+        d3.select(this).transition().duration(300)
+          .style("opacity",1)
+      })
+  
+      d3.select("a#logo").on("mouseout",function(){
+        d3.select(this).transition().duration(300)
+          .style("opacity",0.85)
+      })
+    
+    </script>
+
+  </body>
+</html>

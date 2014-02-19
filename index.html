@@ -1,21 +1,53 @@
 ---
 layout: default
-title: Your New Jekyll Site
 ---
 
-<div class="banner banner-left" style="background-image:url(/img/dataviva-launch.jpg)">
-  <div class="container">
-    <h1><span>Fully designed and feature rich big data platforms from the database to the final font.</h1>
-  </div>
-  
-  <!--// end container -->
-</div>
+<script>
 
-<!-- <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div> -->
+  document.onscroll = function() {
+    var visible = d3.select("a#logo").style("visibility") == "visible",
+        cutoff = 500
+    if (document.documentElement.scrollTop > cutoff && !visible) {
+      d3.select("a#logo")
+        .style("visibility","visible")
+        .transition().duration(300)
+        .style("opacity",0.85)
+    }
+    else if (document.documentElement.scrollTop <= cutoff && visible) {
+      d3.select("a#logo").transition().duration(300)
+        .style("opacity",0)
+        .transition()
+        .style("visibility","hidden")
+    }
+  }
+  
+</script>
+
+<section>
+  <div id="logo"></div>
+  <h1 class="sub">Big ideas, big data.</h1>
+</section>
+
+<section>
+  <h2>From the database to the final font</h2>
+  <i class="fa fa-code"></i>
+  <i class="fa fa-th-list"></i>
+  <i class="fa fa-font"></i>
+  <p>What is "big data" and how can we learn from it? We strive to answer that question by building large custom web platforms that are tailored to the specific needs of the data.</p>
+  <a class="button" href="/portfolio/">
+    What have we done?
+    <i class="fa fa-angle-right"></i>
+  </a>
+</section>
+
+<section>
+  <h2>No two data sources are created equal</h2>
+  <i class="fa fa-medkit"></i>
+  <i class="fa fa-users"></i>
+  <i class="fa fa-globe"></i>
+  <p>Whether your data is about health, customer activities, or the economy: we can calculate custom measures that are unique to you and your data. These calculations can help you gain insights that you may not have been able to see otherwise.</p>
+  <a class="button" href="/company/">
+    Who are we?
+    <i class="fa fa-angle-right"></i>
+  </a>
+</section>

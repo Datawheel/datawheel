@@ -1,0 +1,262 @@
+<html>
+<head>
+  <title>datawheel | logo</title>
+  <link rel="stylesheet" type="text/css" href="/css/general.css">
+  <script src="/js/d3.v3.min.js"></script>
+</head>
+<body>
+  <div id="comparison">
+  </div>
+</body>
+
+<script>
+
+  var radius = 100 // overall radius of logo
+      
+  function outerRadius(d,r,w,s,i) {
+    return (r*d) + (w*(i+1)) + (s*i)
+  }
+      
+  function innerRadius(d,r,w,s,i) {
+    return (r*d) + (w*i) + (s*i)
+  }
+  
+  // var favs = [7,10,6]
+  var favs = null
+  
+  var logos = [],
+      spacings = [5,10,15],
+      donuts = [.2,.3,.4,.5],
+      color = "#3333cc",
+      positions = [.5],
+      viewed = [],
+      number = 12
+      
+  var scores = []
+      
+  function getCombinations(arr, n) {
+      if(n == 1)
+      {
+          var ret = [];
+          for(var i = 0; i < arr.length; i++)
+          {
+              for(var j = 0; j < arr[i].length; j++)
+              {
+                  ret.push([arr[i][j]]);
+              }
+          }
+          return ret;
+      }
+      else
+      {
+          var ret = [];
+          for(var i = 0; i < arr.length; i++)
+          {
+              var elem = arr.shift();
+              for(var j = 0; j < elem.length; j++)
+              {
+                  var childperm = getCombinations(arr.slice(), n-1);
+                  for(var k = 0; k < childperm.length; k++)
+                  {
+                      ret.push([elem[j]].concat(childperm[k]));
+                  }
+              }
+          }
+          return ret;
+      }
+  }
+      
+  spacings.forEach(function(spacing) {
+    donuts.forEach(function(donut){
+
+        var width = width = (((radius*(1-donut))-(spacing*2))/3),
+            points = [],
+            groups = {},
+            paths = []
+            
+        for(var i = 2; i >= 0; i--) {
+          groups[i] = []
+          var or = outerRadius(donut,radius,width,spacing,i),
+              ir = innerRadius(donut,radius,width,spacing,i)
+              
+          var arc = d3.svg.arc()
+              .outerRadius(or)
+              .innerRadius(ir)
+              .startAngle(0).endAngle(Math.PI*2);
+              
+          paths.push({
+            "id": i+1,
+            "arc": arc
+          })
+          
+          var segments = 360/(i+2)
+          
+          for (var z = 0; z < i+2; z++) {
+            var lines = []
+            positions.forEach(function(position){ 
+              
+              var point = ((segments-(spacing*4))*position)+(z*segments)+(spacing*2)
+              lines.push({
+                "r": point*(Math.PI/180),
+                "ir": ir,
+                "or": or,
+                "width": spacing
+              })
+              
+            })
+            groups[i].push(lines)
+          }
+          
+        }
+        
+        var linegroups = []
+        var combos = {}
+        for (group in groups) {
+          combos[group] = []
+          groups[group].forEach(function(aa){
+            combos[group].push(aa)
+          })
+          combos[group] = getCombinations(combos[group],parseInt(group)+2)
+        }
+        
+        combos[0].forEach(function(aa){
+          combos[1].forEach(function(bb){
+            combos[2].forEach(function(cc){
+              linegroups.push(aa.concat(bb).concat(cc))
+            })
+          })
+        })
+        
+        linegroups.forEach(function(lg,asd){
+          lg.sort(function(pp){return pp.r;})
+          var linedup = false
+          lg.forEach(function(pp,i){
+            if (i > 0 && lg[i].r == lg[i-1].r) {
+              linedup = true
+            }
+          })
+          if (!linedup) {
+            paths.forEach(function(p,i){
+              p.id = "path"+i+logos.length
+            })
+            lg.forEach(function(l,i){
+              l.id = "line"+i+logos.length
+            })
+            logos.push({
+              "spacing": spacing,
+              "donut": donut,
+              "paths": paths,
+              "lines": lg
+            })
+          }
+        })
+        
+    })
+  })
+  
+  console.log(logos.length+" combinations")
+  
+  function submit_score(l) {
+    
+    // console.log("Spacing: "+ logos[l].spacing)
+    // console.log("Donut: "+ logos[l].donut)
+    
+    var match = false
+    scores.forEach(function(s){
+      if (s.id == l) {
+        s.votes++
+        match = true
+      }
+    })
+    if (!match) {
+      scores.push({
+        "id": l,
+        "votes": 1
+      })
+    }
+    
+    scores = scores.sort(function (a, b) {
+        return b.votes - a.votes;
+    });
+    
+    console.log("Scores: "+JSON.stringify(scores).substr(0,100))
+    
+  }
+  
+  function draw(i) {
+    
+    var group = d3.select("g#group"+i)
+    
+    d3.select(group.node().parentNode.parentNode).on("click",function(){
+      submit_score(start)
+      // if (i) draw(0)
+      // else draw(1)
+      draw(0)
+      draw(1)
+    })
+      
+    function find_logo() {
+      if ((favs && viewed.length == favs.length) || (!favs && viewed.length == logos.length)) viewed = []
+      var rand = Math.floor(logos.length*Math.random())
+      if (viewed.indexOf(rand) >= 0 || (favs && favs.indexOf(rand) < 0)) return find_logo()
+      else {
+        viewed.push(rand)
+        return rand
+      }
+    }
+    var start = find_logo()
+    
+    var paths = group.selectAll("path")
+      .data(logos[start].paths,function(p){return p.id})
+      
+    paths.enter().append("path")
+        .attr("opacity",0)
+        .attr("fill",color)
+        .each(function(p){
+          d3.select(this).attr("d",p.arc)
+        })
+        
+    paths.transition().duration(1000)
+      .attr("opacity",1)
+    
+    paths.exit().transition().duration(1000)
+      .attr("opacity",0)
+      .remove()
+
+    var lines = group.selectAll("line")
+      .data(logos[start].lines,function(l){return l.id})
+      
+    lines.enter().append("line")
+        .attr("opacity",0)
+        .attr("stroke","white")
+        .attr("stroke-width",function(l){return l.width;})
+        .attr("x1",function(l){return (l.ir-(l.width/2))*Math.cos(l.r);})
+        .attr("x2",function(l){return (l.or+(l.width/2))*Math.cos(l.r);})
+        .attr("y1",function(l){return (l.ir-(l.width/2))*Math.sin(l.r);})
+        .attr("y2",function(l){return (l.or+(l.width/2))*Math.sin(l.r);})
+        
+    lines.transition().duration(1000)
+      .attr("opacity",1)
+        
+    lines.exit().transition().duration(1000)
+      .attr("opacity",0)
+      .remove()
+    
+  }
+  
+  var data = []
+  for (var i = 0; i < number; i++) {
+    data.push(i)
+  }
+  
+  var group = d3.select("#comparison").selectAll("div#square")
+    .data(data).enter().append("div").attr("id","square").append("svg").append("g")
+    .attr("id",function(g){return "group"+g;})
+    .attr("transform","translate("+radius+","+radius+")")
+    .each(function(g){
+      draw(g)
+    })
+      
+</script>
+
+</html>

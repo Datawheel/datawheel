@@ -8,7 +8,7 @@
     <meta name="keywords" content="Visualization, Visualizations, Big Data, Database, Design, Web, Website, Platform"/>
     <meta name="author" content="Datawheel, LLC"/>
     
-    <title>Datawheel{% if page.title %} | {{ page.title }}{% endif %}</title>
+    <title>Datawheel | Welcome to Jekyll!</title>
 
     <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="apple-touch-icon" sizes="256x256" href="/img/datawheel-icon-orange-ko-256.jpg">
@@ -24,18 +24,18 @@
     <header>
 
       <nav>
-        <a href="/" id="logo"{% if page.title == null %} style="opacity:0;visibility:hidden;"{% endif %}></a>
+        <a href="/" id="logo"></a>
         <ul>
           <li>
-            <a {% if page.title == 'Portfolio' %}class="active"{% else %}href="/portfolio/"{% endif %}>
+            <a href="/portfolio/">
               Portfolio
             </a>
           </li><li>
-            <a {% if page.title == 'Company' %}class="active"{% else %}href="/company/"{% endif %}>
+            <a href="/company/">
               Company
             </a>
           </li><li>
-            <a {% if page.title == 'Contact' %}class="active"{% else %}href="/contact/"{% endif %}>
+            <a href="/contact/">
               Contact
             </a>
           </li>
@@ -48,7 +48,26 @@
     
       <div id="content">
 
-        {{ content }}
+        <h2>Welcome to Jekyll!</h2>
+<p class="meta">09 Jan 2014</p>
+
+<div class="post">
+<p>You&#39;ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
+<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span>
+</code></pre></div>
+
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
+
+</div>
+
     
       </div>
     
