@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <meta name="description" content="Custom web solutions for big data."/>
     <meta name="keywords" content="Visualization, Visualizations, Big Data, Database, Design, Web, Website, Platform"/>
@@ -50,22 +52,26 @@
 
         <script>
 
-  document.onscroll = function() {
+  d3.select(document).on("scroll",function(){
+    
     var visible = d3.select("a#logo").style("visibility") == "visible",
-        cutoff = 500
-    if (document.documentElement.scrollTop > cutoff && !visible) {
+        cutoff = 500,
+        scroll = document.documentElement.scrollTop || d3.select("body").property("scrollTop")
+        
+    if (scroll > cutoff && !visible) {
       d3.select("a#logo")
         .style("visibility","visible")
         .transition().duration(300)
         .style("opacity",0.85)
     }
-    else if (document.documentElement.scrollTop <= cutoff && visible) {
+    else if (scroll <= cutoff && visible) {
       d3.select("a#logo").transition().duration(300)
         .style("opacity",0)
         .transition()
         .style("visibility","hidden")
     }
-  }
+    
+  })
   
 </script>
 
@@ -123,6 +129,10 @@
         d3.select(this).transition().duration(300)
           .style("opacity",0.85)
       })
+      
+    </script>
+    
+    <script>
       
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       // Google Analytics

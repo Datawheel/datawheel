@@ -86,17 +86,9 @@ a:hover   { color: #b7841d; }
 
 header {
   background-color: #e59e00;
-  opacity: 0.95;
-}
-
-footer {
-  background-color: #f7f7f7;
-  clear: both;
-}
-
-header {
   height: 51px;
   left: 0px;
+  opacity: 0.95;
   overflow: hidden;
   position: fixed;
   top: 0px;
@@ -352,12 +344,16 @@ input[type=submit]:hover, button:hover, a.button:hover {
 }
 
 footer {
+  background-color: #f7f7f7;
   border-top: solid 1px rgba(0,0,0,0.1);
+  clear: both;
   color: #888;
+  display: block;
   font-size: 10px;
   height: 50px;
-  padding: 25px;
+  padding: 25px 0px;
   position: relative;
+  width: 100%;
 }
 
 /*****************************************************************************/

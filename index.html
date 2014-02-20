@@ -4,22 +4,26 @@ layout: default
 
 <script>
 
-  document.onscroll = function() {
+  d3.select(document).on("scroll",function(){
+    
     var visible = d3.select("a#logo").style("visibility") == "visible",
-        cutoff = 500
-    if (document.documentElement.scrollTop > cutoff && !visible) {
+        cutoff = 500,
+        scroll = document.documentElement.scrollTop || d3.select("body").property("scrollTop")
+        
+    if (scroll > cutoff && !visible) {
       d3.select("a#logo")
         .style("visibility","visible")
         .transition().duration(300)
         .style("opacity",0.85)
     }
-    else if (document.documentElement.scrollTop <= cutoff && visible) {
+    else if (scroll <= cutoff && visible) {
       d3.select("a#logo").transition().duration(300)
         .style("opacity",0)
         .transition()
         .style("visibility","hidden")
     }
-  }
+    
+  })
   
 </script>
 
