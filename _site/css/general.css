@@ -55,6 +55,14 @@ h3.sub {
   margin: -25px auto 25px;
 }
 
+h4 {
+  font-size: 16px;
+}
+
+h4.sub {
+  margin: -25px auto 50px;
+}
+
 
 img {
   border: 0;
@@ -267,7 +275,27 @@ section img.staff {
   width: 200px;
 }
 
-section img.staff,
+section .members {
+  text-align: center;
+  width: 700px;
+}
+
+section .members img {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+section .members h3 {
+  margin: 16px auto;
+}
+
+section .members h4 {
+  display: inline-block;
+  margin: 16px 16px 0px 8px;
+  width: auto;
+}
+
 section img.screen {
   border: 1px solid rgba(0,0,0,0.25);
 }
