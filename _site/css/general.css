@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: lighter;
   margin: 0px auto 25px;
-  width: 600px;
+  width: auto;
 }
 
 h1 {
@@ -58,7 +58,7 @@ h3.sub {
 h4 {
   font-size: 16px;
 }
-
+ 
 h4.sub {
   margin: -25px auto 50px;
 }
@@ -198,7 +198,7 @@ section:last-child {
   border-bottom: none;
 }
 
-section #logo {
+section > #logo {
   background-image: url("/img/datawheel-square-orange-512.png");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -222,7 +222,7 @@ section > i.large {
   font-size: 100px;
 }
 
-section p, section form, section div {
+section > p, section > form, section > div {
   display: inline-block;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -230,6 +230,20 @@ section p, section form, section div {
   line-height: 20px;
   text-align: left;
   width: 500px;
+}
+
+article {
+  display: inline-block;
+  padding: 0px 20px;
+  width: 200px;
+}
+
+article p {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: lighter;
+  margin: 20px 0px;
+  text-align: left;
 }
 
 section div {
@@ -268,28 +282,33 @@ section#contact {
   background-image: url("/img/contact/cambridge.png");
 }
 
-section img.project,
-section img.staff {
+section img.project {
   display: inline-block;
   height: 200px;
   width: 200px;
+}
+
+section img.staff {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
 }
 
 section .members {
   text-align: center;
   width: 700px;
 }
-
+ 
 section .members img {
   display: inline-block;
   height: 50px;
   width: 50px;
 }
-
+ 
 section .members h3 {
   margin: 16px auto;
 }
-
+ 
 section .members h4 {
   display: inline-block;
   margin: 16px 16px 0px 8px;
