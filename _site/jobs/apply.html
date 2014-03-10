@@ -13,7 +13,7 @@
     <!-- Facebook Properties -->
     <meta property="og:image" content="http://www.datawheel.us/img/datawheel-icon-orange-ko-256.jpg" />
 
-    <title>Datawheel</title>
+    <title>Datawheel | Jobs</title>
 
     <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="apple-touch-icon" sizes="256x256" href="/img/datawheel-icon-orange-ko-256.jpg">
@@ -29,7 +29,7 @@
     <header>
 
       <nav>
-        <a href="/" id="logo" style="opacity:0;visibility:hidden;"></a>
+        <a href="/" id="logo"></a>
         <ul>
           <li>
             <a href="/portfolio/">
@@ -40,7 +40,7 @@
               Company
             </a>
           </li><li>
-            <a href="/jobs/">
+            <a class="active">
               Jobs
             </a>
           </li><li>
@@ -57,58 +57,22 @@
 
       <div id="content">
 
-        <script>
-
-  d3.select(document).on("scroll",function(){
-    
-    var visible = d3.select("a#logo").style("visibility") == "visible",
-        cutoff = 500,
-        scroll = document.documentElement.scrollTop || d3.select("body").property("scrollTop")
-        
-    if (scroll > cutoff && !visible) {
-      d3.select("a#logo")
-        .style("visibility","visible")
-        .transition().duration(300)
-        .style("opacity",0.85)
-    }
-    else if (scroll <= cutoff && visible) {
-      d3.select("a#logo").transition().duration(300)
-        .style("opacity",0)
-        .transition()
-        .style("visibility","hidden")
-    }
-    
-  })
-  
-</script>
-
-<section>
-  <div id="logo"></div>
-  <h1 class="sub">Big ideas, big data.</h1>
+        <section id="contact" class="bg">
+  <h1>Tell us about yourself</h1>
 </section>
 
 <section>
-  <h2>From the database to the final font</h2>
-  <i class="fa fa-code"></i>
-  <i class="fa fa-th-list"></i>
-  <i class="fa fa-font"></i>
-  <p>What is "big data" and how can we learn from it? We strive to answer that question by building large custom web platforms that are tailored to the specific needs of the data.</p>
-  <a class="button" href="/portfolio/">
-    What have we done?
-    <i class="fa fa-angle-right"></i>
-  </a>
-</section>
-
-<section>
-  <h2>No two data sources are created equal</h2>
-  <i class="fa fa-medkit"></i>
-  <i class="fa fa-users"></i>
-  <i class="fa fa-globe"></i>
-  <p>Whether your data is about health, customer activities, or the economy: we can calculate custom measures that are unique to you and your data. These calculations can help you gain insights that you may not have been able to see otherwise.</p>
-  <a class="button" href="/company/">
-    Who are we?
-    <i class="fa fa-angle-right"></i>
-  </a>
+  <i class="fa fa-user large"></i>
+  <form action="http://getsimpleform.com/messages?form_api_token=f3d799ebd955d04ead0efad9e616defd" method="post">
+    <input type="hidden" name="redirect_to" value="http://www.datawheel.us/contact/submit.html" />
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="email" placeholder="E-mail Address">
+    <input type="text" name="website" placeholder="Website">
+    <input type="text" name="title" placeholder="Job Title">
+    <textarea name="strengths" placeholder="What are your strengths?"></textarea>
+    <textarea name="passions" placeholder="What are you passionate about?"></textarea>
+    <input type="submit" value="Submit">
+  </form>
 </section>
 
 

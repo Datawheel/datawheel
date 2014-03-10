@@ -10,7 +10,7 @@
   vertical-align: top;
 }
 
-html, body { 
+html, body {
   height: 100%;
   width: 100%;
 }
@@ -58,7 +58,7 @@ h3.sub {
 h4 {
   font-size: 16px;
 }
- 
+
 h4.sub {
   margin: -25px auto 50px;
 }
@@ -68,7 +68,7 @@ img {
   border: 0;
 }
 
-a         { 
+a         {
   color: #e59e00;
   text-decoration: none;
   -webkit-transition: color .3s;
@@ -84,6 +84,21 @@ a:hover   { color: #b7841d; }
 .light {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: lighter;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ul > h4 {
+  color: #e59e00;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  margin: 0px;
+}
+
+ul > li {
+  margin-left: 20px;
 }
 
 /*****************************************************************************/
@@ -136,6 +151,7 @@ nav ul {
 
 nav ul li {
   display: inline-block;
+  margin: 0px
 }
 
 nav ul li a {
@@ -189,8 +205,8 @@ section {
 
 section:after {
   content: " ";
-  display: block; 
-  height: 0; 
+  display: block;
+  height: 0;
   clear: both;
 }
 
@@ -214,6 +230,12 @@ section > i {
   margin: 10px 10px;
 }
 
+section.job > i {
+  display: block;
+  font-size: 120px;
+  margin-bottom: 40px;
+}
+
 section > i.fa-th-list {
   padding-top: 3px;
 }
@@ -222,7 +244,7 @@ section > i.large {
   font-size: 100px;
 }
 
-section > p, section > form, section > div {
+section > p, section > form, section > div, section > ul {
   display: inline-block;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -246,15 +268,21 @@ article p {
   text-align: left;
 }
 
-section div {
-  width: 200px;
+section > ul {
+  margin: 20px 0px 0px;
 }
 
-section:nth-child(odd) p, section:nth-child(odd) form, section:nth-child(odd) iframe {
+section:nth-child(odd) p,
+section:nth-child(odd) form,
+section:nth-child(odd) iframe,
+section:nth-child(odd) ul {
   float: right;
 }
 
-section:nth-child(even) p, section:nth-child(even) form, section:nth-child(even) iframe {
+section:nth-child(even) p,
+section:nth-child(even) form,
+section:nth-child(even) iframe,
+section:nth-child(even) ul {
   float: left;
 }
 
@@ -298,17 +326,17 @@ section .members {
   text-align: center;
   width: 700px;
 }
- 
+
 section .members img {
   display: inline-block;
   height: 50px;
   width: 50px;
 }
- 
+
 section .members h3 {
   margin: 16px auto;
 }
- 
+
 section .members h4 {
   display: inline-block;
   margin: 16px 16px 0px 8px;
@@ -464,4 +492,3 @@ footer {
 .post pre.terminal code {
   background-color: #333;
 }
-
