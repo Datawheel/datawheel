@@ -5,11 +5,11 @@ layout: default
 <script>
 
   d3.select(document).on("scroll",function(){
-    
+
     var visible = d3.select("a#logo").style("visibility") == "visible",
         cutoff = 500,
         scroll = document.documentElement.scrollTop || d3.select("body").property("scrollTop")
-        
+
     if (scroll > cutoff && !visible) {
       d3.select("a#logo")
         .style("visibility","visible")
@@ -22,18 +22,18 @@ layout: default
         .transition()
         .style("visibility","hidden")
     }
-    
+
   })
-  
+
 </script>
 
 <section>
   <div id="logo"></div>
-  <h1 class="sub">Big ideas, big data.</h1>
+  <h1 class="sub">Making your data visually accessible.</h1>
 </section>
 
 <section>
-  <h2>From the database to the final font</h2>
+  <h2>From the database to the final font.</h2>
   <i class="fa fa-code"></i>
   <i class="fa fa-th-list"></i>
   <i class="fa fa-font"></i>
@@ -45,7 +45,7 @@ layout: default
 </section>
 
 <section>
-  <h2>No two data sources are created equal</h2>
+  <h2>No two data sources are created equal.</h2>
   <i class="fa fa-medkit"></i>
   <i class="fa fa-users"></i>
   <i class="fa fa-globe"></i>
