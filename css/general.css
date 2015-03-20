@@ -43,6 +43,7 @@ h1.sub {
 
 h2 {
   font-size: 32px;
+  line-height: 34px;
 }
 
 h3 {
@@ -52,7 +53,9 @@ h3 {
 
 h3.sub {
   color: #e59e00;
-  margin: -25px auto 25px;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 10px auto;
 }
 
 h4 {
@@ -203,6 +206,12 @@ section {
   text-align: center;
 }
 
+section.wide {
+  margin-left: -50px;
+  padding: 50px 0;
+  width: 900px;
+}
+
 section:after {
   content: " ";
   display: block;
@@ -254,18 +263,30 @@ section > p, section > form, section > div, section > ul {
   width: 500px;
 }
 
-article {
+.bio {
   display: inline-block;
-  padding: 0px 20px;
-  width: 200px;
+  padding: 10px 10px 50px;
+  width: 400px;
 }
 
-article p {
+.bio .header {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+  width: 150px;
+}
+
+.bio p {
+  display: inline-block;
+  float: none !important;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: lighter;
-  margin: 20px 0px;
+  line-height: 17px;
+  margin: 0;
   text-align: left;
+  width: 230px;
 }
 
 section > ul {
@@ -318,8 +339,9 @@ section img.project {
 
 section img.staff {
   display: inline-block;
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  margin-top: -10px;
+  width: 130px;
 }
 
 section .members {
@@ -330,6 +352,7 @@ section .members {
 section .members img {
   display: inline-block;
   height: 50px;
+  margin: 0 0 10px;
   width: 50px;
 }
 
