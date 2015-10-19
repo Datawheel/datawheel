@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: lighter;
-  margin: 0px auto 25px;
+  margin: 0 auto 25px;
   width: auto;
 }
 
@@ -43,16 +43,19 @@ h1.sub {
 
 h2 {
   font-size: 32px;
+  line-height: 34px;
 }
 
 h3 {
   font-size: 22px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
 h3.sub {
   color: #e59e00;
-  margin: -25px auto 25px;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 10px auto;
 }
 
 h4 {
@@ -94,7 +97,7 @@ ul > h4 {
   color: #e59e00;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: lighter;
-  margin: 0px;
+  margin: 0;
 }
 
 ul > li {
@@ -110,11 +113,11 @@ ul > li {
 header {
   background-color: #e59e00;
   height: 51px;
-  left: 0px;
+  left: 0;
   opacity: 0.95;
   overflow: hidden;
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
   z-index: 5000;
 }
@@ -139,7 +142,7 @@ nav #logo {
 }
 
 nav {
-  margin: 0px auto;
+  margin: 0 auto;
   width: 800px;
 }
 
@@ -151,7 +154,7 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  margin: 0px
+  margin: 0
 }
 
 nav ul li a {
@@ -192,8 +195,8 @@ div#site {
 }
 
 div#content {
-  margin: 0px auto;
-  padding: 150px 0px 0px 0px;
+  margin: 0 auto;
+  padding: 150px 0 0 0;
   width: 800px;
 }
 
@@ -201,6 +204,12 @@ section {
   border-bottom: solid 1px rgba(0,0,0,0.1);
   padding: 50px 25px;
   text-align: center;
+}
+
+section.wide {
+  margin-left: -50px;
+  padding: 50px 0;
+  width: 900px;
 }
 
 section:after {
@@ -254,22 +263,34 @@ section > p, section > form, section > div, section > ul {
   width: 500px;
 }
 
-article {
+.bio {
   display: inline-block;
-  padding: 0px 20px;
-  width: 200px;
+  padding: 10px 10px 50px;
+  width: 400px;
 }
 
-article p {
+.bio .header {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+  width: 150px;
+}
+
+.bio p {
+  display: inline-block;
+  float: none !important;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: lighter;
-  margin: 20px 0px;
+  line-height: 17px;
+  margin: 0;
   text-align: left;
+  width: 230px;
 }
 
 section > ul {
-  margin: 20px 0px 0px;
+  margin: 20px 0 0;
 }
 
 section:nth-child(odd) p,
@@ -318,8 +339,9 @@ section img.project {
 
 section img.staff {
   display: inline-block;
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  margin-top: -10px;
+  width: 130px;
 }
 
 section .members {
@@ -330,6 +352,7 @@ section .members {
 section .members img {
   display: inline-block;
   height: 50px;
+  margin: 0 0 10px;
   width: 50px;
 }
 
@@ -339,7 +362,7 @@ section .members h3 {
 
 section .members h4 {
   display: inline-block;
-  margin: 16px 16px 0px 8px;
+  margin: 16px 16px 0 8px;
   width: auto;
 }
 
@@ -356,7 +379,7 @@ section img.screen {
 section img.thumb {
   display: inline-block;
   height: 100px;
-  margin: 25px 10px 0px;
+  margin: 25px 10px 0;
   opacity: 0.85;
   -webkit-transition: opacity .3s;
           transition: opacity .3s;
@@ -376,7 +399,7 @@ input, textarea {
   font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: lighter;
-  margin: 10px 0px;
+  margin: 10px 0;
   padding: 5px 10px;
   -webkit-transition: border-color .3s;
           transition: border-color .3s;
@@ -396,13 +419,13 @@ textarea {
 input[type=submit], button, a.button {
   background-color: #484128;
   border: 0;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   color: white;
   display: inline-block;
   font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: lighter;
-  margin: 50px 0px 25px 0px;
+  margin: 50px 0 25px 0;
   padding: 15px 25px;
   min-width: 325px;
   -webkit-transition: background-color .3s, box-shadow .3s;
@@ -410,7 +433,7 @@ input[type=submit], button, a.button {
 }
 
 input[type=submit] {
-  margin: 0px;
+  margin: 0;
   padding: 10px;
   text-align: left;
   width: 522px;
@@ -418,12 +441,12 @@ input[type=submit] {
 
 button i, a.button i {
   float: right;
-  margin: 2px 0px 0px 5px;
+  margin: 2px 0 0 5px;
 }
 
 input[type=submit]:hover, button:hover, a.button:hover {
   background-color: #e59e00;
-  box-shadow: 0px 2px 3px rgba(0,0,0,0.35);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.35);
   cursor: pointer;
 }
 
@@ -433,9 +456,9 @@ footer {
   clear: both;
   color: #888;
   display: block;
-  font-size: 10px;
-  height: 50px;
-  padding: 25px 0px;
+  font-size: 12px;
+  height: 70px;
+  padding: 25px 0;
   position: relative;
   width: 100%;
 }
