@@ -2,6 +2,101 @@
 layout: default
 ---
 
+<article class="hero-container">
+	<div class="logotype">
+		<h1>Datawheel</h1>
+	</div>
+	<ul>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Portfolio</a></li>
+		<li><a href="#">Team</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">Blog</a></li>
+	</ul>
+
+	<div class="logo-container">
+		<h2>From data into stories.</h2>
+	</div>
+</article>
+
+<article class="welcome-msg sub-container">
+	<section>
+		<h3>
+			Welcome to Datawheel, where we make big data easy to use and open to everyone.
+		</h3>
+		<p>
+			Datawheel is a small but mighty crew of programmers and designers who are here to make sense of the world’s vast amounts of data. We know how to turn any client’s raw data into an interactive interface that is clear, accessible and beautiful.
+		</p>
+	</section>
+</article>
+
+<article class="offerings sub-container">
+	<h3>What we offer</h3>
+	<section>
+		<div class="offering a">
+			<div class="badge"></div>
+			<p>
+				A web interface tailored to your unique dataset
+			</p>
+		</div>
+		<div class="offering b">
+			<div class="badge"></div>
+			<p>
+				The merging of disparate datasets into a unified API
+			</p>
+		</div>
+		<div class="offering c">
+			<div class="badge"></div>
+			<p>
+				Apprenticeships to help you update and maintain your site
+			</p>
+		</div>
+		<div class="offering d">
+			<div class="badge"></div>
+			<p>
+				The leverage of cutting-edge, open-source software
+			</p>
+		</div>
+	</section>
+</article>
+
+<article class="projects">
+	<h3>We bring data and people together.</h3>
+	<section>
+		<div class="project datausa"></div>
+		<div class="project dataviva"></div>
+		<div class="project d3plus"></div>
+		<div class="project oec"></div>
+</article>
+
+<article class="contact sub-container">
+	<section class="dialogue-form"></section>
+	<section class="map"></section>
+</article>
+
+<footer>
+	<p>
+		"With great data, comes great responsibility."
+	</p>
+	<section>
+		<div class="mini-contact">
+			<span><a href="mailto:info@datawheel.us" target="_blank">info@datawheel.us</a></span>
+			<span>c 2016 Datawheel, LLC</span>
+			<span>All rights reserved.</span>
+		</div>
+		<div class="badge"></div>
+		<div class="social">
+			<a href="http://www.github.com/datawheel" target="_blank">
+				<i class="github"></i>
+			</a>
+			<a href="http://www.twitter.com/datawheel" target="_blank">
+				<i class="twt"></i>
+			</a>
+		</div>
+	</section>
+</footer>
+
+
 {% for person in site.team %}
 <div class="team-person" id="{{ person.id }}">
   <img class="hover" src="/img/team/desktop/{{ person.id }}-hover.jpg" />
