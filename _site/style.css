@@ -381,7 +381,8 @@ footer {
 
 @font-face {
   font-family: 'VarelaRound-Regular';
-  src: url("fonts/VarelaRound-Regular.ttf") format("ttf");
+  src: url("fonts/VarelaRound-Regular.ttf") format("truetype");
+  src: local("VarelaRound Regular"), url("fonts/VarelaRound-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal; }
