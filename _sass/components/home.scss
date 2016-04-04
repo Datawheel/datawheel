@@ -1,7 +1,14 @@
 .sub-container {
-  width: 100%;
-  height: 100vh;
-  max-height: 600px;
+  @media screen and (min-width: 415px) {
+    width: 100%;
+    height: 100vh;
+    max-height: 600px; 
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .hero-container {
@@ -9,32 +16,61 @@
   // background-repeat: no-repeat;
   // background-position: 50% 0%;
   // background-size: cover;
-  width: 100%;
-  height: 100vh;
-  max-height: 800px;
   overflow: hidden;
   position: relative;
 
-  #hero-video {
+  @media screen and (min-width: 415px) {
     width: 100%;
     height: 100vh;
+    max-height: 800px;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 100%;
+    height: 100vh;
+    max-height: 600px;
+  }
+
+  #hero-video {
     position: absolute;
     overflow: hidden;
+
+    @media screen and (min-width: 415px) {
+      width: 100%;
+      height: 100vh;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 100%;
+      height: 100%;
+    }
 
     .overlay {
       width: 100%;
       height: 100%;
-      background-color: rgba(242, 242, 242, 0.8);
+      background-color: rgba(249, 251, 253, 0.8);
       position: absolute;
       z-index: 0;
+
+      @media screen and (max-width: 414px) {
+        background-color: rgba(249, 251, 253, 0.6);
+      }
     }
     
     #video {
-      width: 100vw;
       top: 0;
       position: absolute;
       z-index: -1;
       @include filter(saturate(0.5));
+      
+      @media screen and (min-width: 415px) {
+        width: 100vw;
+      }
+
+      @media screen and (max-width: 414px) {
+        height: 100%;
+        margin-left: -60%;
+      }
     }
   }
 
@@ -57,6 +93,19 @@
       }
     }
   }
+
+  .down-arrow {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 14px;
+    background-image: url('/img/home/down_arrow.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .logotype {
@@ -71,6 +120,14 @@
   font-size: 1px;
   position: relative;
   z-index: 2;
+
+  @media screen and (max-width: 414px) {
+    margin: 35px auto 0;
+    height: 32px;
+    width: auto;
+    padding: 0;
+    background-size: contain;
+  }
 }
 
 .logo-container {
@@ -84,12 +141,22 @@
   position: relative;
   z-index: 1;
 
+  @media screen and (max-width: 414px) {
+    background-size: contain;
+    margin: 0 65px 90px;
+  }
+
   h2 {
     font-size: 40px;
     color: $txt-gray;
     letter-spacing: 2.38px;
     @include text-shadow(0px 2px 3px rgba(154,154,154,0.50));
     padding: 190px 0;
+
+    @media screen and (max-width: 414px) {
+      padding: 50% 0;
+      font-size: 55px;
+    }
   }
 }
 
@@ -99,31 +166,63 @@
   section {
     width: 60%;
     max-width: 950px;
-    padding: 160px 0;
+    padding: 140px 0 160px;
     margin: 0 auto;
     @include flex();
     @include flex-direction(row);
     @include align-items(center);
+
+    @media screen and (max-width: 414px) {
+      @include flex-direction(column);
+      width: 100%;
+      padding: 50px 35px 60px;
+      @include box();
+    }
   }
 
   h3 {
-    width: 45%;
-    max-width: 417px;
-    margin-right: 20px;
-    text-align: right;
     color: $gold;
     font-size: 40px;
     letter-spacing: 1.68px;
     line-height: 55px;
+
+    @media screen and (min-width: 415px) {
+      width: 45%;
+      max-width: 417px;
+      margin-right: 20px;
+      text-align: right;
+    }
+
+    @media screen and (max-width: 414px) {
+      font-size: 28px;
+      letter-spacing: 1.5px;
+      line-height: 45px;
+      text-align: left;
+      width: 100%;
+      @include box();
+      padding-right: 45px;
+    }
   }
 
   p {
-    width: 54%;
-    max-width: 500px;
-    text-align: left;
     font-size: 22px;
     color: $txt-gray;
     line-height: 44px;
+
+    @media screen and (min-width: 415px) {
+      width: 54%;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 100%;
+      font-size: 18px;
+      line-height: 40px;
+      padding-top: 10px;
+      padding-right: 10px;
+      @include box();
+    }
   }
 }
 
@@ -138,6 +237,10 @@
     margin: 0 auto;
     text-align: center;
     text-transform: capitalize;
+
+    @media screen and (max-width: 414px) {
+      color: white;
+    }
   }
 
   section {
@@ -145,15 +248,31 @@
     @include flex-direction(row);
     max-width: 960px;
     margin: 0 auto;
+
+    @media screen and (max-width: 414px) {
+      @include flex-direction(column);
+      @include align-items(center);
+      margin: 0 72px;
+      padding: 0px 0 60px;
+    }
   }
 
   .offering {
     text-align: center;
-    width: 21%;
-    max-width: 190px;
+    
+    @media screen and (min-width: 415px) {
+      width: 21%;
+      max-width: 190px;
 
-    & + .offering {
-      margin-left: 67px;
+      & + .offering {
+        margin-left: 67px;
+      }
+    }
+
+    @media screen and (max-width: 414px) {
+      & + .offering {
+        margin-top: 21px;
+      }
     }
 
     p {
@@ -161,6 +280,10 @@
       color: $txt-gray;
       letter-spacing: 0.64px;
       line-height: 26px;
+
+      @media screen and (max-width: 414px) {
+        max-width: 175px;
+      }
     }
 
     &.a .badge {
@@ -182,6 +305,20 @@
       background-position: 50% 50%;
       width: 180px;
       height: 180px;
+
+      @media screen and (max-width: 414px) {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.contact {
+  @media screen and (max-width: 414px) {
+    height: 100vh;
+
+    #map {
+      height: 100vh;
     }
   }
 }
@@ -196,16 +333,28 @@
     line-height: 36px;
     text-align: center;
     padding: 70px 0 50px;
+
+    @media screen and (max-width: 414px) {
+      padding: 50px;
+    }
   }
 
   section {
     text-align: center;
     padding-bottom: 70px;
 
+    @media screen and (max-width: 414px) {
+      padding: 0;
+    }
+
     .row {
       @include flex();
       @include flex-direction(row);
       @include justify(center);
+      
+      @media screen and (max-width: 414px) {
+        @include flex-direction(column);
+      }
     }
     
     .datausa {
@@ -248,6 +397,16 @@
       @include flex();
       @include align-items(center);
 
+      @media screen and (max-width: 414px) {
+        margin: -1px 0 0;
+        padding: 0;
+        width: 100%;
+        height: 276px;
+        background-size: cover;
+        @include box();
+
+      }
+
       a {
         display: block;
         margin: auto;
@@ -269,6 +428,10 @@
   width: 100%;
   height: 300px;
 
+  @media screen and (max-width: 414px) {
+    height: 160px;
+  }
+
   &.a {
     background-image: url('/img/home/desk1.png');
   }
@@ -277,7 +440,10 @@
   }
   &.c {
     background-image: url('/img/home/desk3.png');
-    height: 190px !important;
+    
+    @media screen and (min-width: 415px) {
+      height: 190px !important;
+    }
   }
 
   background-repeat: no-repeat;

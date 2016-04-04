@@ -1,7 +1,10 @@
 footer {
   background-color: $bg-gold;
-  height: 300px;
   
+  @media screen and (min-width: 415px) {
+    height: 300px;
+  }
+
   .parting-words {
     font-size: 18px;
     color: $txt-gray;
@@ -9,17 +12,34 @@ footer {
     line-height: 44px;
     text-align: center;
     padding: 42px 0;
+
+    @media screen and (max-width: 414px) {
+      font-size: 24px;
+      letter-spacing: 1px;
+      line-height: 31px;
+      padding: 42px 45px;
+    }
   }
 
   section {
     @include flex();
     @include flex-direction(row);
-    @include justify(space-around);
+    @include justify(space-between);
     @include align-items(center);
-    padding-bottom: 40px;
+    padding: 0 13% 40px;
+
+    @media screen and (max-width: 414px) {
+      @include flex-direction(column-reverse);
+    }
+
+    & > * {
+      @include flex-size(1 0 auto);
+    }
   }
 
   .mini-contact {
+    text-align: left;
+
     span, a {
       display: block;
       font-size: 14px;
@@ -40,13 +60,19 @@ footer {
   .badge {
     background-image: url('/img/home/footer_gem.svg');
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 33% 50%;
     background-size: contain;
     width: 132px;
     height: 132px;
   }
 
   .social {
+    text-align: right;
+
+    @media screen and (max-width: 414px) {
+      margin-bottom: 40px;
+    }
+
     a {
       display: inline-block;
     }

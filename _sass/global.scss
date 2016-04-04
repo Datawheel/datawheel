@@ -1,3 +1,15 @@
 body {
   font-family: $varela;
 }
+
+.mbl {
+	@media screen and (min-width: 415px) {
+		display: none;
+	}
+}
+
+.dsk {
+	@media screen and (max-width: 414px) {
+		display: none;
+	}
+}
