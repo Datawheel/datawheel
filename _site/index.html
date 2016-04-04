@@ -17,6 +17,19 @@
   <body>
 
     <article class="hero-container">
+	<div id="hero-video">
+        <div class="overlay"></div>
+        <!-- Video Partial -->
+        <video id="video" class="video"  preload="auto" style="background-image: url('/img/home/hero.png');" autoplay loop muted>
+        	<source src="/video/hero.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.vi40.2">
+        	<source src="/video/hero.mp4" type="video/webm; codecs=vp8,vorbis">
+        </video>
+        <![if !IE]>
+        <!-- <video id="video" class="ta-video video" preload="auto" autoplay muted>
+            <source src="/video/video.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+        </video> -->
+        <![endif]>
+    </div>
 	<div class="logotype">
 		<h1>Datawheel</h1>
 	</div>
@@ -43,6 +56,8 @@
 		</p>
 	</section>
 </article>
+
+<article class="parallax a"></article>
 
 <article class="offerings sub-container">
 	<h3>What we offer</h3>
@@ -74,49 +89,89 @@
 	</section>
 </article>
 
+<article class="parallax b"></article>
+
 <article class="projects">
 	<h3>We bring data and people together.</h3>
 	<section>
-		<div class="project datausa"></div>
-		<div class="project dataviva"></div>
-		<div class="project d3plus"></div>
-		<div class="project oec"></div>
+		<div class="row a">
+			<div class="project datausa">
+				<a href="http://www.datausa.io" target="_blank">DataUSA</a>
+			</div>
+			<div class="project dataviva">
+				<a href="dataviva.info" target="_blank">DataViva</a>
+			</div>
+		</div>
+		<div class="row b">
+			<div class="project d3plus">
+				<a href="http://d3plus.org/" target="_blank">D3Plus</a>
+			</div>
+			<div class="project oec">
+				<a href="http://atlas.media.mit.edu/" target="_blank">Observatory of Economic Complexity</a>
+			</div>
+		</div>
 </article>
 
 <article class="contact sub-container">
 	<section class="dialogue-form"></section>
-	<section class="map"></section>
+	<section id="map" class="sub-container"></section>
 </article>
 
-<footer>
-	<p>
-		"With great data, comes great responsibility."
-	</p>
-	<section>
-		<div class="mini-contact">
-			<span><a href="mailto:info@datawheel.us" target="_blank">info@datawheel.us</a></span>
-			<span>c 2016 Datawheel, LLC</span>
-			<span>All rights reserved.</span>
-		</div>
-		<div class="badge"></div>
-		<div class="social">
-			<a href="http://www.github.com/datawheel" target="_blank">
-				<i class="github"></i>
-			</a>
-			<a href="http://www.twitter.com/datawheel" target="_blank">
-				<i class="twt"></i>
-			</a>
-		</div>
-	</section>
-</footer>
+<article class="parallax c"></article>
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&sensor=false"></script>
+<script type="text/javascript">
+    google.maps.event.addDomListener(window, 'load', init);
 
-
-<div class="team-person" id="dave">
-  <img class="hover" src="/img/team/desktop/dave-hover.jpg" />
-</div>
-
-
-
+    function init() {
+        var mapOptions = {
+            zoom: 17,
+            center: new google.maps.LatLng(42.373683,-71.09927829999998),
+            scrollwheel:  false,
+            disableDefaultUI: true,
+            styles:    
+	           [{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#F0F0F1"}]},
+	           {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#FFCC66"},{"color":"#F0F0F1"}]},
+	           {"featureType":"road","elementType":"geometry","stylers":[{"color":"#FFCC66"},{"visibility":"simplified"}]},
+	           {"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},
+	           {"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#FFCC66"}]},
+	           {"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#FFCC66"}]},
+	           {"elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+	           {"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},
+	           {"featureType":"water","elementType":"all","stylers":[{"color":"#F0F0F1"}]},
+	           {"featureType": "administrative","elementType": "all","stylers": [{"visibility": "off"}]}]
+        };
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+		var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(42.373683,-71.09927829999998),
+            map: map,
+            title: '1299 Cambridge St',
+            icon: '/img/home/map_marker.svg'
+        });
+    }
+</script>
+  
   </body>
+  <footer>
+  <p class="parting-words">
+    "With great data, comes great responsibility."
+  </p>
+  <section>
+    <div class="mini-contact">
+      <span><a href="mailto:info@datawheel.us" target="_blank">info@datawheel.us</a></span>
+      <span>c 2016 Datawheel, LLC</span>
+      <span>All rights reserved.</span>
+    </div>
+    <div class="badge"></div>
+    <div class="social">
+      <a href="http://www.github.com/datawheel" target="_blank">
+        <i class="github"></i>
+      </a>
+      <a href="http://www.twitter.com/datawheel" target="_blank">
+        <i class="twitter"></i>
+      </a>
+    </div>
+  </section>
+</footer>
 </html>

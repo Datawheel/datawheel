@@ -46,14 +46,33 @@ table {
   max-height: 600px; }
 
 .hero-container {
-  background-image: url("/img/home/hero.png");
-  background-repeat: no-repeat;
-  background-position: 50% 0%;
-  background-size: cover;
   width: 100%;
   height: 100vh;
-  max-height: 800px; }
+  max-height: 800px;
+  overflow: hidden;
+  position: relative; }
+  .hero-container #hero-video {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden; }
+    .hero-container #hero-video .overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(242, 242, 242, 0.8);
+      position: absolute;
+      z-index: 0; }
+    .hero-container #hero-video #video {
+      width: 100vw;
+      top: 0;
+      position: absolute;
+      z-index: -1;
+      -webkit-filter: saturate(0.5);
+      -moz-filter: saturate(0.5);
+      -o-filter: saturate(0.5);
+      filter: saturate(0.5); }
   .hero-container ul {
+    display: none;
     margin: 0 auto;
     text-align: center;
     width: 60%; }
@@ -76,7 +95,9 @@ table {
   padding-top: 100px;
   margin: 0 auto;
   color: transparent;
-  font-size: 1px; }
+  font-size: 1px;
+  position: relative;
+  z-index: 2; }
 
 .logo-container {
   background-image: url("/img/home/logo.svg");
@@ -85,7 +106,9 @@ table {
   background-size: 429px 429px;
   height: 429px;
   text-align: center;
-  margin: 70px auto; }
+  margin: 70px auto;
+  position: relative;
+  z-index: 1; }
   .logo-container h2 {
     font-size: 40px;
     color: #666666;
@@ -190,9 +213,171 @@ table {
       width: 180px;
       height: 180px; }
 
+.projects {
+  background-color: #F2F2F2; }
+  .projects h3 {
+    font-size: 30px;
+    color: #6C6558;
+    letter-spacing: 1.25px;
+    line-height: 36px;
+    text-align: center;
+    padding: 70px 0 50px; }
+  .projects section {
+    text-align: center;
+    padding-bottom: 70px; }
+    .projects section .row {
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      flex-pack: center;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      flex-pack: center; }
+    .projects section .datausa {
+      background-image: url("/img/home/datausa_bg.png"); }
+      .projects section .datausa a {
+        background-color: rgba(109, 155, 193, 0.7); }
+    .projects section .dataviva {
+      background-image: url("/img/home/dataviva_bg.png"); }
+      .projects section .dataviva a {
+        background-color: rgba(229, 99, 100, 0.6); }
+    .projects section .d3plus {
+      background-image: url("/img/home/d3plus_bg.png"); }
+      .projects section .d3plus a {
+        background-color: rgba(71, 142, 94, 0.7); }
+    .projects section .oec {
+      background-image: url("/img/home/oec_bg.png"); }
+      .projects section .oec a {
+        background-color: rgba(77, 204, 235, 0.8); }
+    .projects section .project {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+      width: 465px;
+      height: 310px;
+      margin: 0 15px 30px;
+      display: inline-block;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      flex-pack: center;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -ms-flex-align: center;
+      flex-align: center; }
+      .projects section .project a {
+        display: block;
+        margin: auto;
+        text-align: center;
+        text-decoration: none;
+        border: 3px solid #F2F2F2;
+        width: 50%;
+        padding: 25px;
+        font-size: 20px;
+        color: #F2F2F2;
+        letter-spacing: 1px; }
+
+.parallax {
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%; }
+  .parallax.a {
+    background-image: url("/img/home/desk1.png"); }
+  .parallax.b {
+    background-image: url("/img/home/desk2.png"); }
+  .parallax.c {
+    background-image: url("/img/home/desk3.png");
+    height: 190px !important; }
+
 footer {
   background-color: #FFCC66;
   height: 300px; }
+  footer .parting-words {
+    font-size: 18px;
+    color: #666666;
+    letter-spacing: 0.79px;
+    line-height: 44px;
+    text-align: center;
+    padding: 42px 0; }
+  footer section {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    flex-pack: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    justify-content: space-around;
+    -ms-flex-pack: distribute;
+    flex-pack: distribute;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    flex-align: center;
+    padding-bottom: 40px; }
+  footer .mini-contact span, footer .mini-contact a {
+    display: block;
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 0.61px;
+    line-height: 22px; }
+  footer .mini-contact a {
+    text-decoration: none; }
+    footer .mini-contact a:hover, footer .mini-contact a:focus {
+      opacity: 0.6; }
+  footer .badge {
+    background-image: url("/img/home/footer_gem.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 132px;
+    height: 132px; }
+  footer .social a {
+    display: inline-block; }
+  footer .social i {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 45px;
+    height: 45px; }
+    footer .social i:hover, footer .social i:focus {
+      opacity: 0.6; }
+  footer .social .github {
+    background-image: url("/img/home/github.svg");
+    margin-right: 15px; }
+  footer .social .twitter {
+    background-image: url("/img/home/twitter.svg"); }
 
 @font-face {
   font-family: 'VarelaRound-Regular';

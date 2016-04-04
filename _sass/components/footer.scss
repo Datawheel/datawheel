@@ -1,0 +1,76 @@
+footer {
+  background-color: $bg-gold;
+  height: 300px;
+  
+  .parting-words {
+    font-size: 18px;
+    color: $txt-gray;
+    letter-spacing: 0.79px;
+    line-height: 44px;
+    text-align: center;
+    padding: 42px 0;
+  }
+
+  section {
+    @include flex();
+    @include flex-direction(row);
+    @include justify(space-around);
+    @include align-items(center);
+    padding-bottom: 40px;
+  }
+
+  .mini-contact {
+    span, a {
+      display: block;
+      font-size: 14px;
+      color: $txt-gray;
+      letter-spacing: 0.61px;
+      line-height: 22px;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover, &:focus {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .badge {
+    background-image: url('/img/home/footer_gem.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 132px;
+    height: 132px;
+  }
+
+  .social {
+    a {
+      display: inline-block;
+    }
+
+    i {
+      display: block;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      width: 45px;
+      height: 45px;
+
+      &:hover, &:focus {
+        opacity: 0.6;
+      }
+    }
+
+    .github {
+      background-image: url('/img/home/github.svg');
+      margin-right: 15px;
+    }
+
+    .twitter {
+      background-image: url('/img/home/twitter.svg');
+    }
+  }
+}
