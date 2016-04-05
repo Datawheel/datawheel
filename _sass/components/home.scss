@@ -348,6 +348,15 @@
     @include box();
     position: relative;
 
+    h3 {
+      font-size: 24px;
+      color: $bg-gray;
+      letter-spacing: 1px;
+      line-height: 36px;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
     input, textarea {
       outline: none;
     }
@@ -360,6 +369,10 @@
       letter-spacing: 0.87px;
       border: 0;
       padding: 10px;
+
+      @media screen and (max-width: 768px) {
+        color: $txt-gold;
+      }
     }
 
     input[type="text"] {
@@ -395,6 +408,10 @@
 
       &:hover {
         background-color: #c0c0c0;
+      }
+
+      @media screen and (max-width: 768px) {
+        left: 26%;
       }
     }
   }

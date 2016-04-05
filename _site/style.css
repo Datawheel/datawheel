@@ -410,6 +410,13 @@ table {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
+    .contact .dialogue-form h3 {
+      font-size: 24px;
+      color: #F2F2F2;
+      letter-spacing: 1px;
+      line-height: 36px;
+      text-align: center;
+      padding-bottom: 30px; }
     .contact .dialogue-form input, .contact .dialogue-form textarea {
       outline: none; }
     .contact .dialogue-form input[type="text"], .contact .dialogue-form textarea {
@@ -420,6 +427,9 @@ table {
       letter-spacing: 0.87px;
       border: 0;
       padding: 10px; }
+      @media screen and (max-width: 768px) {
+        .contact .dialogue-form input[type="text"], .contact .dialogue-form textarea {
+          color: #FFCD33; } }
     .contact .dialogue-form input[type="text"] {
       border-bottom: 1px solid gray; }
       .contact .dialogue-form input[type="text"] + input[type="text"] {
@@ -446,6 +456,9 @@ table {
       cursor: pointer; }
       .contact .dialogue-form input[type="submit"]:hover {
         background-color: #c0c0c0; }
+      @media screen and (max-width: 768px) {
+        .contact .dialogue-form input[type="submit"] {
+          left: 26%; } }
   .contact #map {
     width: 50vw; }
   @media screen and (max-width: 768px) {
@@ -700,10 +713,10 @@ body {
   .mbl {
     display: none; } }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 768px) {
   .dsk {
     display: none; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .tbl {
     display: none; } }
