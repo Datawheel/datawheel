@@ -5,7 +5,7 @@ layout: default
 <article class="hero-container">
 	<div id="hero-video">
       <!-- Video Partial -->
-      <video id="video" class="video"  preload="auto" style="background-image: url('/img/home/hero.png');" autoplay loop muted>
+      <video id="video" class="video"  preload="auto" style="background-image: url('/img/home/hero.jpg');" autoplay loop muted>
       	<source src="/hero.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.vi40.2">
       	<source src="/hero.mp4" type="video/webm; codecs=vp8,vorbis">
       </video>
@@ -47,7 +47,7 @@ layout: default
 	</section>
 </article>
 
-<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk1.png" data-bleed="50" data-speed="0.5"></article>
+<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk1.jpg" data-bleed="50" data-speed="0.5"></article>
 
 <article class="offerings sub-container">
 	<h3>What we offer</h3>
@@ -79,7 +79,7 @@ layout: default
 	</section>
 </article>
 
-<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk2.png" data-bleed="50" data-speed="0.5"></article>
+<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk2.jpg" data-bleed="50" data-speed="0.5"></article>
 
 <article class="projects">
 	<h3>We bring data and people together.</h3>
@@ -102,7 +102,7 @@ layout: default
 		</div>
 </article>
 
-<article class="parallax-window mbl" data-parallax="scroll" data-image-src="/img/home/desk1.png" data-bleed="50" data-speed="0.5"></article>
+<article class="parallax-window mbl" data-parallax="scroll" data-image-src="/img/home/desk1.jpg" data-bleed="50" data-speed="0.5"></article>
 
 <article class="contact sub-container">
 	<section class="dialogue-form">
@@ -123,10 +123,21 @@ layout: default
 	<section id="map" class="sub-container"></section>
 </article>
 
-<article class="parallax-window tall" data-parallax="scroll" data-image-src="/img/home/desk3.png" data-bleed="50" data-speed="0.5"></article>
+<article class="parallax-window tall" data-parallax="scroll" data-image-src="/img/home/desk3.jpg" data-bleed="50" data-speed="0.5"></article>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
+
+	  $(document).ready(function() {
+	    $(".video").backgroundVideo({
+	      $videoWrap: $(".video").parent(),
+	      $outerWrap: $(".video").parent().parent(),
+				pauseVideoOnViewLoss: false,
+	      preventContextMenu: true,
+	      parallaxOptions: {effect: 2}
+	    });
+	  });
+
     google.maps.event.addDomListener(window, 'load', init);
 
     function init() {
