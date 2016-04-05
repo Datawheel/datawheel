@@ -484,28 +484,28 @@
     .datausa {
       background-image: url('/img/home/datausa_bg.png');
 
-      a {
+      .project-title {
         background-color: rgba(109,155,193,0.70);
       }
     }
     .dataviva {
       background-image: url('/img/home/dataviva_bg.png');
 
-      a {
+      .project-title {
         background-color: rgba(229,99,100,0.60);
       }
     }
     .d3plus {
       background-image: url('/img/home/d3plus_bg.png');
 
-      a {
+      .project-title {
         background-color: rgba(71,142,94,0.70);
       }
     }
     .oec {
       background-image: url('/img/home/oec_bg.png');
 
-      a {
+      .project-title {
         background-color: rgba(77,204,235,0.80);
       }
     }
@@ -518,6 +518,7 @@
       height: 310px;
       margin: 0 15px 30px;
       display: inline-block;
+      text-decoration: none;
       @include flex();
       @include align-items(center);
       @include justify(center);
@@ -532,18 +533,38 @@
 
       }
 
-      a {
+      .project-title {
         display: block;
         // margin: auto;
         text-align: center;
-        text-decoration: none;
         border: 3px solid $bg-gray;
         width: 50%;
         padding: 25px;
         font-size: 20px;
         color: $bg-gray;
         letter-spacing: 1px;
+
+        .project-desc {
+          display: none;
+          font-size: 14px;
+          line-height: 18px;
+          margin-top: 5px;
+          text-align: left;
+        }
+
       }
+
+      &:hover {
+
+        .project-title {
+          width: 75%;
+        }
+
+        .project-desc {
+          display: block;
+        }
+      }
+
     }
 
   }
