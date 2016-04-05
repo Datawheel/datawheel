@@ -216,7 +216,19 @@ table {
           box-sizing: border-box; } }
     @media screen and (max-width: 414px) {
       .welcome-msg section {
-        padding: 50px 35px 60px; } }
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 50px 35px 60px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; }
+        .welcome-msg section:before, .welcome-msg section:after {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; } }
   .welcome-msg h3 {
     color: #CB9F2C;
     font-size: 40px;
