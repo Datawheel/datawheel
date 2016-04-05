@@ -5,7 +5,7 @@ layout: default
 <article class="hero-container">
 	<div id="hero-video">
       <!-- Video Partial -->
-      <video id="video" class="video"  preload="auto" style="background-image: url('/img/home/hero.jpg');" autoplay loop muted>
+      <video id="video" class="video"  preload="auto" autoplay loop muted>
       	<source src="/hero.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.vi40.2">
       	<source src="/hero.mp4" type="video/webm; codecs=vp8,vorbis">
       </video>
@@ -180,5 +180,9 @@ layout: default
             title: '1299 Cambridge St',
             icon: '/img/home/map_marker.svg'
         });
+
+				google.maps.event.addListener(marker, "click", function() {
+					window.open("https://goo.gl/maps/7cv2ScytYYE2", "_blank");
+				})
     }
 </script>
