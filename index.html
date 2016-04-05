@@ -150,7 +150,7 @@ layout: default
 
     function init() {
         var mapOptions = {
-            zoom: 16,
+            zoom: 17,
             center: new google.maps.LatLng(42.373683,-71.09927829999998),
             scrollwheel:  false,
             disableDefaultUI: true,
@@ -164,6 +164,7 @@ layout: default
 	           {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#FFCC66"},{"color":"#F0F0F1"}]},
 	           {"featureType":"road","elementType":"geometry","stylers":[{"color":"#FFCC66"},{"visibility":"simplified"}]},
 	           {"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},
+	           {"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"off"}]},
 	           {"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#FFCC66"}]},
 	           {"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#FFCC66"}]},
 	           {"elementType":"labels.icon","stylers":[{"visibility":"off"}]},
