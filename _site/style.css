@@ -426,10 +426,15 @@ table {
       display: block;
       letter-spacing: 0.87px;
       border: 0;
-      padding: 10px; }
-      @media screen and (max-width: 768px) {
-        .contact .dialogue-form input[type="text"], .contact .dialogue-form textarea {
-          color: #FFCD33; } }
+      padding: 10px;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .contact .dialogue-form input[type="text"]:before, .contact .dialogue-form input[type="text"]:after, .contact .dialogue-form textarea:before, .contact .dialogue-form textarea:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; }
     .contact .dialogue-form input[type="text"] {
       border-bottom: 1px solid gray; }
       .contact .dialogue-form input[type="text"] + input[type="text"] {
@@ -437,11 +442,11 @@ table {
     .contact .dialogue-form textarea {
       color: #FFCD33;
       margin-top: 20px;
-      width: 100%;
       min-height: 200px; }
     .contact .dialogue-form input[type="submit"] {
       position: absolute;
       bottom: 35px;
+      left: 26%;
       display: block;
       margin: auto;
       text-align: center;
@@ -456,9 +461,6 @@ table {
       cursor: pointer; }
       .contact .dialogue-form input[type="submit"]:hover {
         background-color: #c0c0c0; }
-      @media screen and (max-width: 768px) {
-        .contact .dialogue-form input[type="submit"] {
-          left: 26%; } }
   .contact #map {
     width: 50vw; }
   @media screen and (max-width: 768px) {
