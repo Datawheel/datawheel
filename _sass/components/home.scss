@@ -144,13 +144,17 @@
 
 .welcome-msg {
   background-color: $bg-gray;
+  text-align: center;
   @include flex();
+  @include justify(center);
+  @include align-items(center);
 
   section {
     width: 80%;
     max-width: 950px;
-    margin: 0 auto;
+    // margin: 0 auto;
     @include flex();
+    // @include flex-size(1);
     @include flex-direction(row);
     @include align-items(center);
 
@@ -366,6 +370,7 @@
 
     input[type="text"], textarea {
       background-color: $txt-gray;
+      font-family: $varela;
       font-size: 20px;
       color: $bg-gray;
       display: block;
@@ -388,6 +393,7 @@
       color: $txt-gold;
       margin-top: 20px;
       min-height: 200px;
+      overflow: auto;
     }
 
     input[type="submit"] {
@@ -506,6 +512,7 @@
       display: inline-block;
       @include flex();
       @include align-items(center);
+      @include justify(center);
 
       @media screen and (max-width: 768px) {
         margin: -1px 0 0;
@@ -519,7 +526,7 @@
 
       a {
         display: block;
-        margin: auto;
+        // margin: auto;
         text-align: center;
         text-decoration: none;
         border: 3px solid $bg-gray;
