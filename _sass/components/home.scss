@@ -354,7 +354,7 @@
   height: 600px;
 
   .dialogue-form {
-    width: 50vw;
+    width: 50%;
     background-color: $txt-gray;
     font-size: 20px;
     color: $bg-gray;
@@ -428,7 +428,7 @@
   }
 
   #map {
-    width: 50vw;
+    width: 50%;
   }
 
   @media screen and (max-width: 768px) {
