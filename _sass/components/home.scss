@@ -331,11 +331,87 @@
 }
 
 .contact {
-  @media screen and (max-width: 414px) {
-    height: 100vh;
+  @include flex();
+  @include flex-direction(row);
+  height: 600px;
+
+  .dialogue-form {
+    width: 50vw;
+    background-color: $txt-gray;
+    font-size: 20px;
+    color: $bg-gray;
+    letter-spacing: 0.87px;
+    padding: 35px;
+    @include box();
+    position: relative;
+
+    input, textarea {
+      outline: none;
+    }
+
+    input[type="text"], textarea {
+      background-color: $txt-gray;
+      font-size: 20px;
+      color: $bg-gray;
+      display: block;
+      letter-spacing: 0.87px;
+      border: 0;
+      padding: 10px;
+    }
+
+    input[type="text"] {
+      border-bottom: 1px solid gray;
+      
+      & + input[type="text"] {
+        margin-top: 20px;
+      }
+    }
+    
+    textarea {
+      color: $txt-gold;
+      margin-top: 20px;
+      width: 100%;
+      min-height: 200px;
+    }
+
+    input[type="submit"] {
+      position: absolute;
+      bottom: 35px;
+      display: block;
+      margin: auto;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgba(255,255,255,0);
+      border: 3px solid $bg-gray;
+      width: 50%;
+      padding: 25px;
+      font-size: 20px;
+      color: $bg-gray;
+      letter-spacing: 1px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #c0c0c0;
+      }
+    }
+  }
+
+  #map {
+    width: 50vw;
+  }
+  
+  @media screen and (max-width: 768px) {
+    @include flex-direction(column);
+    height: auto;
+
+    .dialogue-form {
+      width: 100vw;
+      height: 600px;
+    }
 
     #map {
-      height: 100vh;
+      width: 100vw;
+      height: 600px;
     }
   }
 }

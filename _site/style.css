@@ -367,11 +367,88 @@ table {
         .offerings .offering .badge {
           margin: 0 auto; } }
 
-@media screen and (max-width: 414px) {
-  .contact {
-    height: 100vh; }
-    .contact #map {
-      height: 100vh; } }
+.contact {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  flex-pack: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 600px; }
+  .contact .dialogue-form {
+    width: 50vw;
+    background-color: #666666;
+    font-size: 20px;
+    color: #F2F2F2;
+    letter-spacing: 0.87px;
+    padding: 35px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative; }
+    .contact .dialogue-form:before, .contact .dialogue-form:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+    .contact .dialogue-form input, .contact .dialogue-form textarea {
+      outline: none; }
+    .contact .dialogue-form input[type="text"], .contact .dialogue-form textarea {
+      background-color: #666666;
+      font-size: 20px;
+      color: #F2F2F2;
+      display: block;
+      letter-spacing: 0.87px;
+      border: 0;
+      padding: 10px; }
+    .contact .dialogue-form input[type="text"] {
+      border-bottom: 1px solid gray; }
+      .contact .dialogue-form input[type="text"] + input[type="text"] {
+        margin-top: 20px; }
+    .contact .dialogue-form textarea {
+      color: #FFCD33;
+      margin-top: 20px;
+      width: 100%;
+      min-height: 200px; }
+    .contact .dialogue-form input[type="submit"] {
+      position: absolute;
+      bottom: 35px;
+      display: block;
+      margin: auto;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0);
+      border: 3px solid #F2F2F2;
+      width: 50%;
+      padding: 25px;
+      font-size: 20px;
+      color: #F2F2F2;
+      letter-spacing: 1px;
+      cursor: pointer; }
+      .contact .dialogue-form input[type="submit"]:hover {
+        background-color: #c0c0c0; }
+  .contact #map {
+    width: 50vw; }
+  @media screen and (max-width: 768px) {
+    .contact {
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      height: auto; }
+      .contact .dialogue-form {
+        width: 100vw;
+        height: 600px; }
+      .contact #map {
+        width: 100vw;
+        height: 600px; } }
 
 .projects {
   background-color: #F2F2F2; }

@@ -103,7 +103,20 @@ layout: default
 <article class="parallax a mbl"></article>
 
 <article class="contact sub-container">
-	<section class="dialogue-form"></section>
+	<section class="dialogue-form">
+		<form action="https://docs.google.com/forms/d/1RgAbvlCyF6kpyGT12vZxAk2E5n751gk74IpCEO7nzaw/formResponse" method="POST" id="ss-form" target="_blank" onsubmit="">
+			<div class="inputs">
+				<input type="text" name="entry.1407440466" value="" id="entry_1407440466" placeholder="Name" aria-required="true" required>
+				<input type="text" name="entry.2139193680" value="" id="entry_2139193680" placeholder="E-mail address" aria-required="true" required>
+				<textarea name="entry.1950491585" id="entry_1950491585" placeholder="What's up?" aria-required="true" required></textarea>
+		    </div>
+
+		    <input type="submit" name="submit" value="Submit" id="ss-submit">
+		    <input type="hidden" name="draftResponse" value="[,,&quot;-6665875044849292915&quot;]">
+		    <input type="hidden" name="pageHistory" value="0">
+		    <input type="hidden" name="fbzx" value="-6665875044849292915">
+		</form>
+	</section>
 	<section id="map" class="sub-container"></section>
 </article>
 
@@ -119,6 +132,11 @@ layout: default
             center: new google.maps.LatLng(42.373683,-71.09927829999998),
             scrollwheel:  false,
             disableDefaultUI: true,
+            scrollwheel: false,
+		    navigationControl: false,
+		    mapTypeControl: false,
+		    scaleControl: false,
+		    draggable: false,
             styles:    
 	           [{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#F0F0F1"}]},
 	           {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#FFCC66"},{"color":"#F0F0F1"}]},
