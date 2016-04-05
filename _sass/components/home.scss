@@ -2,7 +2,7 @@
   @media screen and (min-width: 1200px) {
     width: 100%;
     height: 100vh;
-    max-height: 600px; 
+    max-height: 600px;
   }
 
   @media screen and (max-width: 414px) {
@@ -28,17 +28,17 @@
       height: 100%;
       background-color: rgba(249, 251, 253, 0.8);
       position: absolute;
-      z-index: 0;
+      z-index: 2;
 
       @media screen and (max-width: 768px) {
         background-color: rgba(249, 251, 253, 0.6);
       }
     }
-    
+
     #video {
       top: 0;
-      position: absolute;
-      z-index: -1;
+      // position: absolute;
+      // z-index: -1;
       @include filter(saturate(0.5));
       height: 100%;
     }
@@ -49,6 +49,7 @@
     margin: 0 auto;
     text-align: center;
     width: 60%;
+    z-index: 3;
 
     li {
       display: inline-block;
@@ -75,6 +76,7 @@
     height: 20px;
     width: 100%;
     text-align: center;
+    z-index: 3;
   }
 }
 
@@ -89,7 +91,7 @@
   color: transparent;
   font-size: 1px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   @media screen and (max-width: 414px) {
     margin: 35px auto 0;
@@ -101,6 +103,7 @@
 }
 
 .logo-container {
+  @include box();
   background-image: url('/img/home/logo.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -109,8 +112,8 @@
   text-align: center;
   margin: 70px auto;
   position: relative;
-  z-index: 1;
-  
+  z-index: 3;
+
   @media screen and (min-width: 415px) and (max-width: 768px) {
     background-size: contain;
     height: 360px;
@@ -133,8 +136,8 @@
     }
 
     @media screen and (max-width: 414px) {
-      padding: 46% 0;
-      font-size: 55px;
+      padding: 81% 0;
+      font-size: 40px;
     }
   }
 }
@@ -144,7 +147,7 @@
   @include flex();
 
   section {
-    width: 60%;
+    width: 80%;
     max-width: 950px;
     margin: 0 auto;
     @include flex();
@@ -157,7 +160,7 @@
 
     @media screen and (min-width: 769px) and (max-width: 1049px) {
       padding: 80px 0;
-      width: 70%;
+      width: 90%;
     }
 
     @media screen and (min-width: 415px) and (max-width: 768px) {
@@ -183,7 +186,7 @@
     width: 45%;
     text-align: right;
     margin-right: 20px;
-    
+
     @media screen and (min-width: 769px) {
       max-width: 417px;
     }
@@ -213,7 +216,7 @@
     text-align: left;
 
     @media screen and (min-width: 769px) {
-      max-width: 500px;
+      max-width: 450px;
     }
 
     @media screen and (min-width: 769px) and (max-width: 1049px) {
@@ -270,7 +273,7 @@
 
   .offering {
     text-align: center;
-    
+
     @media screen and (min-width: 1200px) {
       width: 21%;
       max-width: 190px;
@@ -375,12 +378,12 @@
 
     input[type="text"] {
       border-bottom: 1px solid gray;
-      
+
       & + input[type="text"] {
         margin-top: 20px;
       }
     }
-    
+
     textarea {
       color: $txt-gold;
       margin-top: 20px;
@@ -413,7 +416,7 @@
   #map {
     width: 50vw;
   }
-  
+
   @media screen and (max-width: 768px) {
     @include flex-direction(column);
     height: auto;
@@ -432,7 +435,7 @@
 
 .projects {
   background-color: $bg-gray;
-  
+
   h3 {
     font-size: 30px;
     color: $txt-gray-l;
@@ -458,12 +461,12 @@
       @include flex();
       @include flex-direction(row);
       @include justify(center);
-      
+
       @media screen and (max-width: 768px) {
         @include flex-direction(column);
       }
     }
-    
+
     .datausa {
       background-image: url('/img/home/datausa_bg.png');
 
@@ -531,30 +534,48 @@
   }
 }
 
-.parallax {
-  width: 100%;
-  height: 300px;
+.parallax-window {
+  // @include transition(none);
+  background: transparent;
+  min-height: 300px;
+  position: relative;
 
   @media screen and (max-width: 414px) {
-    height: 160px;
+    min-height: 160px;
   }
 
-  &.a {
-    background-image: url('/img/home/desk1.png');
-  }
-  &.b {
-    background-image: url('/img/home/desk2.png');
-  }
-  &.c {
-    background-image: url('/img/home/desk3.png');
-    
+  &.tall {
     @media screen and (min-width: 415px) {
-      height: 190px !important;
+      min-height: 190px !important;
     }
   }
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 50% 50%;
 }
+
+// .parallax {
+//   width: 100%;
+//   height: 300px;
+//
+//   @media screen and (max-width: 414px) {
+//     height: 160px;
+//   }
+//
+//   &.a {
+//     background-image: url('/img/home/desk1.png');
+//   }
+//   &.b {
+//     background-image: url('/img/home/desk2.png');
+//   }
+//   &.c {
+//     background-image: url('/img/home/desk3.png');
+//
+//     @media screen and (min-width: 415px) {
+//       height: 190px !important;
+//     }
+//   }
+//
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   background-position: 50% 50%;
+// }

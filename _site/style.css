@@ -65,14 +65,12 @@ table {
       height: 100%;
       background-color: rgba(249, 251, 253, 0.8);
       position: absolute;
-      z-index: 0; }
+      z-index: 2; }
       @media screen and (max-width: 768px) {
         .hero-container #hero-video .overlay {
           background-color: rgba(249, 251, 253, 0.6); } }
     .hero-container #hero-video #video {
       top: 0;
-      position: absolute;
-      z-index: -1;
       -webkit-filter: saturate(0.5);
       -moz-filter: saturate(0.5);
       -o-filter: saturate(0.5);
@@ -82,7 +80,8 @@ table {
     display: none;
     margin: 0 auto;
     text-align: center;
-    width: 60%; }
+    width: 60%;
+    z-index: 3; }
     .hero-container ul li {
       display: inline-block; }
       .hero-container ul li a {
@@ -102,7 +101,8 @@ table {
     background-size: contain;
     height: 20px;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    z-index: 3; }
 
 .logotype {
   background-image: url("/img/home/logotype.svg");
@@ -115,7 +115,7 @@ table {
   color: transparent;
   font-size: 1px;
   position: relative;
-  z-index: 2; }
+  z-index: 3; }
   @media screen and (max-width: 414px) {
     .logotype {
       margin: 35px auto 0;
@@ -125,6 +125,9 @@ table {
       background-size: contain; } }
 
 .logo-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   background-image: url("/img/home/logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -133,7 +136,11 @@ table {
   text-align: center;
   margin: 70px auto;
   position: relative;
-  z-index: 1; }
+  z-index: 3; }
+  .logo-container:before, .logo-container:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
   @media screen and (min-width: 415px) and (max-width: 768px) {
     .logo-container {
       background-size: contain;
@@ -155,8 +162,8 @@ table {
         padding: 160px 0; } }
     @media screen and (max-width: 414px) {
       .logo-container h2 {
-        padding: 46% 0;
-        font-size: 55px; } }
+        padding: 81% 0;
+        font-size: 40px; } }
 
 .welcome-msg {
   background-color: #F2F2F2;
@@ -171,7 +178,7 @@ table {
   display: -webkit-flex;
   display: flex; }
   .welcome-msg section {
-    width: 60%;
+    width: 80%;
     max-width: 950px;
     margin: 0 auto;
     -webkit-justify-content: center;
@@ -198,7 +205,7 @@ table {
     @media screen and (min-width: 769px) and (max-width: 1049px) {
       .welcome-msg section {
         padding: 80px 0;
-        width: 70%; } }
+        width: 90%; } }
     @media screen and (min-width: 415px) and (max-width: 768px) {
       .welcome-msg section {
         -webkit-flex-direction: column;
@@ -268,7 +275,7 @@ table {
     text-align: left; }
     @media screen and (min-width: 769px) {
       .welcome-msg p {
-        max-width: 500px; } }
+        max-width: 450px; } }
     @media screen and (min-width: 769px) and (max-width: 1049px) {
       .welcome-msg p {
         font-size: 20px;
@@ -585,25 +592,16 @@ table {
         color: #F2F2F2;
         letter-spacing: 1px; }
 
-.parallax {
-  width: 100%;
-  height: 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 50% 50%; }
+.parallax-window {
+  background: transparent;
+  min-height: 300px;
+  position: relative; }
   @media screen and (max-width: 414px) {
-    .parallax {
-      height: 160px; } }
-  .parallax.a {
-    background-image: url("/img/home/desk1.png"); }
-  .parallax.b {
-    background-image: url("/img/home/desk2.png"); }
-  .parallax.c {
-    background-image: url("/img/home/desk3.png"); }
-    @media screen and (min-width: 415px) {
-      .parallax.c {
-        height: 190px !important; } }
+    .parallax-window {
+      min-height: 160px; } }
+  @media screen and (min-width: 415px) {
+    .parallax-window.tall {
+      min-height: 190px !important; } }
 
 footer {
   background-color: #FFCC66; }
