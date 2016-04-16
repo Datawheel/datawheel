@@ -388,8 +388,8 @@
       }
 
       input[type="text"], textarea {
+        @include varela();
         background-color: $txt-gray;
-        font-family: $varela;
         font-size: 20px;
         color: $bg-gray;
         display: block;

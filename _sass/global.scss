@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
-$varela: 400 14px 'VarelaRound-Regular', sans-serif;
+
+@mixin varela() {
+  font-family: "Varela Round", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
 
 $max-width: 940px;
 $nav-height-dsk: 160px;
@@ -11,7 +16,7 @@ $nav-height-mbl: 70px;
 @import "helpers/media";
 
 body {
-  font: $varela;
+  @include varela();
   padding-top: $nav-height-dsk;
 
   @include tablet {
