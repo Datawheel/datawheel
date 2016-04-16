@@ -1,6 +1,6 @@
 <ul>
   <a class="nav-btn" href="/test/about/"><li>About</li></a>
-  <div class="nav-btn"><li>Portfolio</li>
+  <div class="nav-btn"><li class="sub-title">Portfolio</li>
     <ul class="sub-menu">
       {% assign projects = site.portfolio | sort: "order"  %}
       {% for project in projects %}

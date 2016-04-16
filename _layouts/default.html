@@ -86,6 +86,11 @@
 
   <script>
 
+    $("#mobile-nav div.nav-btn").click(function(){
+      $(this).find(".sub-menu").toggleClass("active");
+      $(this).find(".sub-title").toggleClass("active");
+    });
+
     $("#hamburger").click(function(){
       $("#hamburger").toggleClass("active");
       $("#mobile-nav").toggleClass("active");
