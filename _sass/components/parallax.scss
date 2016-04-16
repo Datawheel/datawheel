@@ -1,0 +1,10 @@
+.parallax-window {
+  background: transparent;
+  min-height: 190px;
+  position: relative;
+
+  @media screen and (max-width: 415px) {
+    min-height: 107px;
+  }
+
+}

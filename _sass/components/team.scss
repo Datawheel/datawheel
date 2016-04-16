@@ -1,0 +1,152 @@
+$team: ("alex", "cesar", "dave", "jonathan", "matt", "melissa");
+$services: ("github", "twitter");
+
+&.team {
+
+  #team-list {
+    @include flex();
+    @include flex-wrap();
+    margin: 40px auto;
+    max-width: 990px;
+    text-align: center;
+
+    @include mobile {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .person {
+      background-color: none;
+      display: inline-block;
+      padding: 15px;
+
+      @include mobile {
+        display: block;
+        padding: 0;
+      }
+
+      .photo {
+        @include background-stretch();
+        cursor: pointer;
+        height: 450px;
+        position: relative;
+        width: 300px;
+
+        @include mobile {
+          height: 375px;
+          width: 100%;
+        }
+
+        .bio {
+          @include flex-direction(column);
+          @include justify(center);
+          @include box();
+          color: $txt-gray;
+          cursor: pointer;
+          display: none;
+          font-size: 18px;
+          height: 100%;
+          left: 0;
+          line-height: 27px;
+          padding: 10px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+
+          p {
+            margin-bottom: 25px;
+          }
+
+          @include mobile {
+            font-size: 14px;
+            line-height: 23px;
+            padding: 40px;
+            text-align: left;
+          }
+
+        }
+
+      }
+
+      @each $person in $team {
+        &##{$person} .photo {
+          background-image: url("/img/team/#{$person}-static.png");
+          &:hover {
+            background-image: url("/img/team/#{$person}-hover.png");
+          }
+        }
+        &##{$person}.active .photo {
+          background-image: url("/img/team/#{$person}-gradient.png");
+        }
+      }
+
+      .title {
+        @include box();
+        color: $gold;
+        padding: 20px 0 0 0;
+        text-align: left;
+
+        @include mobile {
+          padding: 20px 40px;
+        }
+
+        h3 {
+          font-size: 22px;
+          font-weight: 400;
+        }
+
+        sub {
+          display: block;
+          font-size: 16px;
+          font-weight: 400;
+          margin-top: 5px;
+        }
+
+        a {
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          float: right;
+          height: 25px;
+          margin-right: 10px;
+          width: 25px;
+
+          &:first-child {
+            margin-right: 0;
+          }
+
+          @each $service in $services {
+            &.#{$service} {
+              background-image: url("/img/social/#{$service}-gold.svg");
+            }
+          }
+
+        }
+
+      }
+
+      &.active {
+        background-color: $bg-gold;
+
+        .photo .bio {
+          @include flex();
+        }
+
+        .title {
+          color: $txt-gray;
+
+          @each $service in $services {
+            a.#{$service} {
+              background-image: url("/img/social/#{$service}.svg");
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

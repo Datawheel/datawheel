@@ -1,0 +1,188 @@
+---
+layout: default
+footer: home
+style: home
+---
+
+<article class="hero-container">
+	<div id="hero-video">
+      <!-- Video Partial -->
+      <video id="video" class="video"  preload="auto" autoplay loop muted>
+      	<source src="/hero.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.vi40.2">
+      	<source src="/hero.mp4" type="video/webm; codecs=vp8,vorbis">
+      </video>
+      <![if !IE]>
+      <!-- <video id="video" class="ta-video video" preload="auto" autoplay muted>
+          <source src="/hero.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+      </video> -->
+      <![endif]>
+      <div class="overlay"></div>
+
+			<div class="logotype">
+				<h1>Datawheel</h1>
+			</div>
+			<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+
+			<div class="logo-container">
+				<h2>From data to stories</h2>
+			</div>
+
+			<div class="down-arrow mbl"></div>
+
+  </div>
+</article>
+
+<article class="welcome-msg sub-container">
+	<section>
+		<h3>
+			Welcome to Datawheel, where we make big data easy to use and open to everyone.
+		</h3>
+		<p>
+			Datawheel is a small but mighty crew of programmers and designers who are here to make sense of the world’s vast amounts of data. We know how to turn any client’s raw data into an interactive interface that is clear, accessible and beautiful.
+		</p>
+	</section>
+</article>
+
+<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk1.jpg" data-speed="0.5"></article>
+
+<article class="offerings sub-container">
+	<h3>What we offer</h3>
+	<section>
+		<div class="offering a">
+			<div class="badge"></div>
+			<p>
+				A web interface tailored to your unique dataset
+			</p>
+		</div>
+		<div class="offering b">
+			<div class="badge"></div>
+			<p>
+				The merging of disparate datasets into a unified API
+			</p>
+		</div>
+		<div class="offering c">
+			<div class="badge"></div>
+			<p>
+				Apprenticeships to help you update and maintain your site
+			</p>
+		</div>
+		<div class="offering d">
+			<div class="badge"></div>
+			<p>
+				The leverage of cutting-edge, open-source software
+			</p>
+		</div>
+	</section>
+</article>
+
+<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk2.jpg" data-speed="0.5"></article>
+
+<article class="projects">
+	<h3>What We Make</h3>
+	<section>
+		<div class="row a">
+			<a href="http://www.datausa.io" target="_blank" class="project datausa">
+				<div class="project-title">DataUSA
+					<div class="project-desc">Data USA puts public US Government data in your hands. Instead of searching through multiple data sources that are often incomplete and difficult to access, you can simply point to Data USA to answer your questions. Data USA provides an open, easy-to-use platform that turns data into knowledge.</div>
+				</div>
+			</a>
+			<a href="http://www.dataviva.info" target="_blank" class="project dataviva">
+				<div class="project-title">DataViva
+					<div class="project-desc">DataViva is a ground-breaking example of public data repositories turned into an accessible and attractive public resource. It makes labor and export data for the entirety of Brazil accessible in a public, easy to use visualization tool.</div>
+				</div>
+			</a>
+		</div>
+		<div class="row b">
+			<a href="http://d3plus.org/" target="_blank" class="project d3plus">
+				<div class="project-title">D3Plus
+					<div class="project-desc">When the team began creating web platforms for visualizing large disaggregate datasets, it became clear that there was need for a tool to quickly and effectively visualize the datasets at hand. When we realized we’d created something crucial to our own productivity, we wondered, “why not share this with the world?”</div>
+				</div>
+			</a>
+			<a href="http://atlas.media.mit.edu/" target="_blank" class="project oec">
+				<div class="project-title">Observatory of Economic Complexity
+					<div class="project-desc">The Observatory of Economic Complexity is a tool that allows users to quickly compose a visual narrative about countries and the products they exchange.</div>
+				</div>
+			</a>
+		</div>
+</article>
+
+<article class="parallax-window mbl" data-parallax="scroll" data-image-src="/img/home/desk1.jpg" data-speed="0.5"></article>
+
+<article class="contact sub-container">
+	<section class="dialogue-form">
+		<h3>Let's talk</h3>
+		<form action="https://docs.google.com/forms/d/1RgAbvlCyF6kpyGT12vZxAk2E5n751gk74IpCEO7nzaw/formResponse" method="POST" id="ss-form" target="_blank" onsubmit="">
+			<div class="inputs">
+				<input type="text" name="entry.1407440466" value="" id="entry_1407440466" placeholder="Name" aria-required="true" required>
+				<input type="text" name="entry.2139193680" value="" id="entry_2139193680" placeholder="E-mail address" aria-required="true" required>
+				<textarea name="entry.1950491585" id="entry_1950491585" placeholder="How can we help you?" aria-required="true" required></textarea>
+		    </div>
+
+		    <input type="submit" name="submit" value="Submit" id="ss-submit">
+		    <input type="hidden" name="draftResponse" value="[,,&quot;-6665875044849292915&quot;]">
+		    <input type="hidden" name="pageHistory" value="0">
+		    <input type="hidden" name="fbzx" value="-6665875044849292915">
+		</form>
+	</section>
+	<section id="map" class="sub-container"></section>
+</article>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+
+	  $(document).ready(function() {
+	    $(".video").backgroundVideo({
+	      $videoWrap: $(".video").parent(),
+	      $outerWrap: $(".video").parent().parent(),
+				pauseVideoOnViewLoss: false,
+	      preventContextMenu: true,
+	      parallaxOptions: {effect: 2}
+	    });
+	  });
+
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        var mapOptions = {
+            zoom: 17,
+            center: new google.maps.LatLng(42.373683,-71.09927829999998),
+            scrollwheel:  false,
+            disableDefaultUI: true,
+            scrollwheel: false,
+		    navigationControl: false,
+		    mapTypeControl: false,
+		    scaleControl: false,
+		    draggable: false,
+            styles:
+	           [{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#F0F0F1"}]},
+	           {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#FFCC66"},{"color":"#F0F0F1"}]},
+	           {"featureType":"road","elementType":"geometry","stylers":[{"color":"#FFCC66"},{"visibility":"simplified"}]},
+	           {"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},
+	           {"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"off"}]},
+	           {"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#FFCC66"}]},
+	           {"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#FFCC66"}]},
+	           {"elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+	           {"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},
+	           {"featureType":"water","elementType":"all","stylers":[{"color":"#F0F0F1"}]},
+	           {"featureType": "administrative","elementType": "all","stylers": [{"visibility": "off"}]}]
+        };
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+		var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(42.373683,-71.09927829999998),
+            map: map,
+            title: '1299 Cambridge St',
+            icon: '/img/home/map_marker.svg'
+        });
+
+				google.maps.event.addListener(marker, "click", function() {
+					window.open("https://goo.gl/maps/7cv2ScytYYE2", "_blank");
+				})
+    }
+</script>

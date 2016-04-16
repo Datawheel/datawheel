@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="132px" height="132px" viewBox="0 0 132 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DataViva" transform="translate(-657.000000, -3008.000000)">
+            <g id="Footer-Copy" transform="translate(0.000000, 2880.000000)">
+                <g id="icon" transform="translate(657.000000, 128.000000)">
+                    <path d="M131.287,65.643 C131.287,101.899 101.897,131.288 65.642,131.288 C29.389,131.288 0,101.899 0,65.643 C0,29.389 29.389,0 65.642,0 C101.897,0 131.287,29.389 131.287,65.643" id="Fill-1" fill="#F1F1F2"></path>
+                    <polygon id="Fill-3" fill="#DB8889" points="20.537 66.0512 55.234 79.9302 110.75 59.1122 76.052 45.2332"></polygon>
+                    <polygon id="Stroke-5" stroke="#DB8889" stroke-width="5.361" stroke-linecap="round" stroke-linejoin="round" points="20.537 66.0512 55.234 79.9302 110.75 59.1122 76.052 45.2332"></polygon>
+                    <polyline id="Stroke-7" stroke="#DB8889" stroke-width="5.361" stroke-linecap="round" stroke-linejoin="round" points="20.537 76.0102 55.234 89.8892 110.75 69.0712"></polyline>
+                    <polyline id="Stroke-9" stroke="#DB8889" stroke-width="5.361" stroke-linecap="round" stroke-linejoin="round" points="20.537 85.9696 55.234 99.8486 110.75 79.0296"></polyline>
+                    <polyline id="Stroke-11" stroke="#DB8889" stroke-width="5.361" stroke-linecap="round" stroke-linejoin="round" points="20.537 95.9286 55.234 109.8076 110.75 88.9896"></polyline>
+                    <polygon id="Fill-13" fill="#676767" points="76.5312 48.6166 64.1162 53.2716 76.4852 58.2196 88.9002 53.5636"></polygon>
+                    <polygon id="Fill-15" fill="#676767" points="101.7499 58.3402 93.7899 55.1552 81.3749 59.8132 89.3359 62.9952"></polygon>
+                    <polygon id="Fill-17" fill="#676767" points="55.3769 75.8441 57.8519 74.9141 32.8939 64.9291 30.4159 65.8591"></polygon>
+                    <polygon id="Fill-19" fill="#676767" points="39.4003 62.4926 36.9253 63.4186 61.8833 73.4036 64.3603 72.4746"></polygon>
+                    <polygon id="Fill-21" fill="#676767" points="52.416 57.6107 49.939 58.5397 74.899 68.5217 77.374 67.5927"></polygon>
+                    <polygon id="Fill-23" fill="#676767" points="58.9228 55.1703 56.4468 56.0973 81.4058 66.0823 83.8828 65.1533"></polygon>
+                    <polygon id="Fill-25" fill="#676767" points="45.9072 60.0502 43.4322 60.9792 68.3902 70.9622 70.8682 70.0322"></polygon>
+                    <path d="M67.248,24.3969 L67.248,22.2349" id="Stroke-27" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M67.248,37.7016 L67.248,28.7306" id="Stroke-29" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M52.3749,32.2895 L49.7379,24.1725" id="Stroke-31" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M55.3613,41.4809 L54.1333,37.7019" id="Stroke-33" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M36.3769,35.5746 L34.3979,32.8476" id="Stroke-35" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M44.0761,46.1703 L38.9081,39.0593" id="Stroke-37" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M30.9199,51.6703 L25.3999,47.6583" id="Stroke-39" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M92.832,42.852 L97.636,36.239" id="Stroke-41" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M82.832,30.102 L84.232,25.791" id="Stroke-43" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                    <path d="M80.3622,37.7016 L81.4482,34.3596" id="Stroke-45" stroke="#676767" stroke-width="2.797" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,61 @@
+section {
+  padding: 40px 0;
+  width: 100%;
+
+  &.light {
+    background-color: $bg-gray;
+    color: $txt-gray;
+  }
+
+  &.dark {
+    background-color: $txt-gray;
+    color: $bg-gray;
+  }
+
+  &.gold {
+    background-color: $bg-gold;
+    color: $txt-gray;
+  }
+
+  & > h2 {
+    @include box();
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.79px;
+    line-height: 35px;
+    margin: 0 auto;
+    max-width: $max-width + 80px;
+    padding: 40px 40px 0;
+    text-align: center;
+    width: 100%;
+
+    @include mobile {
+      color: white;
+      font-size: 28px;
+      line-height: 33px;
+      padding: 0 40px;
+    }
+
+  }
+
+  & > p {
+    @include box();
+    font-size: 18px;
+    letter-spacing: 0.79px;
+    line-height: 44px;
+    margin: 0 auto;
+    max-width: $max-width + 80px;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 24px;
+      padding: 40px 40px 0;
+      text-align: left;
+    }
+
+  }
+
+}

@@ -1,8 +1,17 @@
+$footer-colors: (
+  datausa: #33648C,
+  oec: #5BB9D0,
+  d3plus: #0D8140,
+  dataviva: #DB5E5F
+);
+
 footer {
   background-color: $bg-gold;
-  
-  @media screen and (min-width: 415px) {
-    height: 300px;
+
+  @each $name, $color in $footer-colors {
+    &.#{$name} {
+      background-color: $color;
+    }
   }
 
   .parting-words {
@@ -11,30 +20,34 @@ footer {
     letter-spacing: 0.79px;
     line-height: 44px;
     text-align: center;
-    padding: 42px 0;
+    padding: 40px 0;
 
     @media screen and (max-width: 768px) {
       font-size: 24px;
       letter-spacing: 1px;
       line-height: 31px;
-      padding: 42px 45px;
+      padding: 40px 45px;
     }
   }
 
   section {
+    @include box();
     @include flex();
     @include flex-direction(row);
     @include justify(space-between);
     @include align-items(center);
-    padding: 0 13% 40px;
-
-    @media screen and (max-width: 414px) {
-      @include flex-direction(column-reverse);
-    }
+    margin: 0 auto;
+    max-width: $max-width;
+    padding: 0 40px 40px;
 
     & > * {
       @include flex-size(1 0 auto);
     }
+
+    @include mobile {
+      @include flex-direction(column-reverse);
+    }
+
   }
 
   .mini-contact {
@@ -55,10 +68,14 @@ footer {
         opacity: 0.6;
       }
     }
+
+    @include mobile {
+      text-align: center;
+    }
+
   }
 
   .badge {
-    background-image: url('/img/home/footer_gem.svg');
     background-repeat: no-repeat;
     background-position: 33% 50%;
     background-size: contain;
@@ -69,34 +86,59 @@ footer {
   .social {
     text-align: right;
 
-    @media screen and (max-width: 414px) {
+    @include mobile {
       margin-bottom: 40px;
     }
 
     a {
       display: inline-block;
-    }
 
-    i {
-      display: block;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: contain;
-      width: 45px;
-      height: 45px;
-
-      &:hover, &:focus {
-        opacity: 0.6;
+      &:not(:last-child) {
+        margin-right: 15px;
       }
-    }
 
-    .github {
-      background-image: url('/img/home/github.svg');
-      margin-right: 15px;
-    }
+      i {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: 45px;
+        height: 45px;
 
-    .twitter {
-      background-image: url('/img/home/twitter.svg');
+        &:hover, &:focus {
+          opacity: 0.6;
+        }
+
+        &.github {
+          background-image: url('/img/social/github.svg');
+        }
+
+        &.twitter {
+          background-image: url('/img/social/twitter.svg');
+        }
+
+      }
+
     }
   }
+
+  &.dark {
+    .parting-words, .mini-contact span, .mini-contact a {
+      color: white;
+    }
+
+    .social a i {
+
+      &.github {
+        background-image: url('/img/social/github-white.svg');
+      }
+
+      &.twitter {
+        background-image: url('/img/social/twitter-white.svg');
+      }
+
+    }
+
+  }
+
 }

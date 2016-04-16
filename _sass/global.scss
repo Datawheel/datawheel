@@ -1,23 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+$varela: 400 14px 'VarelaRound-Regular', sans-serif;
+
+$max-width: 940px;
+$nav-height-dsk: 160px;
+$nav-height-mbl: 70px;
+
+@import "helpers/reset";
+@import "helpers/colors";
+@import "helpers/vendor";
+@import "helpers/media";
+
 body {
-  font-family: $varela;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+  font: $varela;
+  padding-top: $nav-height-dsk;
 
-.mbl {
-	@media screen and (min-width: 415px) {
-		display: none;
-	}
-}
+  @include tablet {
+    padding-top: $nav-height-mbl;
+  }
 
-.dsk {
-	@media screen and (max-width: 768px) {
-		display: none;
-	}
-}
+  &.frozen {
+    overflow: hidden;
+  }
 
-.tbl {
-	@media screen and (min-width: 768px) {
-		display: none;
-	}
+  @import "components/parallax";
+
+  @import "components/nav";
+  @import "components/footer";
+  @import "components/section";
+
+  @import "components/home-old";
+  @import "components/home";
+  @import "components/portfolio";
+  @import "components/team";
+  @import "components/jobs";
+
 }

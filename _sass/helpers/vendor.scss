@@ -21,6 +21,16 @@
   animation: $animation;
 }
 
+@mixin background-contain() {
+  background-position: center center;
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+
 @mixin background-stretch() {
   background-position: center center;
   // background-attachment: fixed;
@@ -189,10 +199,10 @@
 }
 
 @mixin transition-duration($duration...) {
-    -moz-transition-property:    $duration;
-    -o-transition-property:      $duration;
-    -webkit-transition-property: $duration;
-    transition-property:         $duration;
+    -moz-transition-duration:    $duration;
+    -o-transition-duration:      $duration;
+    -webkit-transition-duration: $duration;
+    transition-duration:         $duration;
 }
 
 @mixin transition-timing-function($timing...) {

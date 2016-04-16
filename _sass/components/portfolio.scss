@@ -1,0 +1,223 @@
+&.portfolio {
+
+  #intro {
+    @include box();
+    @include flex();
+    @include align-items(center);
+    @include background-stretch();
+    padding: 80px 40px;
+    width: 100%;
+
+    @include tablet {
+      @include flex-direction(column);
+      padding: 40px 20px 20px;
+    }
+
+    & > h1 {
+      color: white;
+      display: none;
+      font-size: 28px;
+      line-height: 33px;
+      margin: 0;
+      text-align: center;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    .image {
+      width: 300px;
+
+      @include tablet {
+        margin: 40px 0;
+        width: 75%;
+      }
+    }
+
+    .text {
+      color: white;
+      margin-left: 80px;
+      max-width: 550px;
+
+      @include tablet {
+        margin-left: 0;
+        max-width: none;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 40px;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 40px;
+
+        @include tablet {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+
+    }
+
+  }
+
+  .light {
+    text-align: center;
+
+    .page {
+      @include flex();
+      @include flex-direction(row);
+      @include align-items(center);
+      margin: 120px 40px;
+
+      &.even {
+        @include flex-direction(row-reverse);
+      }
+
+      .screenshot {
+        @include flex-size(1);
+        max-width: 600px;
+        position: relative;
+        width: 100%;
+
+        &::before {
+          @include background-contain();
+          background-image: url("/img/portfolio/titlebar.png");
+          background-position: center bottom;
+          content: "";
+          height: 50px;
+          left: 0;
+          position: absolute;
+          top: -49px;
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 40px;
+        margin: 0 40px;
+        min-width: 400px;
+        text-align: left;
+        width: 400px;
+
+      }
+
+      &.odd, &.even {
+        @include tablet {
+          @include flex-direction(column);
+          margin: 20px 20px 40px;
+
+          .screenshot {
+            max-width: none;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-top: 20px;
+            min-width: 0;
+            width: 100%;
+          }
+
+        }
+
+      }
+
+    }
+
+    #external-link {
+      color: $txt-gray;
+      font-size: 30px;
+      margin-left: 20px;
+      text-decoration: none;
+      img {
+        margin-left: 20px;
+        margin-top: 10px;
+        vertical-align: top;
+      }
+
+      @include tablet {
+        font-size: 18px;
+        margin-left: 0;
+
+        @each $name, $color in $footer-colors {
+          &.#{$name}-color {
+            color: $color;
+          }
+        }
+
+        img {
+          display: none;
+        }
+
+      }
+
+    }
+
+    #portfolio-nav {
+      @include flex();
+      @include justify(space-between);
+      margin: 60px auto 20px;
+      max-width: 880px;
+      padding: 0 40px;
+
+      @include tablet {
+        margin: 40px auto 0;
+        padding: 0 20px;
+      }
+
+      a {
+        color: $txt-gray;
+        font-size: 20px;
+        text-decoration: none;
+
+        img {
+          margin-top: -3px;
+          width: 18px;
+          vertical-align: middle;
+        }
+
+        &:first-child img {
+          margin-right: 15px;
+        }
+
+        &:last-child img {
+          margin-left: 15px;
+        }
+
+        @include tablet {
+          font-size: 12px;
+
+          img {
+            width: 11px;
+          }
+
+          &:first-child img {
+            margin-right: 10px;
+          }
+
+          &:last-child img {
+            margin-left: 10px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

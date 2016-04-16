@@ -1,2 +1,19 @@
 collections:
-- team
+  jobs:
+    output: false
+  team:
+    output: false
+  portfolio:
+    output: true
+    permalink: /test/:path/
+
+defaults:
+  - scope:
+      type: team
+    values:
+      order: 100
+  - scope:
+      type: portfolio
+    values:
+      order: 100
+      style: portfolio

@@ -1,0 +1,247 @@
+nav {
+  background-color: $bg-gray;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  $width-offset: 100px;
+
+  .nav-content {
+    @include flex();
+    @include justify(space-between);
+    @include align-items(center);
+    @include transition(height 0.5s);
+    margin: 0 auto;
+    height: $nav-height-dsk;
+    max-width: $max-width + ($width-offset * 2);
+    padding: 0 20px;
+
+    @include tablet {
+      height: $nav-height-mbl;
+    }
+
+    .nav-logo {
+      @include flex();
+      @include align-items(center);
+      height: 42%;
+      padding-right: 40px;
+
+      .nav-logo-icon {
+        height: 100%;
+        margin-right: 20px;
+
+        @include tablet {
+          display: none;
+        }
+
+      }
+
+      .nav-logo-type {
+        @include transition(opacity 0.5s);
+        height: 50%;
+
+        @include tablet {
+          height: 26px;
+        }
+
+      }
+
+    }
+
+    ul {
+      @include flex();
+      @include justify(space-between);
+      max-width: 520px;
+      width: 100%;
+
+      @include tablet {
+        display: none;
+      }
+
+      .nav-btn {
+        color: $txt-gray;
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: 0.61px;
+        padding: 15px 0;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        .sub-menu {
+          background-color: #D8D8D8;
+          display: none;
+          left: -40%;
+          position: absolute;
+          text-align: center;
+          top: 40px;
+          width: 180%;
+
+          a {
+            color: $txt-gray;
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            text-transform: capitalize;
+          }
+        }
+
+        &:hover {
+          color: $gold;
+
+          .sub-menu {
+            display: block;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+#mobile-nav {
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+
+  @include tablet {
+    &.active {
+      display: block;
+    }
+  }
+
+  ul {
+    background-color: $bg-gray;
+    text-align: center;
+    padding: $nav-height-mbl + 25px 0 0;
+    width: 100%;
+
+    .nav-btn {
+      color: $txt-gray;
+      display: block;
+      font-size: 18px;
+      letter-spacing: 0.79px;
+      padding: 25px 0;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      .sub-menu {
+        background-color: #D8D8D8;
+        display: none;
+        margin: 25px 0 -25px;
+        padding: 0;
+        text-align: center;
+
+        a {
+          color: $txt-gray;
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          text-transform: none;
+        }
+      }
+
+      &:hover {
+        color: $gold;
+
+        .sub-menu {
+          display: block;
+        }
+      }
+
+    }
+
+  }
+
+  img {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+}
+
+$ham-width: 25px;
+$ham-height: 25px;
+$ham-stroke: 3px;
+$ham-spacing: 5px;
+$ham-duration: 0.3s;
+
+#hamburger {
+  display: none;
+  cursor: pointer;
+  height: $ham-height;
+  position: relative;
+  width: $ham-width;
+
+  @include tablet {
+    display: block;
+  }
+
+  span {
+    @include transition(background 0s $ham-duration);
+    display: block;
+    position: absolute;
+    top: ($ham-height / 2) - ($ham-stroke / 2);
+    left: 0;
+    right: 0;
+    height: $ham-stroke;
+    background-color: $bg-gold;
+  }
+
+  span::before, span::after {
+    @include transition-duration($ham-duration, $ham-duration);
+    @include transition-delay($ham-duration, 0s);
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: $ham-stroke;
+    background-color: $bg-gold;
+    content: "";
+  }
+
+  span::before {
+    @include transition-property(top, transform);
+    top: -$ham-stroke - $ham-spacing;
+  }
+
+  span::after {
+    @include transition-property(bottom, transform);
+    bottom: -$ham-stroke - $ham-spacing;
+  }
+
+  &.active {
+
+    span {
+      background: none;
+    }
+
+    span::before {
+      @include transform(rotate(45deg));
+      top: 0;
+    }
+
+    span::after {
+      @include transform(rotate(-45deg));
+      bottom: 0;
+    }
+
+    span::before, span::after {
+      @include transition-delay(0s, $ham-duration);
+    }
+
+  }
+
+}

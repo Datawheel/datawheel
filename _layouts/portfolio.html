@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<section id="intro" style="background-image: url('/img/portfolio/{{ page.footer }}/header.jpg');">
+  <h1>{{ page.title }}</h1>
+  <img class="image" src="/img/portfolio/{{ page.footer }}/logo.png" />
+  <div class="text">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.desc }}</h1>
+  </div>
+</section>
+
+<section class="light">
+  {% for p in page.body %}
+  <article class="page {% cycle 'odd', 'even' %}">
+    <div class="screenshot">
+      <img src="/img/portfolio/{{ page.footer }}/p{{ forloop.index }}.gif" />
+    </div>
+    <p>{{ p }}</p>
+  </article>
+  {% endfor %}
+  <a id="external-link" class="{{ page.footer }}-color" href="{{ page.link }}" target="_blank">Visit {% if page.shortname %}{{ page.shortname }}{% else %}{{ page.title }}{% endif %}<img src="/img/ui/arrow-right.svg" /></a>
+
+  {% assign projects = site.portfolio | sort: "order"  %}
+  {% assign len = projects | size %}
+  {% for project in projects  %}
+    {% if project.title == page.title %}
+      {% if forloop.first %}
+        {% assign previndex = len | minus: 1 %}
+        {% assign prevurl = projects[previndex].url %}
+        {% assign nexturl = projects[forloop.index].url %}
+      {% elsif forloop.last %}
+        {% assign previndex = forloop.index | minus: 2 %}
+        {% assign prevurl = projects[previndex].url %}
+        {% assign nexturl = projects[0].url %}
+      {% else %}
+        {% assign previndex = forloop.index | minus: 2 %}
+        {% assign prevurl = projects[previndex].url %}
+        {% assign nexturl = projects[forloop.index].url %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <div id="portfolio-nav">
+    <a href="{{prevurl}}" class="prev"><img src="/img/ui/angle-left.svg" /> Previous Project</a>
+    <a href="{{nexturl}}" class="nxt">Next Project <img src="/img/ui/angle-right.svg" /></a>
+  </div>
+
+</section>

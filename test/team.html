@@ -1,0 +1,85 @@
+---
+layout: default
+style: team
+---
+
+<section class="gold">
+
+  <h2>The People Behind the Code</h2>
+  <p>Here at Datawheel, we see our small size as one of our greatest strengths. Our hand-picked team of data experts, developers, and designers embody all of the skills necessary to deliver breath-taking solutions for your data needs — just the right balance of technical prowess and design savvy.</p>
+
+</section>
+
+<section class="light">
+
+  <div id="team-list">
+    {% assign team = site.team | sort: "order" %}
+    {% for person in team %}
+    <div class="person" id="{{ person.id }}">
+      <div class="photo">
+        <div class="bio">{{ person.content }}</div>
+      </div>
+      <div class="title">
+        {% if person.twitter %}<a href="{{ person.twitter }}" class="twitter" target="_blank"></a>{% endif %}
+        {% if person.github %}<a href="{{ person.github }}" class="github" target="_blank"></a>{% endif %}
+        <h3>{{ person.name }}</h3>
+        <sub>{{ person.role }}</sub>
+      </div>
+    </div>
+    <script>
+      preloadImages.push("/img/team/{{ person.id }}-hover.png");
+      preloadImages.push("/img/team/{{ person.id }}-gradient.png");
+    </script>
+    {% endfor %}
+  </div>
+
+</section>
+
+<script>
+
+  preloadImages.push("/img/social/twitter.svg");
+  preloadImages.push("/img/social/twitter-gold.svg");
+
+  $(".photo, .bio").click(function(){
+    $(this.parentNode).toggleClass("active");
+  });
+
+</script>
+
+{% assign jobs = site.jobs | sort:"order" %}
+{% if jobs|length > 0 %}
+<section class="dark">
+
+  <h2>Join the Team</h2>
+
+  <div id="job-list">
+    {% for job in jobs %}
+    <div class="job">
+      <h3>{{ job.title }}</h3>
+      <p>{{ job.desc }}</p>
+      <div class="details-btn">
+        <span class="details-x"></span>Details
+      </div>
+      <div class="details">
+        <p class="mbl">{{ job.desc }}</p>
+        {{ job.content }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a id="apply" href="/test/contact/">Apply</a>
+
+</section>
+
+<script>
+
+  preloadImages.push("/img/social/twitter.svg");
+  preloadImages.push("/img/social/twitter-gold.svg");
+
+  $(".details-btn").click(function(){
+    $(this.parentNode).toggleClass("active");
+  });
+
+</script>
+{% endif %}

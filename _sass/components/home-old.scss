@@ -1,0 +1,584 @@
+&.home-old {
+
+  padding-top: 0;
+
+  nav {
+    display: none;
+  }
+
+  .sub-container {
+    @media screen and (min-width: 1200px) {
+      width: 100%;
+      height: 100vh;
+      max-height: 600px;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .hero-container {
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      max-height: auto;
+      height: 500px;
+    }
+
+    #hero-video {
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(249, 251, 253, 0.8);
+        position: absolute;
+        z-index: 2;
+
+        @media screen and (max-width: 768px) {
+          background-color: rgba(249, 251, 253, 0.6);
+        }
+      }
+
+      #video {
+        top: 0;
+        // position: absolute;
+        // z-index: -1;
+        @include filter(saturate(0.5));
+        height: 100%;
+
+        &::-webkit-media-controls {
+          display: none !important;
+        }
+      }
+    }
+
+    ul {
+      display: none;
+      margin: 0 auto;
+      text-align: center;
+      width: 60%;
+      z-index: 3;
+
+      li {
+        display: inline-block;
+
+        a {
+          padding: 3px 10px;
+          text-decoration: none;
+          font-size: 14px;
+          color: $txt-gray;
+          letter-spacing: 0.61px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .down-arrow {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 14px;
+      background-image: url('/img/home/down_arrow.png');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      height: 20px;
+      width: 100%;
+      text-align: center;
+      z-index: 3;
+    }
+  }
+
+  .logotype {
+    background-image: url('/img/logo/type.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 234px;
+    height: 36px;
+    padding-top: 100px;
+    margin: 0 auto;
+    color: transparent;
+    font-size: 1px;
+    position: relative;
+    z-index: 3;
+
+    @media screen and (max-width: 768px) {
+      margin: 35px auto 0;
+      height: 32px;
+      width: auto;
+      padding: 0;
+      background-size: contain;
+    }
+  }
+
+  .logo-container {
+    @include box();
+    background-image: url('/img/logo/icon.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 429px 429px;
+    height: 429px;
+    text-align: center;
+    margin: 70px auto;
+    position: relative;
+    z-index: 3;
+
+    // @media screen and (min-width: 415px) and (max-width: 768px) {
+    //   background-size: contain;
+    //   height: 360px;
+    // }
+
+    @media screen and (max-width: 768px) {
+      background-size: contain;
+      height: 370px;
+      margin: 0 auto 90px;
+      width: 270px;
+    }
+
+    h2 {
+      font-size: 40px;
+      color: $txt-gray;
+      letter-spacing: 2.38px;
+      @include text-shadow(0px 2px 3px rgba(154,154,154,0.50));
+      padding: 190px 0;
+
+      // @media screen and (min-width: 415px) and (max-width: 768px) {
+      //   padding: 160px 0;
+      // }
+
+      @media screen and (max-width: 768px) {
+        padding: 54% 0;
+        font-size: 40px;
+      }
+    }
+  }
+
+  .welcome-msg {
+    background-color: $bg-gray;
+    text-align: center;
+    @include flex();
+    @include justify(center);
+    @include align-items(center);
+
+    section {
+      width: 80%;
+      max-width: 950px;
+      // margin: 0 auto;
+      @include flex();
+      // @include flex-size(1);
+      @include flex-direction(row);
+      @include align-items(center);
+
+      @media screen and (min-width: 1050px) and (max-width: 1200px) {
+        padding: 140px 0 160px;
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 1049px) {
+        padding: 80px 0;
+        width: 90%;
+      }
+
+      @media screen and (min-width: 415px) and (max-width: 768px) {
+        @include flex-direction(column);
+        width: 100%;
+        padding: 50px 15% 60px;
+        @include box();
+      }
+
+      @media screen and (max-width: 414px) {
+        @include flex-direction(column);
+        padding: 50px 35px 60px;
+        width: 100%;
+        @include box();
+      }
+    }
+
+    h3 {
+      color: $gold;
+      font-size: 40px;
+      letter-spacing: 1.68px;
+      line-height: 55px;
+      width: 45%;
+      text-align: right;
+      margin-right: 20px;
+
+      @media screen and (min-width: 769px) {
+        max-width: 417px;
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 1049px) {
+        font-size: 36px;
+        line-height: 50px;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 26px;
+        letter-spacing: 1.5px;
+        line-height: 40px;
+        text-align: left;
+        width: 100%;
+        @include box();
+        // padding-right: 45px;
+        margin: 0;
+      }
+    }
+
+    p {
+      font-size: 22px;
+      color: $txt-gray;
+      line-height: 44px;
+      width: 54%;
+      text-align: left;
+
+      @media screen and (min-width: 769px) {
+        max-width: 450px;
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 1049px) {
+        font-size: 20px;
+        line-height: 38px;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        font-size: 18px;
+        line-height: 30px;
+        padding: 10px 0;
+        // padding-right: 10px;
+        @include box();
+      }
+    }
+  }
+
+  .offerings {
+    background-color: $bg-gold;
+
+    h3 {
+      font-size: 30px;
+      color: $txt-gray;
+      letter-spacing: 1.79px;
+      padding: 80px 0 53px;
+      margin: 0 auto;
+      text-align: center;
+      text-transform: capitalize;
+
+      @media screen and (max-width: 560px) {
+        color: white;
+      }
+    }
+
+    section {
+      @include flex();
+      @include flex-direction(row);
+      max-width: 960px;
+      margin: 0 auto;
+
+      @media screen and (max-width: 1200px) {
+        @include flex-wrap(wrap);
+        padding-bottom: 60px;
+      }
+
+      @media screen and (max-width: 560px) {
+        @include flex-direction(column);
+        @include align-items(center);
+        padding: 0px 0 60px;
+      }
+    }
+
+    .offering {
+      text-align: center;
+
+      @media screen and (min-width: 1200px) {
+        width: 21%;
+        max-width: 190px;
+
+        & + .offering {
+          margin-left: 67px;
+        }
+      }
+
+      @media screen and (min-width: 561px) and (max-width: 1199px) {
+        width: 42%;
+
+        &.a, &.b {
+          margin-bottom: 41px;
+        }
+      }
+
+      @media screen and (max-width: 560px) {
+        & + .offering {
+          margin-top: 21px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        color: $txt-gray;
+        letter-spacing: 0.64px;
+        line-height: 26px;
+
+        @media screen and (max-width: 1200px) {
+          max-width: 175px;
+          margin: 0 auto;
+        }
+      }
+
+      &.a .badge {
+        background-image: url('/img/icons/laptop.svg');
+      }
+      &.b .badge {
+        background-image: url('/img/icons/merge.svg');
+      }
+      &.c .badge {
+        background-image: url('/img/icons/wrench.svg');
+      }
+      &.d .badge {
+        background-image: url('/img/icons/floppy.svg');
+      }
+
+      .badge {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        width: 180px;
+        height: 180px;
+
+        @media screen and (max-width: 1200px) {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .contact {
+    @include flex();
+    @include flex-direction(row);
+    height: 600px;
+    overflow: hidden;
+
+    .dialogue-form {
+      width: 50%;
+      background-color: $txt-gray;
+      font-size: 20px;
+      color: $bg-gray;
+      letter-spacing: 0.87px;
+      padding: 35px;
+      @include box();
+      position: relative;
+
+      h3 {
+        font-size: 24px;
+        color: $bg-gray;
+        letter-spacing: 1px;
+        line-height: 36px;
+        text-align: center;
+        padding-bottom: 30px;
+      }
+
+      input, textarea {
+        outline: none;
+      }
+
+      input[type="text"], textarea {
+        background-color: $txt-gray;
+        font-family: $varela;
+        font-size: 20px;
+        color: $bg-gray;
+        display: block;
+        letter-spacing: 0.87px;
+        border: 0;
+        padding: 10px;
+        width: 100%;
+        @include box();
+      }
+
+      input[type="text"] {
+        border-bottom: 1px solid gray;
+
+        & + input[type="text"] {
+          margin-top: 20px;
+        }
+      }
+
+      textarea {
+        color: $txt-gold;
+        margin-top: 20px;
+        min-height: 200px;
+        overflow: auto;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        bottom: 35px;
+        left: 26%;
+        display: block;
+        margin: auto;
+        text-align: center;
+        text-decoration: none;
+        background-color: rgba(255,255,255,0);
+        border: 3px solid $bg-gray;
+        width: 50%;
+        padding: 25px;
+        font-size: 20px;
+        color: $bg-gray;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #c0c0c0;
+        }
+      }
+    }
+
+    #map {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+      @include flex-direction(column);
+      height: auto;
+
+      .dialogue-form {
+        width: 100vw;
+        height: 600px;
+      }
+
+      #map {
+        width: 100vw;
+        height: 600px;
+      }
+    }
+  }
+
+  .projects {
+    background-color: $bg-gray;
+
+    h3 {
+      font-size: 30px;
+      color: $txt-gray-l;
+      letter-spacing: 1.25px;
+      line-height: 36px;
+      text-align: center;
+      padding: 70px 0 50px;
+
+      @media screen and (max-width: 768px) {
+        padding: 50px;
+      }
+    }
+
+    section {
+      text-align: center;
+      padding-bottom: 70px;
+
+      @media screen and (max-width: 769px) {
+        padding: 0;
+      }
+
+      .row {
+        @include flex();
+        @include flex-direction(row);
+        @include justify(center);
+
+        @media screen and (max-width: 768px) {
+          @include flex-direction(column);
+        }
+      }
+
+      .datausa {
+        background-image: url('/img/home/datausa_bg.png');
+
+        .project-title {
+          background-color: rgba(109,155,193,0.70);
+        }
+      }
+      .dataviva {
+        background-image: url('/img/home/dataviva_bg.png');
+
+        .project-title {
+          background-color: rgba(229,99,100,0.60);
+        }
+      }
+      .d3plus {
+        background-image: url('/img/home/d3plus_bg.png');
+
+        .project-title {
+          background-color: rgba(71,142,94,0.70);
+        }
+      }
+      .oec {
+        background-image: url('/img/home/oec_bg.png');
+
+        .project-title {
+          background-color: rgba(77,204,235,0.80);
+        }
+      }
+
+      .project {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        width: 465px;
+        height: 310px;
+        margin: 0 15px 30px;
+        display: inline-block;
+        text-decoration: none;
+        @include flex();
+        @include align-items(center);
+        @include justify(center);
+
+        @media screen and (max-width: 768px) {
+          margin: -1px 0 0;
+          padding: 0;
+          width: 100%;
+          height: 276px;
+          background-size: cover;
+          @include box();
+
+        }
+
+        .project-title {
+          display: block;
+          // margin: auto;
+          text-align: center;
+          border: 3px solid $bg-gray;
+          width: 50%;
+          padding: 25px;
+          font-size: 20px;
+          color: $bg-gray;
+          letter-spacing: 1px;
+
+          .project-desc {
+            display: none;
+            font-size: 14px;
+            line-height: 18px;
+            margin-top: 5px;
+            text-align: left;
+          }
+
+        }
+
+        &:hover {
+
+          .project-title {
+            width: 75%;
+          }
+
+          .project-desc {
+            display: block;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
