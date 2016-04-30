@@ -40,8 +40,18 @@ style: team
   preloadImages.push("/img/social/twitter.svg");
   preloadImages.push("/img/social/twitter-gold.svg");
 
-  $(".photo, .bio").click(function(){
-    $(this.parentNode).toggleClass("active");
+  $(".photo").click(function(event){
+    event.stopPropagation();
+    var on = $(this.parentNode).hasClass("active");
+    $(".person").removeClass("active");
+    if (!on) $(this.parentNode).addClass("active");
+  });
+
+  $(".bio").click(function(event){
+    event.stopPropagation();
+    var on = $(this.parentNode.parentNode).hasClass("active");
+    $(".person").removeClass("active");
+    if (!on) $(this.parentNode.parentNode).addClass("active");
   });
 
 </script>

@@ -113,7 +113,6 @@
                 (document.documentElement || document.body.parentNode || document.body).scrollTop;
         var h = lastScroll > y ? maxH : Math.max(minH, maxH - y);
         var p = (h - minH) / (maxH - minH);
-        console.log(p);
         nav.css("height", h + "px");
         nav.find(".nav-logo-type").css("opacity", p);
         lastScroll = y;
