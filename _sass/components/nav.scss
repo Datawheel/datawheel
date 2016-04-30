@@ -1,3 +1,5 @@
+$nav-timing: 0.4s;
+
 nav {
   background-color: $bg-gray;
   left: 0;
@@ -12,7 +14,7 @@ nav {
     @include flex();
     @include justify(space-between);
     @include align-items(center);
-    @include transition(height 0.5s);
+    @include transition(height $nav-timing);
     margin: 0 auto;
     height: $nav-height-dsk;
     max-width: $max-width + ($width-offset * 2);
@@ -39,7 +41,7 @@ nav {
       }
 
       .nav-logo-type {
-        @include transition(opacity 0.5s);
+        @include transition(opacity $nav-timing);
         height: 50%;
 
         @include tablet {
@@ -71,20 +73,35 @@ nav {
         text-transform: uppercase;
 
         .sub-menu {
-          background-color: #D8D8D8;
-          display: none;
+          @include transition(height $nav-timing);
+          background-color: $bg-gray;
+          display: block;
+          height: 0;
           left: -40%;
+          overflow: hidden;
           position: absolute;
           text-align: center;
-          top: 40px;
+          top: 38px;
           width: 180%;
 
           a {
+            @include box();
+            @include transition(height $nav-timing, margin-top $nav-timing, opacity $nav-timing);
             color: $txt-gray;
             display: block;
+            height: 0;
+            line-height: 22px;
+            margin-top: -8px;
+            opacity: 0;
+            overflow: hidden;
             padding: 5px;
             text-decoration: none;
             text-transform: capitalize;
+
+            &:hover {
+              color: $gold;
+            }
+
           }
         }
 
@@ -92,7 +109,13 @@ nav {
           color: $gold;
 
           .sub-menu {
-            display: block;
+            height: 135px;
+
+            a {
+              height: 32px;
+              margin-top: 0;
+              opacity: 1;
+            }
           }
 
         }
