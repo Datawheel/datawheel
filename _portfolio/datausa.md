@@ -7,7 +7,7 @@ desc: Data USA is, to date, the largest and most comprehensive representation of
 footer: datausa
 badge: datausa
 body:
-  - "Through more than 100 million interactive visualizations, users can learn valuable insights and knowledge regarding the entire formal sector of Brazil."
-  - "The platform visualizes over 500 gigabytes of Brazilian data and helps to answer basic questions such as \"which occupations are growing most quickly in my town?\" and \"what are students studying at UFMG?\""
-  - "DataViva boasts a combination of descriptive and prescriptive applications and seeks to provide useful socio-economic information to anybody interest in the Brazilian economy."
+  - "Traverse the US by exploring economic, social, and occupational data through interactive customizable maps and visualizations."
+  - "Explore stories and discover trends throughout American society. Utilizing seven comprehensive public data sets, Data USA puts the controls directly in the hands of the user for almost limitless possible applications."
+  - "Data USA adopts the philosophy that one need not be a data scientist or a programmer to access valuable and versatile public information. It provides access for those unfamiliar with data manipulation, while maintaining breadth and depth for the seasoned professional."
 ---

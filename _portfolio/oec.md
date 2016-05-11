@@ -8,7 +8,7 @@ desc: "What started as a master's thesis for Datawheel's Alexander Simoes has si
 footer: oec
 badge: oec
 body:
-  - "Through more than 100 million interactive visualizations, users can learn valuable insights and knowledge regarding the entire formal sector of Brazil."
-  - "The platform visualizes over 500 gigabytes of Brazilian data and helps to answer basic questions such as \"which occupations are growing most quickly in my town?\" and \"what are students studying at UFMG?\""
-  - "DataViva boasts a combination of descriptive and prescriptive applications and seeks to provide useful socio-economic information to anybody interest in the Brazilian economy."
+  - "See the inner workings of the world's economy through thousands of custom visualizations, presented with comprehensive controls for precise exploration."
+  - "The Observatory of Economic Complexity makes it possible to answer specific, fundamental questions regarding product trade, economic complexity, and trends over time."
+  - "It was designed with both the rigorous academic as well as the curious observer in mind. Despite the platform's simple and intuitive design, the OEC makes it possible to make sense of the complexities of the world's economy."
 ---
