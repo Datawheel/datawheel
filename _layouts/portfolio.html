@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{% assign projects = site.portfolio | sort: "order"  %}
+{% assign len = projects | size %}
+
 <section id="intro" style="background-image: url('/img/portfolio/{{ page.footer }}/header.jpg');">
   <h1>{{ page.title }}</h1>
   <img class="image" src="/img/portfolio/{{ page.footer }}/logo.png" />
@@ -22,8 +25,6 @@ layout: default
   {% endfor %}
   <a id="external-link" class="{{ page.footer }}-color" href="{{ page.link }}" target="_blank">Visit {% if page.shortname %}{{ page.shortname }}{% else %}{{ page.title }}{% endif %}<img src="/img/ui/arrow-right.svg" /></a>
 
-  {% assign projects = site.portfolio | sort: "order"  %}
-  {% assign len = projects | size %}
   {% for project in projects  %}
     {% if project.title == page.title %}
       {% if forloop.first %}

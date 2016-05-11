@@ -21,13 +21,8 @@ style: home
 			<div class="logotype">
 				<h1>Datawheel</h1>
 			</div>
-			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Team</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Blog</a></li>
-			</ul>
+
+			{% include nav.html %}
 
 			<div class="logo-container">
 				<h2>From data to stories</h2>
@@ -87,28 +82,20 @@ style: home
 	<h3>What We Make</h3>
 	<section>
 		<div class="row a">
-			<a href="http://www.datausa.io" target="_blank" class="project datausa">
-				<div class="project-title">DataUSA
-					<div class="project-desc">Data USA puts public US Government data in your hands. Instead of searching through multiple data sources that are often incomplete and difficult to access, you can simply point to Data USA to answer your questions. Data USA provides an open, easy-to-use platform that turns data into knowledge.</div>
-				</div>
-			</a>
-			<a href="http://www.dataviva.info" target="_blank" class="project dataviva">
-				<div class="project-title">DataViva
-					<div class="project-desc">DataViva is a ground-breaking example of public data repositories turned into an accessible and attractive public resource. It makes labor and export data for the entirety of Brazil accessible in a public, easy to use visualization tool.</div>
-				</div>
-			</a>
+			<div class="project datausa">
+				<a class="project-title" href="/test/datausa/">DataUSA</a>
+			</div>
+			<div class="project dataviva">
+				<a class="project-title" href="/test/dataviva/">DataViva</a>
+			</div>
 		</div>
 		<div class="row b">
-			<a href="http://d3plus.org/" target="_blank" class="project d3plus">
-				<div class="project-title">D3Plus
-					<div class="project-desc">When the team began creating web platforms for visualizing large disaggregate datasets, it became clear that there was need for a tool to quickly and effectively visualize the datasets at hand. When we realized we’d created something crucial to our own productivity, we wondered, “why not share this with the world?”</div>
-				</div>
-			</a>
-			<a href="http://atlas.media.mit.edu/" target="_blank" class="project oec">
-				<div class="project-title">Observatory of Economic Complexity
-					<div class="project-desc">The Observatory of Economic Complexity is a tool that allows users to quickly compose a visual narrative about countries and the products they exchange.</div>
-				</div>
-			</a>
+			<div class="project d3plus">
+				<a class="project-title" href="/test/d3plus/">D3Plus</a>
+			</div>
+			<div class="project oec">
+				<a class="project-title" href="/test/oec/">Observatory of Economic Complexity</a>
+			</div>
 		</div>
 </article>
 
@@ -178,7 +165,7 @@ style: home
             position: new google.maps.LatLng(42.373683,-71.09927829999998),
             map: map,
             title: '1299 Cambridge St',
-            icon: '/img/home/map_marker.svg'
+            icon: '/img/home/map_marker.png'
         });
 
 				google.maps.event.addListener(marker, "click", function() {

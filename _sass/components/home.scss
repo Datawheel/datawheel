@@ -2,10 +2,6 @@
 
   padding-top: 0;
 
-  nav {
-    display: none;
-  }
-
   .sub-container {
     @media screen and (min-width: 1200px) {
       width: 100%;
@@ -62,24 +58,11 @@
     }
 
     ul {
-      display: none;
       margin: 0 auto;
+      position: relative;
       text-align: center;
-      width: 60%;
-      z-index: 3;
-
-      li {
-        display: inline-block;
-
-        a {
-          padding: 3px 10px;
-          text-decoration: none;
-          font-size: 14px;
-          color: $txt-gray;
-          letter-spacing: 0.61px;
-          text-transform: uppercase;
-        }
-      }
+      // width: 60%;
+      z-index: 4;
     }
 
     .down-arrow {
@@ -554,26 +537,7 @@
           font-size: 20px;
           color: $bg-gray;
           letter-spacing: 1px;
-
-          .project-desc {
-            display: none;
-            font-size: 14px;
-            line-height: 18px;
-            margin-top: 5px;
-            text-align: left;
-          }
-
-        }
-
-        &:hover {
-
-          .project-title {
-            width: 75%;
-          }
-
-          .project-desc {
-            display: block;
-          }
+          text-decoration: none;
         }
 
       }

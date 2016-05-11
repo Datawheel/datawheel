@@ -26,6 +26,7 @@ nav {
 
     .nav-logo {
       @include flex();
+      @include justify(flex-start);
       @include align-items(center);
       height: 42%;
       padding-right: 40px;
@@ -52,72 +53,76 @@ nav {
 
     }
 
-    ul {
-      @include flex();
-      @include justify(space-between);
-      max-width: 520px;
-      width: 100%;
+  }
 
-      @include tablet {
-        display: none;
-      }
+}
 
-      .nav-btn {
-        color: $txt-gray;
-        cursor: pointer;
-        font-size: 14px;
-        letter-spacing: 0.61px;
-        padding: 15px 0;
-        position: relative;
-        text-decoration: none;
-        text-transform: uppercase;
+nav, .hero-container {
 
-        .sub-menu {
-          @include transition(height $nav-timing);
-          background-color: $bg-gray;
+  ul {
+    @include flex();
+    @include justify(space-between);
+    max-width: 520px;
+    width: 100%;
+
+    @include tablet {
+      display: none;
+    }
+
+    .nav-btn {
+      color: $txt-gray;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 0.61px;
+      padding: 15px 0;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      .sub-menu {
+        @include transition(height $nav-timing);
+        background-color: $bg-gray;
+        display: block;
+        height: 0;
+        left: -40%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 38px;
+        width: 180%;
+
+        a {
+          @include box();
+          @include transition(height $nav-timing, margin-top $nav-timing, opacity $nav-timing);
+          color: $txt-gray;
           display: block;
           height: 0;
-          left: -40%;
+          line-height: 22px;
+          margin-top: -8px;
+          opacity: 0;
           overflow: hidden;
-          position: absolute;
-          text-align: center;
-          top: 38px;
-          width: 180%;
+          padding: 5px;
+          text-decoration: none;
+          text-transform: capitalize;
+
+          &:hover {
+            color: $gold;
+          }
+
+        }
+      }
+
+      &:hover {
+        color: $gold;
+
+        .sub-menu {
+          height: 135px;
 
           a {
-            @include box();
-            @include transition(height $nav-timing, margin-top $nav-timing, opacity $nav-timing);
-            color: $txt-gray;
-            display: block;
-            height: 0;
-            line-height: 22px;
-            margin-top: -8px;
-            opacity: 0;
-            overflow: hidden;
-            padding: 5px;
-            text-decoration: none;
-            text-transform: capitalize;
-
-            &:hover {
-              color: $gold;
-            }
-
+            height: 32px;
+            margin-top: 0;
+            opacity: 1;
           }
-        }
-
-        &:hover {
-          color: $gold;
-
-          .sub-menu {
-            height: 135px;
-
-            a {
-              height: 32px;
-              margin-top: 0;
-              opacity: 1;
-            }
-          }
-
         }
 
       }

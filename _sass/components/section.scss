@@ -22,9 +22,9 @@ section {
     font-size: 30px;
     font-weight: 400;
     letter-spacing: 1.79px;
-    line-height: 35px;
+    line-height: 40px;
     margin: 0 auto;
-    max-width: $max-width + 80px;
+    max-width: $max-width;
     padding: 40px 40px 0;
     text-align: center;
     width: 100%;
@@ -40,11 +40,11 @@ section {
 
   & > p {
     @include box();
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.79px;
-    line-height: 44px;
+    line-height: 40px;
     margin: 0 auto;
-    max-width: $max-width + 80px;
+    max-width: $max-width;
     padding: 40px;
     text-align: center;
     width: 100%;

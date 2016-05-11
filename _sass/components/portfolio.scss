@@ -75,10 +75,14 @@
       @include flex();
       @include flex-direction(row);
       @include align-items(center);
-      margin: 120px 40px;
+      margin: 120px 40px 160px;
 
-      &.even {
+      &.odd {
         @include flex-direction(row-reverse);
+
+        p {
+          text-align: right;
+        }
       }
 
       .screenshot {
@@ -105,19 +109,33 @@
       }
 
       p {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 40px;
         margin: 0 40px;
         min-width: 400px;
         text-align: left;
         width: 400px;
 
+        a {
+          @include transition(border-color 0.3s, color 0.3s);
+          border-color: transparent;
+          border-bottom-width: 2px;
+          border-style: solid;
+          color: $txt-gray;
+          text-decoration: none;
+
+          &:hover {
+            border-color: $gold;
+            color: $gold;
+          }
+        }
+
       }
 
       &.odd, &.even {
         @include tablet {
           @include flex-direction(column);
-          margin: 20px 20px 40px;
+          margin: 20px 20px 60px;
 
           .screenshot {
             max-width: none;
@@ -128,6 +146,7 @@
             line-height: 24px;
             margin-top: 20px;
             min-width: 0;
+            text-align: left;
             width: 100%;
           }
 
@@ -144,7 +163,7 @@
       text-decoration: none;
       img {
         margin-left: 20px;
-        margin-top: 10px;
+        margin-top: 5px;
         vertical-align: top;
       }
 
