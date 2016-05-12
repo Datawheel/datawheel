@@ -2,6 +2,9 @@
   -webkit-appearance: $appearance;
   -moz-appearance: $appearance;
   appearance: $appearance;
+  &::-ms-expand {
+    display: $appearance;
+  }
 }
 
 @mixin clean-tap() {

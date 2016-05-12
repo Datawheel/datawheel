@@ -1,143 +1,147 @@
-section#tracks {
-  overflow: hidden;
-  text-align: center;
+&.about {
 
-  img {
-    margin: 40px auto -48px;
-    width: 616px;
-  }
-}
-
-section.step {
-  @include flex();
-  @include align-items(center);
-
-  div {
-    h3 {
-      display: inline-block;
-      font-size: 40px;
-      line-height: 80px;
-      width: 60px;
-    }
-    p {
-      font-size: 20px;
-      line-height: 31px;
-      padding-top: 20px;
-    }
-  }
-
-}
-
-section#usb {
-  background-image: url("/img/about/usb.png");
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 77px 81px;
-
-  div {
-    margin-left: 50px;
-    width: 423px;
-    h3 {
-      color: $bg-gray;
-      border-bottom: 2px solid $txt-gray;
-    }
-    p {
-      max-width: 321px;
-    }
-  }
-
-  img {
-    height: 423px;
-    margin-right: 50px;
-    width: 423px;
-  }
-}
-
-section#glass {
-  @include flex-direction(row-reverse);
-
-  div {
-    margin-right: 50px;
-    text-align: right;
-    width: 392px;
-    h3 {
-      color: $txt-gray;
-      border-bottom: 2px solid $gold;
-    }
-    p {
-      color: $gold;
-    }
-  }
-
-  img {
-    height: 308px;
-    margin: 50px 0 50px 50px;
-    padding-right: 22px;
-    width: 370px;
-  }
-
-}
-
-section#gems {
-
-  div {
-    margin-left: 50px;
-    width: 452px;
-    h3 {
-      color: $bg-gray;
-      border-bottom: 2px solid $txt-gray;
-    }
-    p {
-      width: 442px;
-    }
-  }
-
-  img {
-    height: 424px;
-    margin-right: 50px;
-    width: 452px;
-  }
-
-}
-
-section#jewelry {
-  @include flex-direction(column);
-  padding: 60px 0;
-
-  div {
-    h3 {
-      color: $txt-gray;
-      display: inline-block;
-      border-right: 2px solid $gold;
-      height: 60px;
-      line-height: 40px;
-      margin-top: 5px;
-      vertical-align: top;
-      width: 60px;
-    }
-    p {
-      color: $gold;
-      display: inline-block;
-      padding-left: 30px;
-      padding-top: 0;
-      width: 442px;
-    }
-  }
-
-  img {
-    height: 424px;
-    width: 1056px;
-  }
-
-}
-
-section#tag {
-
-  h3 {
-    color: $txt-gold;
-    font-size: 20px;
-    margin: 20px auto;
+  section#tracks {
+    overflow: hidden;
     text-align: center;
+
+    img {
+      margin: 40px auto -48px;
+      width: 616px;
+    }
+  }
+
+  section.step {
+    @include flex();
+    @include align-items(center);
+
+    div {
+      h3 {
+        display: inline-block;
+        font-size: 40px;
+        line-height: 80px;
+        width: 60px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 31px;
+        padding-top: 20px;
+      }
+    }
+
+  }
+
+  section#usb {
+    background-image: url("/img/about/usb.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 77px 81px;
+
+    div {
+      margin-left: 50px;
+      width: 423px;
+      h3 {
+        color: $bg-gray;
+        border-bottom: 2px solid $txt-gray;
+      }
+      p {
+        max-width: 321px;
+      }
+    }
+
+    img {
+      height: 423px;
+      margin-right: 50px;
+      width: 423px;
+    }
+  }
+
+  section#glass {
+    @include flex-direction(row-reverse);
+
+    div {
+      margin-right: 50px;
+      text-align: right;
+      width: 392px;
+      h3 {
+        color: $txt-gray;
+        border-bottom: 2px solid $gold;
+      }
+      p {
+        color: $gold;
+      }
+    }
+
+    img {
+      height: 308px;
+      margin: 50px 0 50px 50px;
+      padding-right: 22px;
+      width: 370px;
+    }
+
+  }
+
+  section#gems {
+
+    div {
+      margin-left: 50px;
+      width: 452px;
+      h3 {
+        color: $bg-gray;
+        border-bottom: 2px solid $txt-gray;
+      }
+      p {
+        width: 442px;
+      }
+    }
+
+    img {
+      height: 424px;
+      margin-right: 50px;
+      width: 452px;
+    }
+
+  }
+
+  section#jewelry {
+    @include flex-direction(column);
+    padding: 60px 0;
+
+    div {
+      h3 {
+        color: $txt-gray;
+        display: inline-block;
+        border-right: 2px solid $gold;
+        height: 60px;
+        line-height: 40px;
+        margin-top: 5px;
+        vertical-align: top;
+        width: 60px;
+      }
+      p {
+        color: $gold;
+        display: inline-block;
+        padding-left: 30px;
+        padding-top: 0;
+        width: 442px;
+      }
+    }
+
+    img {
+      height: 424px;
+      width: 1056px;
+    }
+
+  }
+
+  section#tag {
+
+    h3 {
+      color: $txt-gold;
+      font-size: 20px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
   }
 
 }

@@ -1,0 +1,154 @@
+---
+layout: default
+style: contact
+---
+
+<section id="contact" class="dark">
+
+  <form id="ss-form" target="_self" onsubmit="">
+
+    <div class="ss-form-entry">
+      <div class="ss-q-title">"Hi, what can we help you with?"</div>
+      <div class="ss-q-label">"I&#39;d like to
+        <select dir="rtl" name="entry.1841248979" id="entry_1841248979" aria-label="I&#39;d like to  " aria-required="true" required="">
+          <option value="" selected></option>
+          <option value="hire Datawheel">hire Datawheel</option>
+          <option value="collaborate with Datawheel">collaborate with Datawheel</option>
+          <option value="receive a quote">receive a quote</option>
+          <option value="apply to Datawheel">apply to Datawheel</option>
+        </select>
+      "</div>
+    </div>
+
+    <div class="ss-form-entry">
+      <div class="ss-q-title">"Great. Before we get started, what&#39;s your name?"</div>
+      <div class="ss-q-label">"
+        <input type="text" name="entry.861820534" value="" class="ss-q-short" id="entry_861820534" aria-label="Great. Before we get started, what&#39;s your name?  " aria-required="true" required="" title="">
+      "</div>
+    </div>
+
+    <div class="ss-form-entry" id="org">
+      <div class="ss-q-title">"Nice to meet you, <span class="contact-name"></span>. What kind of organization do you work with?"</div>
+      <div class="ss-q-label">"
+        <select dir="rtl" name="entry.530935635" id="entry_530935635" aria-label="Nice to meet you. What kind of organization do you work with?  " aria-required="true" required="">
+          <option value="" selected></option>
+          <option value="An NGO/non-profit">An NGO/non-profit</option>
+          <option value="A government organization">A government organization</option>
+          <option value="A private business">A private business</option>
+          <option value="Me, Myself &amp; I">Me, Myself &amp; I</option>
+        </select>
+      "</div>
+    </div>
+
+    <div class="ss-form-entry">
+      <div class="ss-q-title">"What can you tell us about yourself?"</div>
+      <div class="ss-q-label full">
+        <textarea name="entry.5162270" rows="8" cols="0" id="entry_5162270" aria-label="What can you tell us about yourself?  " aria-required="true" required=""></textarea>
+      </div>
+    </div>
+
+    <div class="ss-form-entry">
+      <div class="ss-q-title">"Sounds great! How should we contact you?"</div>
+      <div class="ss-q-label">"
+        <input type="text" name="entry.496078352" value="" id="entry_496078352" aria-label="Sounds great! How should we contact you?  Please enter a valid e-mail address." aria-required="true" required="" title="Please enter a valid e-mail address.">
+      "</div>
+    </div>
+
+    <input class="hidden" type="submit" name="submit" value="Submit" id="ss-submit">
+    <input type="hidden" name="draftResponse" value="[,,&quot;3878112766286324366&quot;]">
+    <input type="hidden" name="pageHistory" value="0">
+    <input type="hidden" name="fbzx" value="3878112766286324366">
+
+  </form>
+
+  <div id="success" class="hidden">
+    Thanks for stopping by, we'll be in touch!
+  </div>
+
+</section>
+
+<script>
+
+  $(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode === 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+
+  $("#entry_861820534").keyup(function(){
+    $(".contact-name").html($("#entry_861820534").val());
+    var hidden = $("#org").hasClass("hidden");
+    if (hidden) $("#org").removeClass("hidden");
+    $("#org").css("height", "auto").data("height", $("#org").height()).css("height", $("#org").data("height"));
+    if (hidden) $("#org").addClass("hidden");
+  });
+
+  $(".ss-form-entry").each(function(i) {
+    $(this).data("height", $(this).height()).css("height", $(this).data("height"));
+    if (i) $(this).addClass("hidden");
+  });
+
+  function next(elem) {
+    var entry = $(elem.parentNode.parentNode).next().removeClass("hidden");
+    var form = entry.find("input, select, textarea");
+    if (entry.prop("tagName").toLowerCase() === "input") {
+      entry.submit();
+    }
+    else if (form) {
+
+      // Open Select Box
+      if (form.prop("tagName").toLowerCase() === "select") {
+        setTimeout(function(){
+          if (document.createEvent) { // all browsers
+            var e = document.createEvent("MouseEvents");
+            e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            form[0].dispatchEvent(e);
+          }
+          else if (form[0].fireEvent) form[0].fireEvent("onmousedown");
+          else form.focus();
+        }, 250);
+      }
+      else {
+        form.focus();
+      }
+
+      if (entry[0] === $(".ss-form-entry:last-of-type")[0]) {
+        console.log("last")
+        $("#ss-submit").removeClass("hidden");
+      }
+
+    }
+  }
+
+  $("select").on("change", function() {
+    next(this);
+  });
+
+  $("input, textarea").keydown(function(event) {
+    if(event.keyCode === 13) {
+      next(this);
+    }
+  });
+
+  $("form").on("submit", function (e) {
+
+    e.preventDefault();
+
+    $.ajax({
+      type: "post",
+      url: "https://docs.google.com/forms/d/1XfKxuSWqepYTGNDg1eJz2OL_fXs1i-KMcWTaal4vcT8/formResponse",
+      data: $("form").serialize()
+    });
+
+    $("form").addClass("hidden");
+    setTimeout(function(){
+      $("form").css("display", "none");
+      $("#success").removeClass("hidden");
+    }, 300);
+
+  });
+
+</script>
