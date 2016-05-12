@@ -80,47 +80,53 @@
     }
   }
 
-  .logotype {
-    background-image: url('/img/logo/type.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+  .logo-container {
+    @include flex();
+    @include align-items(center);
     width: 234px;
-    height: 36px;
-    padding-top: 100px;
-    margin: 0 auto;
-    color: transparent;
-    font-size: 1px;
+    height: 78px;
+    margin: 55px auto 25px;
     position: relative;
     z-index: 3;
+
+    .nav-logo-icon {
+      height: 100%;
+      margin-right: 20px;
+
+      @include tablet {
+        display: none;
+      }
+
+    }
+
+    .nav-logo-type {
+      @include transition(opacity $nav-timing);
+      height: 50%;
+
+      @include tablet {
+        height: 26px;
+      }
+
+    }
 
     @media screen and (max-width: 768px) {
       margin: 35px auto 0;
       height: 32px;
       width: auto;
       padding: 0;
-      background-size: contain;
     }
+
   }
 
-  .logo-container {
+  .tag-container {
     @include box();
-    background-image: url('/img/logo/icon.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 429px 429px;
     height: 429px;
     text-align: center;
-    margin: 70px auto;
+    margin: 50px auto;
     position: relative;
     z-index: 3;
 
-    // @media screen and (min-width: 415px) and (max-width: 768px) {
-    //   background-size: contain;
-    //   height: 360px;
-    // }
-
     @media screen and (max-width: 768px) {
-      background-size: contain;
       height: 370px;
       margin: 0 auto 90px;
       width: 270px;
@@ -129,13 +135,9 @@
     h2 {
       font-size: 40px;
       color: $txt-gray;
-      letter-spacing: 2.38px;
+      letter-spacing: 2px;
       @include text-shadow(0px 2px 3px rgba(154,154,154,0.50));
       padding: 190px 0;
-
-      // @media screen and (min-width: 415px) and (max-width: 768px) {
-      //   padding: 160px 0;
-      // }
 
       @media screen and (max-width: 768px) {
         padding: 54% 0;
