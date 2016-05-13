@@ -70,13 +70,13 @@ $services: ("github", "twitter");
 
       @each $person in $team {
         &##{$person} .photo {
-          background-image: url("/img/team/#{$person}-static.png");
+          background-image: url("/img/team/#{$person}-static.jpg");
           &:hover {
-            background-image: url("/img/team/#{$person}-hover.png");
+            background-image: url("/img/team/#{$person}-hover.jpg");
           }
         }
         &##{$person}.active .photo {
-          background-image: url("/img/team/#{$person}-gradient.png");
+          background-image: url("/img/team/#{$person}-gradient.jpg");
         }
       }
 
