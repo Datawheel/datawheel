@@ -15,6 +15,13 @@ section {
   &.gold {
     background-color: $bg-gold;
     color: $txt-gray;
+
+    @include mobile {
+      h2 {
+        color: white;
+      }
+    }
+
   }
 
   & > h2 {
@@ -30,7 +37,6 @@ section {
     width: 100%;
 
     @include mobile {
-      color: white;
       font-size: 28px;
       line-height: 33px;
       padding: 0 40px;
@@ -45,14 +51,18 @@ section {
     line-height: 40px;
     margin: 0 auto;
     max-width: $max-width;
-    padding: 40px;
+    padding: 40px 40px 0;
     text-align: center;
     width: 100%;
+
+    &:last-child {
+      padding-bottom: 40px;
+    }
 
     @include mobile {
       font-size: 14px;
       line-height: 24px;
-      padding: 40px 40px 0;
+      padding-bottom: 0 !important;
       text-align: left;
     }
 

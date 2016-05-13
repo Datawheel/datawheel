@@ -6,7 +6,8 @@
 
     img {
       margin: 40px auto -48px;
-      width: 616px;
+      max-width: 616px;
+      width: 86%;
     }
   }
 
@@ -14,31 +15,61 @@
     @include flex();
     @include align-items(center);
 
-    div {
+    .desc {
       h3 {
         display: inline-block;
         font-size: 40px;
         line-height: 80px;
         width: 60px;
+        @include tablet {
+          font-size: 24px;
+          line-height: 48px;
+          margin-top: -20px;
+          width: 36px;
+        }
       }
       p {
         font-size: 20px;
         line-height: 31px;
         padding-top: 20px;
+        @include tablet {
+          font-size: 14px;
+          line-height: 23px;
+          padding-top: 10px;
+        }
       }
+      @include tablet {
+        margin: 0 !important;
+      }
+    }
+
+    @include tablet {
+      @include flex-direction(column !important);
     }
 
   }
 
   section#usb {
-    background-image: url("/img/about/usb.png");
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 77px 81px;
+    position: relative;
 
-    div {
+    div.usb {
+      left: 0;
+      margin: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+      img {
+        margin: 0 auto;
+        max-width: 616px;
+        width: 86%;
+      }
+    }
+
+    .desc {
       margin-left: 50px;
-      width: 423px;
+      max-width: 423px;
+      width: 80%;
       h3 {
         color: $bg-gray;
         border-bottom: 2px solid $txt-gray;
@@ -48,20 +79,25 @@
       }
     }
 
-    img {
-      height: 423px;
+    img.cart {
       margin-right: 50px;
-      width: 423px;
+      max-width: 423px;
+      width: 80%;
+      @include tablet {
+        margin: 10px 0 0;
+      }
     }
+
   }
 
   section#glass {
     @include flex-direction(row-reverse);
 
-    div {
+    .desc {
       margin-right: 50px;
+      max-width: 392px;
       text-align: right;
-      width: 392px;
+      width: 80%;
       h3 {
         color: $txt-gray;
         border-bottom: 2px solid $gold;
@@ -72,32 +108,41 @@
     }
 
     img {
-      height: 308px;
       margin: 50px 0 50px 50px;
       padding-right: 22px;
-      width: 370px;
+      max-width: 370px;
+      width: 80%;
+      @include tablet {
+        margin: 10px 0 0;
+        padding: 0;
+      }
     }
 
   }
 
   section#gems {
 
-    div {
+    .desc {
       margin-left: 50px;
-      width: 452px;
+      max-width: 452px;
+      width: 80%;
       h3 {
         color: $bg-gray;
         border-bottom: 2px solid $txt-gray;
       }
       p {
-        width: 442px;
+        max-width: 442px;
+        width: 100%;
       }
     }
 
     img {
-      height: 424px;
       margin-right: 50px;
-      width: 452px;
+      max-width: 452px;
+      width: 80%;
+      @include tablet {
+        margin: 10px 0 0;
+      }
     }
 
   }
@@ -106,7 +151,9 @@
     @include flex-direction(column);
     padding: 60px 0;
 
-    div {
+    .desc {
+      text-align: center;
+      width: 80%;
       h3 {
         color: $txt-gray;
         display: inline-block;
@@ -115,20 +162,33 @@
         line-height: 40px;
         margin-top: 5px;
         vertical-align: top;
-        width: 60px;
       }
       p {
         color: $gold;
         display: inline-block;
+        max-width: 442px;
         padding-left: 30px;
         padding-top: 0;
-        width: 442px;
+        width: 100%;
+      }
+      @include tablet {
+        text-align: right;
+        h3 {
+          border-right: 0;
+          border-bottom: 2px solid $gold;
+          height: auto;
+          line-height: 48px;
+          margin-top: -20px;
+        }
+        p {
+          padding: 10px 0 0;
+        }
       }
     }
 
     img {
-      height: 424px;
-      width: 1056px;
+      max-width: 1056px;
+      width: 80%;
     }
 
   }
@@ -138,6 +198,7 @@
     h3 {
       color: $txt-gold;
       font-size: 20px;
+      line-height: 30px;
       margin: 20px auto;
       text-align: center;
     }
