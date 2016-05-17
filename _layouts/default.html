@@ -105,18 +105,27 @@
     var nav = $("nav").find(".nav-content"),
         maxH = nav.height(),
         minH = 50,
-        lastScroll = 0;
+        lastScroll = 0,
+        logo = nav.find(".nav-logo"),
+        icon = nav.find(".nav-logo-icon"),
+        iconPad = parseFloat(icon.css("margin-right"), 10),
+        text = nav.find(".nav-logo-type");
 
     $(window).scroll(function(e){
+      var y = (window.pageYOffset !== undefined) ? window.pageYOffset :
+              (document.documentElement || document.body.parentNode || document.body).scrollTop;
       if (window.innerWidth > 768) {
-        var y = (window.pageYOffset !== undefined) ? window.pageYOffset :
-                (document.documentElement || document.body.parentNode || document.body).scrollTop;
         var h = lastScroll > y ? maxH : Math.max(minH, maxH - y);
         var p = (h - minH) / (maxH - minH);
         nav.css("height", h + "px");
-        nav.find(".nav-logo-type").css("opacity", p);
-        lastScroll = y;
+        // text.css("opacity", p);
+        logo.css("height", 75 - 33 * p + "%");
+        icon.css("margin-right", 11 + 9 * p + "px");
+        // text.css("height", 75 - 25 * p + "%");
       }
+      if (maxH - y <= minH) $("nav").addClass("solid");
+      else $("nav").removeClass("solid");
+      lastScroll = y;
     });
 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,12 +1,17 @@
 $nav-timing: 0.4s;
 
 nav {
+  @include transition(background-color $nav-timing);
   background-color: $bg-gray;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
+
+  &.solid {
+    background-color: $bg-gray !important;
+  }
 
   $width-offset: 100px;
 
@@ -25,6 +30,7 @@ nav {
     }
 
     .nav-logo {
+      @include transition(height $nav-timing);
       @include flex();
       @include justify(flex-start);
       @include align-items(center);
@@ -42,11 +48,12 @@ nav {
       }
 
       .nav-logo-type {
-        @include transition(opacity $nav-timing);
+        // @include transition(opacity $nav-timing);
+        // @include transition(height $nav-timing);
         height: 50%;
 
         @include tablet {
-          height: 26px;
+          height: 20px;
         }
 
       }
