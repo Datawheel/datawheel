@@ -141,24 +141,22 @@ nav, .hero-container {
 }
 
 #mobile-nav {
-  display: none;
   height: 100vh;
   left: 0;
+  pointer-events: none;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
-
-  @include tablet {
-    &.active {
-      display: block;
-    }
-  }
+  z-index: 19;
 
   ul {
+    @include transition(top 0.6s);
     background-color: $bg-gray;
-    text-align: center;
+    left: 0;
     padding: $nav-height-mbl + 25px 0 0;
+    position: absolute;
+    text-align: center;
+    top: -100vh;
     width: 100%;
 
     .nav-btn {
@@ -199,11 +197,24 @@ nav, .hero-container {
   }
 
   img {
-    bottom: 0;
+    @include transition(bottom 0.6s);
+    bottom: -100vh;
     left: 0;
     position: absolute;
     width: 100%;
     z-index: -1;
+  }
+
+  @include tablet {
+    &.active {
+      pointer-events: all;
+      ul {
+        top: 0;
+      }
+      img {
+        bottom: 0;
+      }
+    }
   }
 
 }
