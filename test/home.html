@@ -98,18 +98,7 @@ style: home
 <article class="contact sub-container">
 	<section class="dialogue-form">
 		<h3>Let's talk</h3>
-		<form action="https://docs.google.com/forms/d/1RgAbvlCyF6kpyGT12vZxAk2E5n751gk74IpCEO7nzaw/formResponse" method="POST" id="ss-form" target="_blank" onsubmit="">
-			<div class="inputs">
-				<input type="text" name="entry.1407440466" value="" id="entry_1407440466" placeholder="Name" aria-required="true" required>
-				<input type="text" name="entry.2139193680" value="" id="entry_2139193680" placeholder="E-mail address" aria-required="true" required>
-				<textarea name="entry.1950491585" id="entry_1950491585" placeholder="How can we help you?" aria-required="true" required></textarea>
-		    </div>
-
-		    <input type="submit" name="submit" value="Submit" id="ss-submit">
-		    <input type="hidden" name="draftResponse" value="[,,&quot;-6665875044849292915&quot;]">
-		    <input type="hidden" name="pageHistory" value="0">
-		    <input type="hidden" name="fbzx" value="-6665875044849292915">
-		</form>
+		{% include form.html small="true" %}
 	</section>
 	<section id="map" class="sub-container"></section>
 </article>
@@ -132,7 +121,7 @@ style: home
     function init() {
         var mapOptions = {
             zoom: 17,
-            center: new google.maps.LatLng(42.373683,-71.09927829999998),
+            center: new google.maps.LatLng(42.374233,-71.09927829999998),
             scrollwheel:  false,
             disableDefaultUI: true,
             scrollwheel: false,

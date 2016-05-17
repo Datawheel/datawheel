@@ -1,0 +1,166 @@
+form {
+  @include box();
+  @include transition(opacity 0.2s);
+  color: $bg-gray;
+  font-size: 18px;
+  letter-spacing: 0.79px;
+  line-height: 26px;
+  margin: 0 auto;
+  max-width: 650px;
+  text-align: right;
+  width: 100%;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  .ss-form-entry {
+    @include transition(height 0.2s, opacity 0.2s);
+    overflow: hidden;
+
+    &.hidden {
+      height: 0 !important;
+      opacity: 0;
+    }
+
+    .ss-q-title {
+      display: block;
+      text-align: left;
+      width: 100%;
+    }
+
+    .ss-q-label {
+      color: $bg-gold;
+      display: inline-block;
+      width: 100%;
+
+      &.full {
+        width: 100%;
+      }
+
+    }
+
+    input[type="text"], select, textarea {
+      @include appearance(none);
+      @include box();
+      @include rounded(0);
+      @include varela();
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid $bg-gold;
+      color: $bg-gold;
+      display: inline-block;
+      font-size: 18px;
+      letter-spacing: 0.79px;
+      margin: 20px 0 20px;
+      outline: 0;
+      padding: 5px 0;
+      text-align: right;
+
+    }
+
+    input[type="text"] {
+      width: 254px;
+
+      @include mobile {
+        width: 75%;
+      }
+    }
+
+    select {
+      max-width: 50%;
+      position: relative;
+    }
+
+    textarea {
+      max-height: 100px;
+      min-height: 100px;
+      overflow: auto;
+      padding: 5px;
+      resize: none;
+      text-align: left;
+      width: 100%;
+    }
+
+  }
+
+  input[type="submit"] {
+    @include transition(opacity 0.2s);
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    border: 3px solid $bg-gray;
+    width: 250px;
+    padding: 25px;
+    font-size: 20px;
+    color: $bg-gray;
+    opacity: 1;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &.hidden {
+      display: none;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: #c0c0c0;
+    }
+
+  }
+
+}
+
+#form-back {
+  @include transition(opacity 0.2s);
+  color: $bg-gray;
+  font-size: 16px;
+  left: 35px;
+  opacity: 0.5;
+  position: absolute;
+  top: 46px;
+
+  @include mobile {
+    left: 18px;
+  }
+
+  img {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: -3px;
+    vertical-align: top;
+    width: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  &.hidden {
+    opacity: 0;
+    &:hover {
+      cursor: default;;
+    }
+  }
+
+}
+
+#form-success {
+  @include transition(opacity 0.2s);
+  color: $bg-gray;
+  display: block;
+  font-size: 18px;
+  letter-spacing: 0.79px;
+  line-height: 21px;
+  opacity: 1;
+  text-align: center;
+
+  &.hidden {
+    display: none;
+    opacity: 0;
+  }
+
+}

@@ -1,23 +1,9 @@
 &.home {
+  padding-top: 0;
 
   nav {
     background-color: transparent;
   }
-
-  padding-top: 0;
-
-  // .sub-container {
-  //   @media screen and (min-width: 1200px) {
-  //     width: 100%;
-  //     height: 100vh;
-  //     max-height: 600px;
-  //   }
-  //
-  //   @media screen and (max-width: 414px) {
-  //     width: 100%;
-  //     height: 100%;
-  //   }
-  // }
 
   .hero-container {
     height: 600px;
@@ -28,11 +14,6 @@
     @include mobile {
       height: 100vh;
     }
-
-    // @media screen and (max-width: 768px) {
-    //   max-height: auto;
-    //   height: 500px;
-    // }
 
     #hero-video {
       position: absolute;
@@ -52,8 +33,6 @@
 
       #video {
         top: 0;
-        // position: absolute;
-        // z-index: -1;
         @include filter(saturate(0.5));
         height: 100%;
 
@@ -306,101 +285,63 @@
   .contact {
     @include flex();
     @include flex-direction(row);
-    height: 600px;
+    height: 500px;
     overflow: hidden;
 
     .dialogue-form {
+      @include box();
+      @include flex();
+      @include flex-direction(column);
+      @include align-items(center);
       width: 50%;
       background-color: $txt-gray;
-      font-size: 20px;
-      color: $bg-gray;
-      letter-spacing: 0.87px;
       padding: 35px;
-      @include box();
       position: relative;
 
       h3 {
-        font-size: 24px;
+        @include transition(opacity 0.2s);
         color: $bg-gray;
+        font-size: 24px;
+        left: 0;
         letter-spacing: 1px;
         line-height: 36px;
-        text-align: center;
         padding-bottom: 30px;
-      }
-
-      input, textarea {
-        outline: none;
-      }
-
-      input[type="text"], textarea {
-        @include varela();
-        background-color: $txt-gray;
-        font-size: 20px;
-        color: $bg-gray;
-        display: block;
-        letter-spacing: 0.87px;
-        border: 0;
-        padding: 10px;
-        width: 100%;
-        @include box();
-      }
-
-      input[type="text"] {
-        border-bottom: 1px solid gray;
-
-        & + input[type="text"] {
-          margin-top: 20px;
-        }
-      }
-
-      textarea {
-        color: $txt-gold;
-        margin-top: 20px;
-        min-height: 200px;
-        overflow: auto;
-      }
-
-      input[type="submit"] {
         position: absolute;
-        bottom: 35px;
-        left: 26%;
-        display: block;
-        margin: auto;
         text-align: center;
-        text-decoration: none;
-        background-color: rgba(255,255,255,0);
-        border: 3px solid $bg-gray;
-        width: 50%;
-        padding: 25px;
-        font-size: 20px;
-        color: $bg-gray;
-        letter-spacing: 1px;
-        cursor: pointer;
+        top: 35px;
+        width: 100%;
 
-        &:hover {
-          background-color: #c0c0c0;
+        &.hidden {
+          opacity: 0;
         }
+
+      }
+
+      form {
+        margin-top: 66px;
       }
     }
 
     #map {
+      @include box();
       width: 50%;
     }
 
-    @media screen and (max-width: 768px) {
+    @include tablet {
       @include flex-direction(column);
       height: auto;
 
       .dialogue-form {
         width: 100vw;
-        height: 600px;
+        height: 400px;
       }
 
       #map {
         width: 100vw;
-        height: 600px;
+        height: 300px;
       }
     }
+
   }
 
   .projects {
