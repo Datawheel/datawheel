@@ -68,4 +68,27 @@ section {
 
   }
 
+  .button {
+    @include transition(background-color 0.1s);
+    background-color: $gold;
+    color: white;
+    display: block;
+    font-size: 16px;
+    height: 50px;
+    line-height: 49px;
+    margin: 60px auto 0;
+    text-align: center;
+    text-decoration: none;
+    width: 160px;
+
+    &:hover {
+      background-color: $txt-gold;
+    }
+
+    @include mobile {
+      margin: 40px auto;
+    }
+
+  }
+
 }

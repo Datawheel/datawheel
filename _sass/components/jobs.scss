@@ -138,22 +138,4 @@
 
   }
 
-  #apply {
-    background-color: $gold;
-    color: white;
-    display: block;
-    font-size: 16px;
-    height: 50px;
-    line-height: 47px;
-    margin: 60px auto 0;
-    text-align: center;
-    text-decoration: none;
-    width: 160px;
-
-    @include mobile {
-      margin: 40px auto;
-    }
-
-  }
-
 }
