@@ -57,7 +57,7 @@
 
     {{ content }}
 
-    <article class="parallax-window" data-parallax="scroll" data-image-src="/img/bgs/hq-{% if page.footer %}{{ page.footer }}{% else %}gold{% endif %}.jpg" data-bleed="100" data-speed="0.5"></article>
+    <article class="parallax-window" data-parallax="scroll" data-image-src="/img/bgs/hq-{% if page.footer %}{{ page.footer }}{% else if page.style == "home" %}home{% else %}gold{% endif %}.jpg" data-bleed="100" data-speed="0.5"></article>
 
     <footer{% if page.footer %} class="{{ page.footer }} dark"{% endif %}>
       <p class="parting-words">
