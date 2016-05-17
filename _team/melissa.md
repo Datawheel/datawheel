@@ -2,7 +2,7 @@
 id: melissa
 order: 5
 name: Melissa Teng
-role: Front-End Developer/UX
+role: Designer
 twitter: https://twitter.com/melisteng
 ---
 
