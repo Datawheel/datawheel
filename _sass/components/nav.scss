@@ -63,6 +63,7 @@ nav {
 
         @include tablet {
           height: 20px;
+          margin-top: 3px;
         }
 
       }
@@ -159,7 +160,7 @@ nav, .hero-container {
   width: 100%;
   z-index: 19;
 
-  ul {
+  & > ul {
     @include transition(top 0.6s);
     background-color: $bg-gray;
     left: 0;
