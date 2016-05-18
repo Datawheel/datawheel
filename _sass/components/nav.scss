@@ -141,6 +141,7 @@ nav, .hero-container {
 }
 
 #mobile-nav {
+  display: none;
   height: 100vh;
   left: 0;
   pointer-events: none;
@@ -206,6 +207,7 @@ nav, .hero-container {
   }
 
   @include tablet {
+    display: block;
     &.active {
       pointer-events: all;
       ul {
