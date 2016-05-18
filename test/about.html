@@ -15,13 +15,20 @@ style: about
 
   <h2>Our Process</h2>
   <img src="/img/about/tracks.png" />
+  <div id="track-carts">
+    <img src="/img/about/cart.png" class="scroll-animation" />
+    <img src="/img/about/cart.png" class="scroll-animation" />
+    <img src="/img/about/cart.png" class="scroll-animation" />
+  </div>
 
 </section>
 
 <section id="usb" class="step gold">
 
   <div class="usb"><img src="/img/about/usb.png" /></div>
-  <img class="cart" src="/img/about/cart-full.png" />
+  <div class="bubble">
+    <img class="cart scroll-animation" src="/img/about/cart-full.png" />
+  </div>
   <div class="desc">
     <h3>1</h3>
     <p>First, we mine for data, gathering all the necessary bits and bytes.</p>
@@ -31,7 +38,19 @@ style: about
 
 <section id="glass" class="step light">
 
-  <img src="/img/about/binary-glass.png" />
+  <div class="glass">
+    <img class="glass-line" src="/img/about/glass-line.png" />
+    <img class="glass-mask scroll-animation" src="/img/about/glass-mask.png" />
+    <img class="bg" src="/img/about/glass.png" />
+    <div class="binary">
+      <div class="line scroll-animation"></div>
+      <div class="line scroll-animation"></div>
+      <div class="line scroll-animation"></div>
+      <div class="line scroll-animation"></div>
+      <div class="line scroll-animation"></div>
+      <div class="line scroll-animation"></div>
+    </div>
+  </div>
   <div class="desc">
     <h3>2</h3>
     <p>Once we have a better understanding of the data, we analyze it for patterns, idiosyncrasies, or anything else that may be hiding within. We slice, dice, and merge the data, all with the overarching goals of speed and ease of use.</p>
@@ -41,7 +60,11 @@ style: about
 
 <section id="gems" class="step gold">
 
-  <img src="/img/about/gems.png" />
+  <div class="bubble">
+    <img class="diamonds scroll-animation" src="/img/about/diamonds.png" />
+    <img class="sparkles scroll-animation" src="/img/about/sparkle1.png" />
+    <img class="sparkles scroll-animation" src="/img/about/sparkle2.png" />
+  </div>
   <div class="desc">
     <h3>3</h3>
     <p>Using this newfound knowledge, we create novel calculations and metrics that pair perfectly with the data on hand. Once everything is accounted for, we ask "what’s the best way to present this information?"</p>
@@ -51,7 +74,26 @@ style: about
 
 <section id="jewelry" class="step light">
 
-  <img src="/img/about/jewelry.png" />
+  <div class="bubbles">
+    <img class="scroll-animation" src="/img/about/jewelry1.png" />
+    <img class="scroll-animation" src="/img/about/jewelry3.png" />
+    <img class="scroll-animation" src="/img/about/jewelry2.png" />
+    <div class="center">
+      <div class="mask scroll-animation">
+        <img class="cart" src="/img/about/cart-full.png" />
+        <img class="bedazzles" src="/img/about/bedazzles.png" />
+      </div>
+    </div>
+  </div>
+  <div class="popout">
+    <img class="scroll-animation" src="/img/about/jewelry3.png" />
+    <div class="center">
+      <div class="mask scroll-animation">
+        <img class="cart" src="/img/about/cart-full.png" />
+        <img class="bedazzles" src="/img/about/bedazzles.png" />
+      </div>
+    </div>
+  </div>
   <div class="desc">
     <h3>4</h3>
     <p>With the pieces together, we create a custom visualization engine, giving users the ability to explore the data quickly and painlessly.</p>
@@ -69,8 +111,15 @@ style: about
   preloadImages.push("/img/about/cart.png");
   preloadImages.push("/img/about/usb.png");
   preloadImages.push("/img/about/cart-full.png");
-  preloadImages.push("/img/about/binary-glass.png");
-  preloadImages.push("/img/about/gems.png");
-  preloadImages.push("/img/about/jewelry.png");
+  preloadImages.push("/img/about/glass.png");
+  preloadImages.push("/img/about/glass-line.png");
+  preloadImages.push("/img/about/glass-mask.png");
+  preloadImages.push("/img/about/diamonds.png");
+  preloadImages.push("/img/about/sparkle1.png");
+  preloadImages.push("/img/about/sparkle2.png");
+  preloadImages.push("/img/about/bedazzles.png");
+  preloadImages.push("/img/about/jewelry1.png");
+  preloadImages.push("/img/about/jewelry2.png");
+  preloadImages.push("/img/about/jewelry3.png");
 
 </script>

@@ -102,18 +102,23 @@
       img.src = url;
     });
 
-    var nav = $("nav").find(".nav-content"),
+    var anims = $(".scroll-animation"),
+        nav = $("nav").find(".nav-content"),
         maxH = nav.height(),
         minH = 50,
         lastScroll = 0,
         logo = nav.find(".nav-logo"),
         icon = nav.find(".nav-logo-icon"),
         iconPad = parseFloat(icon.css("margin-right"), 10),
-        text = nav.find(".nav-logo-type");
+        text = nav.find(".nav-logo-type"),
+        w = $(window);
 
-    $(window).scroll(function(e){
-      var y = (window.pageYOffset !== undefined) ? window.pageYOffset :
-              (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    w.on("scroll resize", function(e){
+
+      var wH = w.height(),
+          y = w.scrollTop();
+
+      // desktop nav sizing
       if (window.innerWidth > 768) {
         var h = lastScroll > y ? maxH : Math.max(minH, maxH - y);
         var p = (h - minH) / (maxH - minH);
@@ -123,10 +128,26 @@
         icon.css("margin-right", 11 + 9 * p + "px");
         // text.css("height", 75 - 25 * p + "%");
       }
+
+      // nav coloring
       if (maxH - y <= minH) $("nav").addClass("solid");
       else $("nav").removeClass("solid");
       lastScroll = y;
+
+      if (anims.length) {
+        anims.each(function() {
+          var elem = $(this);
+          var top = elem.offset().top;
+          var bottom = (top + elem.outerHeight());
+
+          //check to see if this current container is within viewport
+          if ((bottom >= y) && (top <= y + wH)) elem.addClass("visible");
+          // else elem.removeClass("visible");
+        });
+      }
+
     });
+    if (w.scrollTop() === 0) w.trigger("scroll");
 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     // Google Analytics
