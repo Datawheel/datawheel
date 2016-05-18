@@ -144,11 +144,12 @@ style: home
         };
         var mapElement = document.getElementById('map');
         var map = new google.maps.Map(mapElement, mapOptions);
-		var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(42.373683,-71.09927829999998),
-            map: map,
-            title: '1299 Cambridge St',
-            icon: '/img/home/map_marker.png'
+				var markerImage = new google.maps.MarkerImage("/img/home/map_marker.png", null, null, null, new google.maps.Size(228, 157));
+				var marker = new google.maps.Marker({
+          "position": new google.maps.LatLng(42.373683,-71.09927829999998),
+          "map": map,
+          "title": "1299 Cambridge St",
+          "icon": markerImage
         });
 
 				google.maps.event.addListener(marker, "click", function() {
