@@ -31,15 +31,20 @@ nav {
 
     .nav-logo {
       @include transition(height $nav-timing);
-      @include flex();
-      @include justify(flex-start);
-      @include align-items(center);
+      // @include flex();
+      // @include justify(flex-start);
+      // @include align-items(center);
       height: 42%;
       padding-right: 40px;
+      position: relative;
+      text-decoration: none;
+      white-space: nowrap;
 
       .nav-logo-icon {
+        display: inline-block;
         height: 100%;
         margin-right: 20px;
+        min-height: 100%;
 
         @include tablet {
           display: none;
@@ -50,7 +55,11 @@ nav {
       .nav-logo-type {
         // @include transition(opacity $nav-timing);
         // @include transition(height $nav-timing);
+        display: inline-block;
         height: 50%;
+        margin-top: 17px;
+        min-height: 50%;
+        vertical-align: top;
 
         @include tablet {
           height: 20px;

@@ -82,84 +82,84 @@
       </section>
     </footer>
 
+    <script>
+
+      $("#mobile-nav div.nav-btn").click(function(){
+        $(this).find(".sub-menu").toggleClass("active");
+        $(this).find(".sub-title").toggleClass("active");
+      });
+
+      $("#hamburger").click(function(){
+        $("#hamburger").toggleClass("active");
+        $("#mobile-nav").toggleClass("active");
+        $("body").toggleClass("frozen");
+      });
+
+      preloadImages.forEach(function(url){
+        var img = new Image();
+        img.src = url;
+      });
+
+      var anims = $(".scroll-animation"),
+          nav = $("nav").find(".nav-content"),
+          maxH = nav.height(),
+          minH = 50,
+          lastScroll = 0,
+          logo = nav.find(".nav-logo"),
+          icon = nav.find(".nav-logo-icon"),
+          text = nav.find(".nav-logo-type"),
+          textPad = parseFloat(text.css("margin-top"), 10),
+          w = $(window);
+
+      w.on("scroll resize", function(e){
+
+        var wH = w.height(),
+            y = w.scrollTop();
+
+        // desktop nav sizing
+        if (window.innerWidth > 768) {
+          var h = lastScroll > y ? maxH : Math.max(minH, maxH - y);
+          var p = (h - minH) / (maxH - minH);
+          nav.css("height", h + "px");
+          // text.css("opacity", p);
+          logo.css("height", 75 - 33 * p + "%");
+          icon.css("margin-right", 11 + 9 * p + "px");
+          text.css("margin-top", textPad - (textPad * 0.50) * (1 - p) + "px");
+        }
+
+        // nav coloring
+        if (maxH - y <= minH) $("nav").addClass("solid");
+        else $("nav").removeClass("solid");
+        lastScroll = y;
+
+        if (anims.length) {
+          anims.each(function() {
+            var elem = $(this);
+            var top = elem.offset().top;
+            var bottom = (top + elem.outerHeight());
+
+            //check to see if this current container is within viewport
+            if ((bottom >= y) && (top <= y + wH)) elem.addClass("visible");
+            // else elem.removeClass("visible");
+          });
+        }
+
+      });
+      if (w.scrollTop() === 0) w.trigger("scroll");
+
+      //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      // Google Analytics
+      //------------------------------------------------------------------------
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48256843-1', 'datawheel.us');
+      ga('send', 'pageview');
+
+    </script>
+
   </body>
-
-  <script>
-
-    $("#mobile-nav div.nav-btn").click(function(){
-      $(this).find(".sub-menu").toggleClass("active");
-      $(this).find(".sub-title").toggleClass("active");
-    });
-
-    $("#hamburger").click(function(){
-      $("#hamburger").toggleClass("active");
-      $("#mobile-nav").toggleClass("active");
-      $("body").toggleClass("frozen");
-    });
-
-    preloadImages.forEach(function(url){
-      var img = new Image();
-      img.src = url;
-    });
-
-    var anims = $(".scroll-animation"),
-        nav = $("nav").find(".nav-content"),
-        maxH = nav.height(),
-        minH = 50,
-        lastScroll = 0,
-        logo = nav.find(".nav-logo"),
-        icon = nav.find(".nav-logo-icon"),
-        iconPad = parseFloat(icon.css("margin-right"), 10),
-        text = nav.find(".nav-logo-type"),
-        w = $(window);
-
-    w.on("scroll resize", function(e){
-
-      var wH = w.height(),
-          y = w.scrollTop();
-
-      // desktop nav sizing
-      if (window.innerWidth > 768) {
-        var h = lastScroll > y ? maxH : Math.max(minH, maxH - y);
-        var p = (h - minH) / (maxH - minH);
-        nav.css("height", h + "px");
-        // text.css("opacity", p);
-        logo.css("height", 75 - 33 * p + "%");
-        icon.css("margin-right", 11 + 9 * p + "px");
-        // text.css("height", 75 - 25 * p + "%");
-      }
-
-      // nav coloring
-      if (maxH - y <= minH) $("nav").addClass("solid");
-      else $("nav").removeClass("solid");
-      lastScroll = y;
-
-      if (anims.length) {
-        anims.each(function() {
-          var elem = $(this);
-          var top = elem.offset().top;
-          var bottom = (top + elem.outerHeight());
-
-          //check to see if this current container is within viewport
-          if ((bottom >= y) && (top <= y + wH)) elem.addClass("visible");
-          // else elem.removeClass("visible");
-        });
-      }
-
-    });
-    if (w.scrollTop() === 0) w.trigger("scroll");
-
-    //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    // Google Analytics
-    //------------------------------------------------------------------------
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-48256843-1', 'datawheel.us');
-    ga('send', 'pageview');
-
-  </script>
 
 </html>

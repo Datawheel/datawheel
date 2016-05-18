@@ -75,7 +75,8 @@
       @include flex();
       @include flex-direction(row);
       @include align-items(center);
-      margin: 120px 40px 160px;
+      margin: 120px auto 160px;
+      width: 100%;
 
       &.odd {
         @include flex-direction(row-reverse);
@@ -86,7 +87,7 @@
       }
 
       .screenshot {
-        @include flex-size(1);
+        @include flex-size(1 1 600px);
         max-width: 600px;
         position: relative;
         width: 100%;
