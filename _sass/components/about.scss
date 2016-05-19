@@ -44,7 +44,7 @@
           }
 
           &.visible {
-            @include animation("cart-1 40s infinite");
+            @include animation("cart-1 30s infinite");
           }
 
         }
@@ -61,7 +61,7 @@
           }
 
           &.visible {
-            @include animation("cart-2 40s infinite");
+            @include animation("cart-2 30s infinite");
           }
 
         }
@@ -78,7 +78,7 @@
           }
 
           &.visible {
-            @include animation("cart-3 53s infinite");
+            @include animation("cart-3 40s infinite");
           }
 
         }
