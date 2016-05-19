@@ -111,7 +111,7 @@
         @include tablet {
           font-size: 24px;
           line-height: 48px;
-          width: 36px;
+          // width: 36px;
         }
       }
       p {
@@ -119,9 +119,11 @@
         line-height: 31px;
         padding-top: 20px;
         @include tablet {
+          padding-top: 10px;
+        }
+        @include mobile {
           font-size: 14px;
           line-height: 23px;
-          padding-top: 10px;
         }
       }
       @include tablet {
@@ -165,6 +167,9 @@
       }
       p {
         max-width: 321px;
+        @include tablet {
+          max-width: none;
+        }
       }
     }
 
@@ -329,6 +334,9 @@
       }
       p {
         max-width: 321px;
+        @include tablet {
+          max-width: none;
+        }
       }
     }
 
@@ -426,7 +434,9 @@
         width: 100%;
       }
       @include tablet {
+        max-width: 423px;
         text-align: right;
+        width: 80%;
         h3 {
           border-right: 0;
           border-bottom: 2px solid $gold;
@@ -434,6 +444,7 @@
           line-height: 48px;
         }
         p {
+          display: block;
           padding: 10px 0 0;
         }
       }
