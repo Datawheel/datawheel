@@ -1,11 +1,14 @@
 collections:
   jobs:
     output: false
+  pages:
+    output: true
+    permalink: /:path/
   team:
     output: false
   portfolio:
     output: true
-    permalink: /test/:path/
+    permalink: /portfolio/:path/
 
 defaults:
   - scope:

@@ -1,14 +1,15 @@
 ---
 layout: default
-style: home
+footer: home
+style: home-old
 ---
 
 <article class="hero-container">
 	<div id="hero-video">
       <!-- Video Partial -->
       <video id="video" class="video"  preload="auto" autoplay loop muted>
-      	<source src="/hero2.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.vi40.2">
-      	<source src="/hero2.mp4" type="video/webm; codecs=vp8,vorbis">
+      	<source src="/hero.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.vi40.2">
+      	<source src="/hero.mp4" type="video/webm; codecs=vp8,vorbis">
       </video>
       <![if !IE]>
       <!-- <video id="video" class="ta-video video" preload="auto" autoplay muted>
@@ -17,14 +18,24 @@ style: home
       <![endif]>
       <div class="overlay"></div>
 
-			<div class="tag-container">
-				<h2>From data to stories.</h2>
+			<div class="logotype">
+				<h1>Datawheel</h1>
+			</div>
+			<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+
+			<div class="logo-container">
+				<h2>From data to stories</h2>
 			</div>
 
 			<div class="down-arrow mbl"></div>
 
   </div>
-
 </article>
 
 <article class="welcome-msg sub-container">
@@ -76,20 +87,28 @@ style: home
 	<h3>What We Make</h3>
 	<section>
 		<div class="row a">
-			<div class="project datausa">
-				<a class="project-title" href="/test/datausa/">Data USA</a>
-			</div>
-			<div class="project dataviva">
-				<a class="project-title" href="/test/dataviva/">DataViva</a>
-			</div>
+			<a href="http://www.datausa.io" target="_blank" class="project datausa">
+				<div class="project-title">Data USA
+					<div class="project-desc">Data USA puts public US Government data in your hands. Instead of searching through multiple data sources that are often incomplete and difficult to access, you can simply point to Data USA to answer your questions. Data USA provides an open, easy-to-use platform that turns data into knowledge.</div>
+				</div>
+			</a>
+			<a href="http://www.dataviva.info" target="_blank" class="project dataviva">
+				<div class="project-title">DataViva
+					<div class="project-desc">DataViva is a ground-breaking example of public data repositories turned into an accessible and attractive public resource. It makes labor and export data for the entirety of Brazil accessible in a public, easy to use visualization tool.</div>
+				</div>
+			</a>
 		</div>
 		<div class="row b">
-			<div class="project d3plus">
-				<a class="project-title" href="/test/d3plus/">D3Plus</a>
-			</div>
-			<div class="project oec">
-				<a class="project-title" href="/test/oec/">Observatory of Economic Complexity</a>
-			</div>
+			<a href="http://d3plus.org/" target="_blank" class="project d3plus">
+				<div class="project-title">D3Plus
+					<div class="project-desc">When the team began creating web platforms for visualizing large disaggregate datasets, it became clear that there was need for a tool to quickly and effectively visualize the datasets at hand. When we realized we’d created something crucial to our own productivity, we wondered, “why not share this with the world?”</div>
+				</div>
+			</a>
+			<a href="http://atlas.media.mit.edu/" target="_blank" class="project oec">
+				<div class="project-title">Observatory of Economic Complexity
+					<div class="project-desc">The Observatory of Economic Complexity is a tool that allows users to quickly compose a visual narrative about countries and the products they exchange.</div>
+				</div>
+			</a>
 		</div>
 </article>
 
@@ -98,7 +117,18 @@ style: home
 <article class="contact sub-container">
 	<section class="dialogue-form">
 		<h3>Let's talk</h3>
-		{% include form.html small="true" %}
+		<form action="https://docs.google.com/forms/d/1RgAbvlCyF6kpyGT12vZxAk2E5n751gk74IpCEO7nzaw/formResponse" method="POST" id="ss-form" target="_blank" onsubmit="">
+			<div class="inputs">
+				<input type="text" name="entry.1407440466" value="" id="entry_1407440466" placeholder="Name" aria-required="true" required>
+				<input type="text" name="entry.2139193680" value="" id="entry_2139193680" placeholder="E-mail address" aria-required="true" required>
+				<textarea name="entry.1950491585" id="entry_1950491585" placeholder="How can we help you?" aria-required="true" required></textarea>
+		    </div>
+
+		    <input type="submit" name="submit" value="Submit" id="ss-submit">
+		    <input type="hidden" name="draftResponse" value="[,,&quot;-6665875044849292915&quot;]">
+		    <input type="hidden" name="pageHistory" value="0">
+		    <input type="hidden" name="fbzx" value="-6665875044849292915">
+		</form>
 	</section>
 	<section id="map" class="sub-container"></section>
 </article>
@@ -121,7 +151,7 @@ style: home
     function init() {
         var mapOptions = {
             zoom: 17,
-            center: new google.maps.LatLng(42.374233,-71.09927829999998),
+            center: new google.maps.LatLng(42.373683,-71.09927829999998),
             scrollwheel:  false,
             disableDefaultUI: true,
             scrollwheel: false,
@@ -144,12 +174,11 @@ style: home
         };
         var mapElement = document.getElementById('map');
         var map = new google.maps.Map(mapElement, mapOptions);
-				var markerImage = new google.maps.MarkerImage("/img/home/map_marker.png", null, null, null, new google.maps.Size(228, 157));
-				var marker = new google.maps.Marker({
-          "position": new google.maps.LatLng(42.373683,-71.09927829999998),
-          "map": map,
-          "title": "1299 Cambridge St",
-          "icon": markerImage
+		var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(42.373683,-71.09927829999998),
+            map: map,
+            title: '1299 Cambridge St',
+            icon: '/img/home/map_marker.png'
         });
 
 				google.maps.event.addListener(marker, "click", function() {
