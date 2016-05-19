@@ -118,13 +118,8 @@
 
         // desktop nav sizing
         if (window.innerWidth > 768) {
-          var h = lastScroll > y ? maxH : Math.max(minH, maxH - y);
-          var p = (h - minH) / (maxH - minH);
-          nav.css("height", h + "px");
-          // text.css("opacity", p);
-          logo.css("height", 75 - 33 * p + "%");
-          icon.css("margin-right", 11 + 9 * p + "px");
-          text.css("margin-top", textPad - (textPad * 0.50) * (1 - p) + "px");
+          if (lastScroll > y) nav.removeClass("small");
+          else if (y > maxH - minH) nav.addClass("small");
         }
 
         // nav coloring

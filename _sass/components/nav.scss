@@ -31,9 +31,6 @@ nav {
 
     .nav-logo {
       @include transition(height $nav-timing);
-      // @include flex();
-      // @include justify(flex-start);
-      // @include align-items(center);
       height: 42%;
       padding-right: 40px;
       position: relative;
@@ -41,6 +38,7 @@ nav {
       white-space: nowrap;
 
       .nav-logo-icon {
+        @include transition(margin-right $nav-timing);
         display: inline-block;
         height: 100%;
         margin-right: 20px;
@@ -53,8 +51,7 @@ nav {
       }
 
       .nav-logo-type {
-        // @include transition(opacity $nav-timing);
-        // @include transition(height $nav-timing);
+        @include transition(margin-top $nav-timing);
         display: inline-block;
         height: 50%;
         margin-top: 17px;
@@ -68,6 +65,19 @@ nav {
 
       }
 
+    }
+
+    &.small {
+      height: 50px;
+      .nav-logo {
+        height: 75%;
+        .nav-logo-icon {
+          margin-right: 11px;
+        }
+        .nav-logo-type {
+          margin-top: 8.5px;
+        }
+      }
     }
 
   }
