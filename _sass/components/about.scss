@@ -176,12 +176,14 @@
     .bubble {
       @include rounded(50%);
       background-color: $bg-gray;
-      height: 370px;
+      height: 423px;
       margin-right: 50px;
       overflow: visible;
-      width: 370px;
+      width: 423px;
       @include tablet {
+        height: 320px;
         margin: 10px 0 0;
+        width: 320px;
       }
       .cart {
         margin: -3% 0 3%;
@@ -341,13 +343,15 @@
     .bubble {
       @include rounded(222px);
       background-color: $bg-gray;
-      height: 370px;
+      height: 423px;
       margin-right: 50px;
       overflow: visible;
       position: relative;
-      width: 370px;
+      width: 423px;
       @include tablet {
+        height: 320px;
         margin: 10px 0 0;
+        width: 320px;
       }
 
       .diamonds {
