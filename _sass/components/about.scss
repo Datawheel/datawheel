@@ -174,14 +174,12 @@
     }
 
     .bubble {
-      @include rounded(222px);
+      @include rounded(50%);
       background-color: $bg-gray;
-      height: 80%;
+      height: 370px;
       margin-right: 50px;
-      max-height: 423px;
-      max-width: 423px;
       overflow: visible;
-      width: 80%;
+      width: 370px;
       @include tablet {
         margin: 10px 0 0;
       }
@@ -343,13 +341,11 @@
     .bubble {
       @include rounded(222px);
       background-color: $bg-gray;
-      height: 80%;
+      height: 370px;
       margin-right: 50px;
-      max-height: 423px;
-      max-width: 423px;
       overflow: visible;
       position: relative;
-      width: 80%;
+      width: 370px;
       @include tablet {
         margin: 10px 0 0;
       }
