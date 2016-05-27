@@ -2,7 +2,7 @@
 layout: portfolio
 order: 4
 title: DataViva
-link: http://en.dataviva.info/
+link: http://legacy.dataviva.info/
 desc: "The Office of Strategic Priorities for the government of Minas Gerais in Brazil approached Datawheel with one goal: to better understand their state's economy. The result was DataViva, a ground-breaking, publicly-accessible web platform representing economic information from all of Brazil. Through the website's over 100 million interactive visualizations, users can explore any aspect of Brazil's formal sector, from wages to exports to education."
 footer: dataviva
 badge: dataviva
