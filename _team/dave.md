@@ -1,5 +1,5 @@
 ---
-id: dave
+slug: dave
 order: 3
 name: Dave Landry
 role: Co-founder

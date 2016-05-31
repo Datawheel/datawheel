@@ -1,5 +1,5 @@
 ---
-id: melissa
+slug: melissa
 order: 5
 name: Melissa Teng
 role: Designer

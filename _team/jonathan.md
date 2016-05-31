@@ -1,5 +1,5 @@
 ---
-id: jonathan
+slug: jonathan
 order: 4
 name: Jonathan Speiser
 role: Chief Software Architect

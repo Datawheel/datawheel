@@ -1,5 +1,5 @@
 ---
-id: matt
+slug: matt
 order: 6
 name: Matt Rosadini
 role: Administration

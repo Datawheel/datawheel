@@ -1,5 +1,5 @@
 ---
-id: alex
+slug: alex
 order: 2
 name: Alex Simoes
 role: Co-founder

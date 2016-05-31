@@ -15,7 +15,7 @@ style: team
   <div id="team-list">
     {% assign team = site.team | sort: "order" %}
     {% for person in team %}
-    <div class="person" id="{{ person.id }}">
+    <div class="person" id="{{ person.slug }}">
       <div class="photo">
         <div class="bio">{{ person.content }}</div>
       </div>
@@ -27,8 +27,8 @@ style: team
       </div>
     </div>
     <script>
-      preloadImages.push("/img/team/{{ person.id }}-hover.jpg");
-      preloadImages.push("/img/team/{{ person.id }}-gradient.jpg");
+      preloadImages.push("/img/team/{{ person.slug }}-hover.jpg");
+      preloadImages.push("/img/team/{{ person.slug }}-gradient.jpg");
     </script>
     {% endfor %}
   </div>

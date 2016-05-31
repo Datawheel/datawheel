@@ -1,5 +1,5 @@
 ---
-id: cesar
+slug: cesar
 order: 1
 name: César Hidalgo
 role: Co-founder
