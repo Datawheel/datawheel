@@ -6,5 +6,5 @@ role: Administration
 ---
 
 Matt is a graduate of Northeastern University who has spent his professional life encouraging young creative businesses. His professional talents include programming, operations and photography, among others.
-
+<br /><br />
 Matt balances his work life with a strong dose of niche hobbies: coin collecting, metal detecting, recreational bowling, reading and anything outdoors.

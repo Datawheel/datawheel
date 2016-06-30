@@ -1,6 +1,6 @@
 ---
 slug: lucy
-order: 9
+order: 99
 name: Lucy
 role: Chief Barking Officer
 ---
