@@ -1,4 +1,6 @@
 collections:
+  alumni:
+    output: false
   jobs:
     output: false
   pages:
@@ -12,9 +14,14 @@ collections:
 
 defaults:
   - scope:
+      type: alumni
+    values:
+      order: 100
+  - scope:
       type: team
     values:
       order: 100
+      visible: true
   - scope:
       type: portfolio
     values:

@@ -25,6 +25,11 @@ $services: ("github", "twitter");
         padding: 0;
       }
 
+      &.alumni {
+        display: inline-block;
+        padding: 15px;
+      }
+
       .photo {
         @include background-stretch();
         cursor: pointer;
@@ -35,6 +40,11 @@ $services: ("github", "twitter");
         @include mobile {
           height: 375px;
           width: 100%;
+        }
+
+        &.alumni {
+          height: 180px;
+          width: 120px;
         }
 
         .bio {
@@ -63,6 +73,7 @@ $services: ("github", "twitter");
             padding: 40px;
             text-align: left;
           }
+
 
         }
 
@@ -100,6 +111,16 @@ $services: ("github", "twitter");
           font-size: 16px;
           font-weight: 400;
           margin-top: 5px;
+        }
+
+        &.alumni {
+          padding: 20px 0 0 0;
+          h3 {
+            font-size: 16px;
+          }
+          sub {
+            font-size: 12px;
+          }
         }
 
         a {

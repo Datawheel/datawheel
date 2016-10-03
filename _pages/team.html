@@ -15,6 +15,7 @@ style: team
   <div id="team-list">
     {% assign team = site.team | sort: "order" %}
     {% for person in team %}
+    {% if person.visible %}
     <div class="person" id="{{ person.slug }}">
       <div class="photo">
         <div class="bio">{{ person.content }}</div>
@@ -30,6 +31,27 @@ style: team
       preloadImages.push("/img/team/{{ person.slug }}-hover.jpg");
       preloadImages.push("/img/team/{{ person.slug }}-gradient.jpg");
     </script>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h2>Alumni</h2>
+
+  <div id="team-list">
+    {% assign alumni = site.alumni | sort: "order" %}
+    {% for person in alumni %}
+    <div class="person alumni" id="{{ person.slug }}">
+      <div class="photo alumni"></div>
+      <div class="title alumni">
+        {% if person.twitter %}<a href="{{ person.twitter }}" class="twitter" target="_blank"></a>{% endif %}
+        {% if person.github %}<a href="{{ person.github }}" class="github" target="_blank"></a>{% endif %}
+        <h3>{{ person.name }}</h3>
+        <sub>{{ person.role }}</sub>
+      </div>
+    </div>
+    <script>
+      preloadImages.push("/img/team/{{ person.slug }}-hover.jpg");
+    </script>
     {% endfor %}
   </div>
 
@@ -42,9 +64,11 @@ style: team
 
   $(".photo").click(function(event){
     event.stopPropagation();
-    var on = $(this.parentNode).hasClass("active");
-    $(".person").removeClass("active");
-    if (!on) $(this.parentNode).addClass("active");
+    if (!$(this).hasClass("alumni")) {
+      var on = $(this.parentNode).hasClass("active");
+      $(".person").removeClass("active");
+      if (!on) $(this.parentNode).addClass("active");
+    }
   });
 
   $(".bio").click(function(event){
