@@ -6,10 +6,10 @@
     <div class="ss-q-title">"Hi, what can we help you with?"</div>
     <div class="ss-q-label">"I&#39;d like to
       <select dir="rtl" name="entry.1841248979" id="entry_1841248979" aria-label="I&#39;d like to  " aria-required="true" required="">
-        <option value="" selected></option>
+        <option value="" {% if include.mode %}{% else %}selected{% endif %}></option>
         <option value="hire Datawheel">hire Datawheel</option>
         <option value="collaborate with Datawheel">collaborate with Datawheel</option>
-        <option value="receive a quote">receive a quote</option>
+        <option value="receive a quote" {% if include.mode %}selected{% endif %}>receive a quote</option>
         <option value="apply to Datawheel">apply to Datawheel</option>
       </select>
     "</div>
@@ -49,12 +49,16 @@
     "</div>
   </div>
 
-  <input class="hidden" type="submit" name="submit" value="Submit" id="ss-submit">
+  <input class="hidden" type="submit" name="submit" value="Submit" id="ss-submit" data-ga-cat="form" data-ga-label="submit">
   <input type="hidden" name="draftResponse" value="[,,&quot;3878112766286324366&quot;]">
   <input type="hidden" name="pageHistory" value="0">
   <input type="hidden" name="fbzx" value="3878112766286324366">
 
 </form>
+
+<div id="form-mode" class="{% if include.mode %}{% else %}hidden{% endif %}" data-ga-cat="form" data-ga-label="request-a-quote">
+  Get a Quote Today
+</div>
 
 <div id="form-success" class="hidden">
   Thanks for stopping by, we'll be in touch!
@@ -62,9 +66,19 @@
 
 <script>
 
-  var small = "{{ include.small }}".length > 0;
+  var mode = "{{ include.mode }}",
+      small = "{{ include.small }}".length > 0,
+      start = 0;
+
+  if (mode.length) start++;
 
   var currentEntry = $(".ss-form-entry:first-of-type")[0];
+
+  $("#form-mode").on("click", function() {
+    $(this).addClass("hidden");
+    $(this.parentNode).find("h2, p, article").addClass("hidden");
+    $($(".ss-form-entry")[1]).removeClass("hidden");
+  });
 
   $(document).ready(function() {
     $(window).keydown(function(event){
@@ -85,7 +99,7 @@
 
   $(".ss-form-entry").each(function(i) {
     $(this).data("height", $(this).height()).css("height", $(this).data("height"));
-    if (i) $(this).addClass("hidden");
+    if (mode.length || i) $(this).addClass("hidden");
   });
 
   function next(elem) {
@@ -124,7 +138,7 @@
   function prev() {
     currentEntry.addClass("hidden");
     currentEntry = currentEntry.prev().removeClass("hidden");
-    if (currentEntry[0] === $(".ss-form-entry:first-of-type")[0]) $("#form-back").addClass("hidden");
+    if (currentEntry[0] === $(".ss-form-entry")[start]) $("#form-back").addClass("hidden");
   }
 
   $("select").on("change", function() {

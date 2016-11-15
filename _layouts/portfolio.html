@@ -23,7 +23,7 @@ layout: default
     <p>{{ p }}</p>
   </article>
   {% endfor %}
-  <a id="external-link" class="{{ page.footer }}-color" href="{{ page.link }}" target="_blank">Visit {% if page.shortname %}{{ page.shortname }}{% else %}{{ page.title }}{% endif %}<img src="/img/ui/arrow-right.svg" /></a>
+  <a id="external-link" class="{{ page.footer }}-color" href="{{ page.link }}" target="_blank" data-ga-cat="portfolio" data-ga-label="{{ page.footer }}">Visit {% if page.shortname %}{{ page.shortname }}{% else %}{{ page.title }}{% endif %}<img src="/img/ui/arrow-right.svg" /></a>
 
   {% for project in projects  %}
     {% if project.title == page.title %}
@@ -44,8 +44,8 @@ layout: default
   {% endfor %}
 
   <div id="portfolio-nav">
-    <a href="{{prevurl}}" class="prev"><img src="/img/ui/angle-left.svg" /> Previous Project</a>
-    <a href="{{nexturl}}" class="nxt">Next Project <img src="/img/ui/angle-right.svg" /></a>
+    <a href="{{prevurl}}" class="prev" data-ga-cat="portfolio" data-ga-label="prev"><img src="/img/ui/angle-left.svg" /> Previous Project</a>
+    <a href="{{nexturl}}" class="nxt" data-ga-cat="portfolio" data-ga-label="next">Next Project <img src="/img/ui/angle-right.svg" /></a>
   </div>
 
 </section>

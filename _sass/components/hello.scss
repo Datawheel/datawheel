@@ -1,11 +1,11 @@
 &.hello {
 
   #projects {
-    background-color: $bg-gold;
+    background-color: $txt-gray;
 
     h3 {
       font-size: 30px;
-      color: $txt-gray;
+      color: white;
       letter-spacing: 1.25px;
       line-height: 36px;
       text-align: center;
@@ -20,30 +20,24 @@
       @include flex();
       @include flex-direction(row);
       @include justify(center);
+      @include align-items(flex-end);
       text-align: center;
       padding: 0;
 
-      @media screen and (max-width: 768px) {
-        @include flex-direction(column);
-      }
-
       .project {
         @include flex-size(1);
-        max-width: 450px;
-        margin: 0 25px 25px;
+        margin: 25px;
+        max-width: 250px;
 
         @media screen and (max-width: 768px) {
-          margin: -1px 0 0;
-          padding: 0;
-          width: 100%;
-          height: 276px;
-          @include box();
+          display: none;
         }
 
         .project-title {
-          color: $txt-gray;
+          color: white;
           display: block;
-          font-size: 20px;
+          font-size: 16px;
+          height: 30px;
           letter-spacing: 1px;
           padding: 15px 0;
           text-align: center;
@@ -51,12 +45,14 @@
         }
 
         .project-image {
-          border: 1px solid $txt-gold;
-          width: 100%;
+          img {
+            width: 100%;
+          }
         }
 
         .project-desc {
-          color: $txt-gray;
+          color: white;
+          display: none;
           font-size: 12px;
           font-weight: 400;
           line-height: 14px;
@@ -69,38 +65,28 @@
     }
   }
 
-  section#contact {
+  #contact {
     @include box();
     @include flex();
     @include flex-direction(column);
     @include align-items(center);
-    background-color: $txt-gray;
-    height: 300px;
-    padding: 35px;
+    height: 600px;
+    padding: 0;
     position: relative;
 
-    h3 {
+    h2, p, article {
       @include transition(opacity 0.2s);
-      color: $bg-gray;
-      font-size: 24px;
-      left: 0;
-      letter-spacing: 1px;
-      line-height: 36px;
-      padding-bottom: 30px;
-      position: absolute;
-      text-align: center;
-      top: 35px;
-      width: 100%;
 
       &.hidden {
+        display: none;
         opacity: 0;
       }
 
     }
 
-    form {
-      margin-top: 66px;
-    }
+    // form {
+    //   margin-top: 40px;
+    // }
 
   }
 

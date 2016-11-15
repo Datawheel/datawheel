@@ -41,12 +41,12 @@
     <nav>
 
       <div class="nav-content">
-        <a href="/" class="nav-logo">
+        <a href="/" class="nav-logo" data-ga-cat="nav" data-ga-label="logo">
           <img class="nav-logo-icon" src="/img/logo/icon.svg" />
           <img class="nav-logo-type" src="/img/logo/type.svg" />
         </a>
         {% include nav.html %}
-        <div id="hamburger">
+        <div id="hamburger" data-ga-cat="nav" data-ga-label="hamburger">
           <span></span>
         </div>
 
@@ -65,17 +65,17 @@
       </p>
       <section>
         <div class="mini-contact">
-          <span><a href="mailto:info@datawheel.us" target="_blank">info@datawheel.us</a></span>
-          <span><a href="https://goo.gl/maps/7cv2ScytYYE2" target="_blank">1299 Cambridge Street<br />Cambridge, MA 02139</a></span>
+          <span><a href="mailto:info@datawheel.us" target="_blank" data-ga-cat="footer" data-ga-label="e-mail">info@datawheel.us</a></span>
+          <span><a href="https://goo.gl/maps/7cv2ScytYYE2" target="_blank" data-ga-cat="footer" data-ga-label="address">1299 Cambridge Street<br />Cambridge, MA 02139</a></span>
           <span>c 2016 Datawheel, LLC</span>
           <span>All rights reserved.</span>
         </div>
         <div class="badge dsk" style="background-image: url('/img/{% if page.badge %}portfolio/{{ page.badge }}/badge{% else %}icons/gem{% endif %}.svg');"></div>
         <div class="social">
-          <a href="http://www.github.com/datawheel" target="_blank">
+          <a href="http://www.github.com/datawheel" target="_blank" data-ga-cat="footer" data-ga-label="github">
             <i class="github"></i>
           </a>
-          <a href="http://www.twitter.com/datawheel" target="_blank">
+          <a href="http://www.twitter.com/datawheel" target="_blank" data-ga-cat="footer" data-ga-label="twitter">
             <i class="twitter"></i>
           </a>
         </div>
@@ -152,6 +152,24 @@
 
       ga('create', 'UA-48256843-1', 'datawheel.us');
       ga('send', 'pageview');
+
+      $("[data-ga-cat]").on("click.ga", function() {
+
+        var _this = $(this);
+        var action = _this.attr("data-ga-action") || "click";
+        var category = _this.attr("data-ga-cat") || "general";
+        var label = _this.attr("data-ga-label") || "n/a";
+
+        // console.log("GA, action: ", action, "category: ", category, "label: ", label)
+
+        ga("send", {
+          hitType: "event",
+          eventCategory: category,
+          eventAction: action,
+          eventLabel: label
+        });
+
+      })
 
     </script>
 

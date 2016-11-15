@@ -5,17 +5,19 @@ form {
   font-size: 18px;
   letter-spacing: 0.79px;
   line-height: 26px;
-  margin: 0;
+  margin: 0 25px;
   max-width: 650px;
   text-align: right;
   width: 100%;
 
   &.hidden {
+    display: none;
     opacity: 0;
   }
 
   .ss-form-entry {
     @include transition(height 0.2s, opacity 0.2s);
+    margin: 0 25px;
     overflow: hidden;
 
     &.hidden {
@@ -144,6 +146,34 @@ form {
     &:hover {
       cursor: default;;
     }
+  }
+
+}
+
+#form-mode {
+  @include transition(opacity 0.2s);
+  background-color: $txt-gold;
+  color: $txt-gray;
+  display: block;
+  font-size: 18px;
+  letter-spacing: 0.79px;
+  line-height: 21px;
+  margin-bottom: 50px;
+  opacity: 1;
+  padding: 10px 12px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.hidden {
+    display: none;
+    opacity: 0;
   }
 
 }
