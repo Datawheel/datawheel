@@ -49,7 +49,7 @@
     "</div>
   </div>
 
-  <input class="hidden" type="submit" name="submit" value="Submit" id="ss-submit" data-ga-cat="form" data-ga-label="submit">
+  <input class="hidden" type="submit" name="submit" value="Submit" id="ss-submit" data-ga-cat="form" data-ga-label="submit-{% if include.mode %}hello{% else %}contact{% endif %}">
   <input type="hidden" name="draftResponse" value="[,,&quot;3878112766286324366&quot;]">
   <input type="hidden" name="pageHistory" value="0">
   <input type="hidden" name="fbzx" value="3878112766286324366">
