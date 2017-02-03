@@ -1,0 +1,40 @@
+---
+layout: default
+style: random
+---
+
+<section id="random" class="dark">
+  <h2 id="name">&nbsp;</h2>
+  <button id="button">Start</button>
+</section>
+
+<script>
+
+  var team = [];
+  {% for member in site.team %}
+  {% if member.slug != "lucy" and member.slug != "cesar" %}
+  team.push("{{ member.name }}");
+  {% endif %}
+  {% endfor %}
+
+  var link = document.getElementById("name"),
+      button = document.getElementById("button");
+
+  button.addEventListener("click", function() {
+
+    button.innerHTML = "Next";
+
+    var person;
+
+    if (team.length) {
+      var int = Math.floor(Math.random() * team.length);
+      link.innerHTML = team.splice(int, 1);
+    }
+    else {
+      link.innerHTML = "Done!";
+      button.style.visibility = "hidden";
+    }
+
+  }, false);
+
+</script>
