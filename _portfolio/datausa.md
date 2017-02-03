@@ -10,4 +10,7 @@ body:
   - "Traverse the US by exploring economic, social, and occupational data through interactive customizable maps and visualizations."
   - "Explore stories and discover trends throughout American society. Utilizing seven comprehensive public data sets, Data USA puts the controls directly in the hands of the user for almost limitless possible applications."
   - "Data USA adopts the philosophy that one need not be a data scientist or a programmer to access valuable and versatile public information. It provides access for those unfamiliar with data manipulation, while maintaining breadth and depth for the seasoned professional."
+award:
+  image: kantar.png
+  link: http://www.informationisbeautifulawards.com/showcase/1186-data-usa
 ---

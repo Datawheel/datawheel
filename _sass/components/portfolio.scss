@@ -69,7 +69,15 @@
   }
 
   .light {
+    position: relative;
     text-align: center;
+
+    & .award {
+      left: 10px;
+      position: absolute;
+      top: 10px;
+      z-index: 15;
+    }
 
     .page {
       @include flex();
