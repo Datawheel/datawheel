@@ -52,7 +52,7 @@
   <body{% if page.style %} class="{{ page.style }}"{% endif %}>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MFW6N4" 
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MFW6N4"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -91,7 +91,7 @@
         <div class="mini-contact">
           <span><a href="mailto:info@datawheel.us" target="_blank" data-ga-cat="footer" data-ga-label="e-mail">info@datawheel.us</a></span>
           <span><a href="https://goo.gl/maps/7cv2ScytYYE2" target="_blank" data-ga-cat="footer" data-ga-label="address">1299 Cambridge Street<br />Cambridge, MA 02139</a></span>
-          <span>c 2016 Datawheel, LLC</span>
+          <span>c {{ site.time | date: '%Y' }} Datawheel, LLC</span>
           <span>All rights reserved.</span>
         </div>
         <div class="badge dsk" style="background-image: url('/img/{% if page.badge %}portfolio/{{ page.badge }}/badge{% else %}icons/gem{% endif %}.svg');"></div>
