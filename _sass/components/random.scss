@@ -4,8 +4,15 @@
     text-align: center;
   }
 
-  h2 {
-    font-size: 64px;
+  ol {
+    list-style: decimal;
+    margin: 0 auto;
+    text-align: left;
+    width: 200px;
+    li {
+      font-size: 16px;
+      margin: 10px 0;
+    }
   }
 
   #button {

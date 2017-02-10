@@ -4,7 +4,13 @@ style: random
 ---
 
 <section id="random" class="dark">
-  <h2 id="name">&nbsp;</h2>
+  <ol>
+    {% for member in site.team %}
+    {% if member.slug != "lucy" and member.slug != "cesar" %}
+    <li class="name">&nbsp;</li>
+    {% endif %}
+    {% endfor %}
+  </ol>
   <button id="button">Start</button>
 </section>
 
@@ -17,7 +23,8 @@ style: random
   {% endif %}
   {% endfor %}
 
-  var link = document.getElementById("name"),
+  var i = 0,
+      items = document.getElementsByClassName("name"),
       button = document.getElementById("button");
 
   button.addEventListener("click", function() {
@@ -28,11 +35,10 @@ style: random
 
     if (team.length) {
       var int = Math.floor(Math.random() * team.length);
-      link.innerHTML = team.splice(int, 1);
-    }
-    else {
-      link.innerHTML = "Done!";
-      button.style.visibility = "hidden";
+      items[i].innerHTML = team.splice(int, 1);
+      i++;
+      console.log(i, team.length);
+      if (!team.length) button.style.visibility = "hidden";
     }
 
   }, false);
