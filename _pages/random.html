@@ -11,6 +11,7 @@ style: random
     {% endif %}
     {% endfor %}
   </ol>
+  <h2 id="clock"></h2>
   <button id="button">Start</button>
 </section>
 
@@ -25,21 +26,35 @@ style: random
 
   var i = 0,
       items = document.getElementsByClassName("name"),
-      button = document.getElementById("button");
+      button = document.getElementById("button"),
+      minutes = 10,
+      warning = 1,
+      timer,
+      clock = document.getElementById("clock");
+
+  clock.innerHTML = minutes + ":00";
 
   button.addEventListener("click", function() {
 
     button.innerHTML = "Next";
 
-    var person;
+    var person, ms = minutes * 60 * 1000;
+    clearInterval(timer);
+    clock.innerHTML = minutes + ":00";
+    clock.className = "";
 
-    if (team.length) {
-      var int = Math.floor(Math.random() * team.length);
-      items[i].innerHTML = team.splice(int, 1);
-      i++;
-      console.log(i, team.length);
-      if (!team.length) button.style.visibility = "hidden";
-    }
+    timer = setInterval(function() {
+      var s = (ms / 1000) % 60;
+      clock.innerHTML = Math.floor(ms / 60000) + ":" + (s < 10 ? "0" + s : s);
+      clock.className = ms < 1 * 60 * 1000 ? "danger" : "";
+      if (!ms) clearInterval(timer);
+      else ms -= 1000;
+    }, 1000);
+
+    var int = Math.floor(Math.random() * team.length);
+    items[i].innerHTML = team.splice(int, 1);
+    i++;
+    if (!team.length) button.style.visibility = "hidden";
 
   }, false);
 

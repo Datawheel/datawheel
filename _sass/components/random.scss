@@ -15,6 +15,12 @@
     }
   }
 
+  #clock {
+    &.danger {
+      color: red;
+    }
+  }
+
   #button {
     @include transition(opacity 0.2s);
     display: block;
