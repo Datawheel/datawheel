@@ -1,6 +1,8 @@
 &.team {
 
   .details {
+    font-size: 16px;
+    line-height: 30px;
     text-align: left;
   }
 
@@ -104,8 +106,8 @@
         ul {
           margin: 15px 0;
           li {
-            margin: 8px 0;
-            padding-left: 25px;
+            margin: 0;
+            padding-left: 15px;
             position: relative;
 
             &::before {
@@ -116,7 +118,7 @@
               height: 5px;
               left: 2px;
               position: absolute;
-              top: 16px;
+              top: 11px;
               width: 5px;
 
               @include mobile {
