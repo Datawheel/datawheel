@@ -1,5 +1,9 @@
 &.team {
 
+  .details {
+    text-align: left;
+  }
+
   #job-list {
     @include box();
     margin: 0 auto;

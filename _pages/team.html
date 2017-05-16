@@ -84,35 +84,38 @@ style: team
 {% if jobs|length > 0 %}
 <section class="dark">
 
-  <h2><a href="#join" name="join">Join the Team</a></h2>
+  <h2><a href="#join" name="join">Who We Are (Our Culture)</a></h2>
 
-  <p>We are always looking to meet interested, talented people who could potentially fit within our team. If you think that describes you, don't hesitate to reach out.
+  <p class="details">
+    Datawheel, LLC is a Cambridge based startup focused on creating custom tools to analyze and visualize big data. We are a tight-knit family with a background in academia, design, and computer science.
+  </p>
+
+  <p class="details">
+    We’re growing and looking for highly motivated people to join our diverse family. If you fit the description of any of these positions, and would like to join our team, please reach out to us.
+  </p>
 
   <div id="job-list">
     {% for job in jobs %}
-    <div class="job">
+    <div class="job active">
       <h3>{{ job.title }}</h3>
-      <p>{{ job.desc }}</p>
-      <div class="details-btn" data-ga-cat="team" data-ga-label="job-expand">
+      <!-- <div class="details-btn" data-ga-cat="team" data-ga-label="job-expand">
         <span class="details-x"></span>Details
-      </div>
+      </div> -->
       <div class="details">
-        <p class="mbl">{{ job.desc }}</p>
         {{ job.content }}
       </div>
+      <a class="button" href="/contact" data-ga-cat="team" data-ga-label="apply-now">Apply Now</a>
     </div>
     {% endfor %}
   </div>
-
-  <a class="button" href="/contact" data-ga-cat="team" data-ga-label="contact-us">Contact Us</a>
 
 </section>
 
 <script>
 
-  $(".details-btn").click(function(){
-    $(this.parentNode).toggleClass("active");
-  });
+  // $(".details-btn").click(function(){
+  //   $(this.parentNode).toggleClass("active");
+  // });
 
 </script>
 {% endif %}

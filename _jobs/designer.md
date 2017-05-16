@@ -1,20 +1,8 @@
 ---
-title: Front-End Developer/Designer
-desc: We are looking for someone with a keen eye for design and usability to help bring our current and future products from mockup to implementation.
+title: Visual Designer
 order: 2
 ---
 
-#### Personal Qualities
-* Self-starter, able to work independently
-* Familiar with working on a small fast-paced team
-* Willingness to learn and develop new technologies
+We are seeking a designer who is comfortable with both the visual design and the UI/UX side of things. This position would involve building site layouts, wireframes, application flow and producing fully designed mock-ups. The designer will end up dictating a huge portion of the look, feel, and branding of the sites we are working on.
 
-#### Requirements
-* 3+ years experience with front-end web languages  (e.g. HTML, CSS, Javascript)
-* Familiarity with Node.js environments
-* Experience with rapid prototyping
-* Experience in product design is a huge plus
-
-#### Benefits
-* Laid back work atmosphere
-* Potential for international travel
+To apply for this postion please be prepared to show a diverse portfolio with strong examples of web design and interaction work. Applicants should have proficiency with Sketch and/or Adobe Creative Suite. A strong candidate for this position has experince in utilizing user research to guide design decisions. Proficiency in HTML, CSS, and Javascript and/or industry standard prototyping tools is not necessary but a plus.
