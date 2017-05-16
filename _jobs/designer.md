@@ -13,9 +13,15 @@ To apply for this postion please be prepared to show a diverse portfolio with st
 
 #### Requirements
 * 3+ years experience with designing web experiences
+* Proficiency with Sketch and/or Adobe Creative Suite
 * Familiarity with HTML and CSS
 * Experience in product design is a huge plus
 
 #### Benefits
 * Laid back work atmosphere
 * Potential for international travel
+* Healthcare, vision, and dental
+* 401k matching
+* Tuition reimbursement
+* Flexible vacation policy
+* Unlimited seltzer
