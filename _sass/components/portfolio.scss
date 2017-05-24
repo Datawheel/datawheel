@@ -72,11 +72,20 @@
     position: relative;
     text-align: center;
 
-    & .award {
+    .awards {
       left: 10px;
       position: absolute;
       top: 10px;
       z-index: 15;
+
+      .award {
+        display: inline-block;
+        vertical-align: top;
+        img {
+          width: 150px;
+        }
+      }
+
     }
 
     .page {

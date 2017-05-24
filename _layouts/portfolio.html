@@ -15,10 +15,14 @@ layout: default
 </section>
 
 <section class="light">
-  {% if page.award %}
-  <a href="{{ page.award.link }}" target="_blank">
-    <img class="award" src="/img/portfolio/{{ page.footer }}/{{ page.award.image }}" />
-  </a>
+  {% if page.awards %}
+  <div class="awards">
+    {% for award in page.awards %}
+    <a class="award" href="{{ award.link }}" target="_blank">
+      <img src="/img/portfolio/{{ page.footer }}/{{ award.image }}" />
+    </a>
+    {% endfor %}
+    </div>
   {% endif %}
   {% for p in page.body %}
   <article class="page {% cycle 'odd', 'even' %}">
