@@ -43,8 +43,6 @@ style: team
     <div class="person alumni" id="{{ person.slug }}">
       <div class="photo alumni" data-ga-cat="team" data-ga-label="{{ person.slug }}"></div>
       <div class="title alumni">
-        {% if person.twitter %}<a href="{{ person.twitter }}" class="twitter" target="_blank"></a>{% endif %}
-        {% if person.github %}<a href="{{ person.github }}" class="github" target="_blank"></a>{% endif %}
         <h3>{{ person.name }}</h3>
         <sub>{{ person.role }}</sub>
       </div>

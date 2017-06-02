@@ -1,6 +1,6 @@
 ---
 slug: melissa
-order: 5
+order: 1
 name: Melissa Teng
 role: Designer
 twitter: https://twitter.com/melisteng
