@@ -5,9 +5,9 @@ layout: default
 {% assign projects = site.portfolio | sort: "order"  %}
 {% assign len = projects | size %}
 
-<section id="intro" style="background-image: url('/img/portfolio/{{ page.footer }}/header.jpg');">
+<section id="intro" style="background-image: url('/img/portfolio/{{ page.slug }}/header.jpg');">
   <h1>{{ page.title }}</h1>
-  <img class="image" src="/img/portfolio/{{ page.footer }}/logo.png" />
+  <img class="image" src="/img/portfolio/{{ page.slug }}/logo.png" />
   <div class="text">
     <h1>{{ page.title }}</h1>
     <p>{{ page.desc }}</p>
@@ -19,7 +19,7 @@ layout: default
   <div class="awards">
     {% for award in page.awards %}
     <a class="award" href="{{ award.link }}" target="_blank">
-      <img src="/img/portfolio/{{ page.footer }}/{{ award.image }}" />
+      <img src="/img/portfolio/{{ page.slug }}/{{ award.image }}" />
     </a>
     {% endfor %}
     </div>
@@ -27,12 +27,12 @@ layout: default
   {% for p in page.body %}
   <article class="page {% cycle 'odd', 'even' %}">
     <div class="screenshot">
-      <img src="/img/portfolio/{{ page.footer }}/p{{ forloop.index }}.gif" />
+      <img src="/img/portfolio/{{ page.slug }}/p{{ forloop.index }}.gif" />
     </div>
     <p>{{ p }}</p>
   </article>
   {% endfor %}
-  <a id="external-link" class="{{ page.footer }}-color" href="{{ page.link }}" target="_blank" data-ga-cat="portfolio" data-ga-label="{{ page.footer }}">Visit {% if page.shortname %}{{ page.shortname }}{% else %}{{ page.title }}{% endif %}<img src="/img/ui/arrow-right.svg" /></a>
+  <a id="external-link" class="{{ page.color }}-color" href="{{ page.link }}" target="_blank" data-ga-cat="portfolio" data-ga-label="{{ page.slug }}">Visit {% if page.shortname %}{{ page.shortname }}{% else %}{{ page.title }}{% endif %}<img src="/img/ui/arrow-right.svg" /></a>
 
   {% for project in projects  %}
     {% if project.title == page.title %}

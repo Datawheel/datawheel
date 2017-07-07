@@ -396,42 +396,70 @@
       }
 
       .datausa {
-        background-image: url('/img/home/datausa_bg.png');
+        background-image: url('/img/portfolio/datausa/home.png');
+
+        &:after {
+          background-color: rgba(109, 155, 193, 0.6);
+        }
 
         .project-title {
-          background-color: rgba(109,155,193,0.70);
+          background-color: rgba(109, 155, 193, 0.6);
+        }
+      }
+      .dataafrica {
+        background-image: url('/img/portfolio/dataafrica/home.png');
+
+        &:after {
+          background-color: rgba(59, 72, 53, 0.6);
+        }
+
+        .project-title {
+          background-color: rgba(59, 72, 53, 0.6);
         }
       }
       .dataviva {
-        background-image: url('/img/home/dataviva_bg.png');
+        background-image: url('/img/portfolio/dataviva/home.png');
+
+        &:after {
+          background-color: rgba(229, 99, 100, 0.6);
+        }
 
         .project-title {
-          background-color: rgba(229,99,100,0.60);
+          background-color: rgba(229, 99, 100, 0.6);
         }
       }
       .d3plus {
-        background-image: url('/img/home/d3plus_bg.png');
+        background-image: url('/img/portfolio/d3plus/home.png');
+
+        &:after {
+          background-color: rgba(71, 142, 94, 0.6);
+        }
 
         .project-title {
-          background-color: rgba(71,142,94,0.70);
+          background-color: rgba(71, 142, 94, 0.6);
         }
       }
       .oec {
-        background-image: url('/img/home/oec_bg.png');
+        background-image: url('/img/portfolio/oec/home.png');
+
+        &:after {
+          background-color: rgba(77, 204, 235, 0.6);
+        }
 
         .project-title {
-          background-color: rgba(77,204,235,0.80);
+          background-color: rgba(77, 204, 235, 0.6);
         }
       }
 
       .project {
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-position: 50% 50%;
         width: 465px;
         height: 310px;
         margin: 0 15px 30px;
         display: inline-block;
+        position: relative;
         text-decoration: none;
         @include flex();
         @include align-items(center);
@@ -447,6 +475,16 @@
 
         }
 
+        &:after {
+          bottom: 0;
+          content: "";
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+        }
+
         .project-title {
           display: block;
           // margin: auto;
@@ -458,6 +496,8 @@
           color: $bg-gray;
           letter-spacing: 1px;
           text-decoration: none;
+          position: relative;
+          z-index: 2;
         }
 
       }

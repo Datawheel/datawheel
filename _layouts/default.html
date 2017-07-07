@@ -81,9 +81,9 @@
 
     {{ content }}
 
-    <article class="parallax-window" data-parallax="scroll" data-image-src="/img/bgs/hq-{% if page.footer %}{{ page.footer }}{% else if page.style == "home" %}home{% else %}gold{% endif %}.jpg" data-bleed="100" data-speed="0.5"></article>
+    <article class="parallax-window" data-parallax="scroll" data-image-src="/img/bgs/hq-{% if page.color %}{{ page.color }}{% else if page.style == "home" %}home{% else %}gold{% endif %}.jpg" data-bleed="100" data-speed="0.5"></article>
 
-    <footer{% if page.footer %} class="{{ page.footer }} dark"{% endif %}>
+    <footer{% if page.color %} class="{{ page.color }} dark"{% endif %}>
       <p class="parting-words">
         "With great data, comes great responsibility."
       </p>
