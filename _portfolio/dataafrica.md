@@ -3,7 +3,7 @@ layout: portfolio
 order: 2
 title: Data Africa
 link: https://dataafrica.io/
-desc: "Data Arica is a tool built for the International Food Policy Research Institute. Aggregating datasets for agriculture, climate, poverty, and health, the site gives users access to open source visualizations for 13 African countries and their provinces."
+desc: "Data Africa is a tool built for the International Food Policy Research Institute. Aggregating datasets for agriculture, climate, poverty, and health, the site gives users access to open source visualizations for 13 African countries and their provinces."
 color: dataafrica
 badge: dataafrica
 slug: dataafrica
