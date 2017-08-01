@@ -1,5 +1,5 @@
 $team: ("alex", "cesar", "dave", "jonathan", "matt", "melissa", "gena", "eli", "lucy", "manuel", "sabrina", "walther", "chloe", "alice", "jimmy", "pacha", "gaby", "pablo", "natalia");
-$services: ("github", "twitter");
+$services: ("github", "twitter", "behance");
 
 &.team {
 
@@ -110,6 +110,7 @@ $services: ("github", "twitter");
           display: block;
           font-size: 16px;
           font-weight: 400;
+          line-height: 20px;
           margin-top: 5px;
         }
 
@@ -130,18 +131,18 @@ $services: ("github", "twitter");
           background-repeat: no-repeat;
           background-size: 100%;
           float: right;
-          height: 25px;
+          height: 20px;
           margin-right: 10px;
-          width: 25px;
-
-          &:first-child {
-            margin-right: 0;
-          }
+          width: 20px;
 
           @each $service in $services {
             &.#{$service} {
               background-image: url("/img/social/#{$service}-gold.svg");
             }
+          }
+
+          &:hover {
+            cursor: pointer;
           }
 
         }

@@ -21,6 +21,7 @@ style: team
         <div class="bio">{{ person.content }}</div>
       </div>
       <div class="title">
+        {% if person.behance %}<a href="{{ person.behance }}" class="behance" target="_blank" data-ga-cat="team" data-ga-label="{{ person.slug }}-behance"></a>{% endif %}
         {% if person.twitter %}<a href="{{ person.twitter }}" class="twitter" target="_blank" data-ga-cat="team" data-ga-label="{{ person.slug }}-twitter"></a>{% endif %}
         {% if person.github %}<a href="{{ person.github }}" class="github" target="_blank" data-ga-cat="team" data-ga-label="{{ person.slug }}-github"></a>{% endif %}
         <h3>{{ person.name }}</h3>
