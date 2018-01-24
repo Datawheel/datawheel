@@ -1,6 +1,6 @@
 ---
 slug: sabrina
-order: 5
+order: 20
 name: Sabrina Kantor
 role: Front-End Developer Intern
 github: https://github.com/kantors
