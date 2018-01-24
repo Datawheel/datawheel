@@ -1,4 +1,4 @@
-$team: ("alex", "cesar", "dave", "jonathan", "matt", "melissa", "gena", "eli", "lucy", "manuel", "sabrina", "walther", "chloe", "alice", "jimmy", "pacha", "gaby", "pablo", "natalia", "james", "nick");
+$team: ("alex", "cesar", "dave", "jonathan", "matt", "melissa", "gena", "eli", "lucy", "manuel", "sabrina", "walther", "chloe", "alice", "jimmy", "pacha", "gaby", "pablo", "natalia", "james", "nick", "daniel");
 $services: ("github", "twitter", "behance");
 
 &.team {
@@ -9,6 +9,10 @@ $services: ("github", "twitter", "behance");
     margin: 40px auto;
     max-width: 990px;
     text-align: center;
+
+    &.alumnus {
+      max-width: 600px;
+    }
 
     @include mobile {
       display: block;

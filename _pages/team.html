@@ -38,8 +38,8 @@ style: team
 
   <h2>Alumni</h2>
 
-  <div id="team-list">
-    {% assign alumni = site.alumni | sort: "order" %}
+  <div id="team-list" class="alumnus">
+    {% assign alumni = site.alumni | sort: "order" | reverse %}
     {% for person in alumni %}
     <div class="person alumni" id="{{ person.slug }}">
       <div class="photo alumni" data-ga-cat="team" data-ga-label="{{ person.slug }}"></div>
