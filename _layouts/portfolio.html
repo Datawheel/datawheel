@@ -7,7 +7,7 @@ layout: default
 
 <section id="intro" style="background-image: url('/img/portfolio/{{ page.slug }}/header.jpg');">
   <h1>{{ page.title }}</h1>
-  <img class="image" src="/img/portfolio/{{ page.slug }}/logo.png" />
+  <img class="image" src="/img/portfolio/{{ page.slug }}/logo.{% if page.logoFormat %}{{ page.logoFormat }}{% else %}png{% endif %}" />
   <div class="text">
     <h1>{{ page.title }}</h1>
     <p>{{ page.desc }}</p>
