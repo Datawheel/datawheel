@@ -406,6 +406,17 @@
           background-color: rgba(109, 155, 193, 0.6);
         }
       }
+      .datachile {
+        background-image: url('/img/portfolio/datachile/home.jpg');
+
+        &:after {
+          background-color: rgba(#4b71b5, 0.6);
+        }
+
+        .project-title {
+          background-color: rgba(#4b71b5, 0.6);
+        }
+      }
       .dataafrica {
         background-image: url('/img/portfolio/dataafrica/home.png');
 
@@ -486,6 +497,7 @@
         }
 
         .project-title {
+          @include transition(transform $nav-timing, box-shadow $nav-timing);
           display: block;
           // margin: auto;
           text-align: center;
@@ -498,6 +510,11 @@
           text-decoration: none;
           position: relative;
           z-index: 2;
+
+          &:hover, &:focus {
+            transform: scale(1.05);
+            box-shadow: 0 2px 3em rgba(0, 0, 0, 0.25);
+          }
         }
 
       }
