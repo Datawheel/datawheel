@@ -41,7 +41,6 @@ nav {
         @include transition(margin-right $nav-timing);
         display: inline-block;
         height: 100%;
-        margin-right: 20px;
         min-height: 100%;
 
         @include tablet {
@@ -51,16 +50,16 @@ nav {
       }
 
       .nav-logo-type {
-        @include transition(margin-top $nav-timing);
+        @include transition(transform $nav-timing);
         display: inline-block;
         height: 50%;
-        margin-top: 17px;
+        transform: translate(5px, 14px);
         min-height: 50%;
         vertical-align: top;
 
         @include tablet {
           height: 20px;
-          margin-top: 3px;
+          transform: none;
         }
 
       }
@@ -72,10 +71,9 @@ nav {
       .nav-logo {
         height: 75%;
         .nav-logo-icon {
-          margin-right: 11px;
         }
         .nav-logo-type {
-          margin-top: 8.5px;
+          transform: translate(4px, 10px);
         }
       }
     }
@@ -107,7 +105,7 @@ nav, .hero-container {
       text-transform: uppercase;
 
       .sub-menu {
-        @include transition(height $nav-timing);
+        @include transition(transform $nav-timing, opacity $nav-timing);
         background-color: $bg-gray;
         display: block;
         height: 0;
@@ -117,6 +115,7 @@ nav, .hero-container {
         text-align: center;
         top: 38px;
         width: 180%;
+        opacity: 0;
 
         a {
           @include box();
@@ -143,7 +142,10 @@ nav, .hero-container {
         color: $gold;
 
         .sub-menu {
-          height: 168px;
+          height: auto;
+          opacity: 1;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
 
           a {
             height: 32px;
