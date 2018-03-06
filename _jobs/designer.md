@@ -1,6 +1,6 @@
 ---
 title: Product Designer
-order: 3
+order: 4
 ---
 
 We are seeking a designer who is comfortable with both visual design and the UI/UX side of things. This position would involve building site layouts, wireframes, application flows and producing fully designed mock-ups for implementation. The designer will end up dictating a huge portion of the look, feel, and branding of the sites we work on.
