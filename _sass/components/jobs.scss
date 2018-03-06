@@ -1,147 +1,108 @@
 &.team {
 
-  .details {
-    font-size: 16px;
-    line-height: 30px;
-    text-align: left;
+  section.dark {
+    text-align: center;
   }
 
-  #job-list {
+  h3 {
     @include box();
-    margin: 0 auto;
-    max-width: $max-width + 80px;
+    color: $bg-gold;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 70px auto 0;
+    max-width: $max-width;
     padding: 0 40px;
+    text-align: left;
+    width: 100%;
+    @include mobile {
+      padding: 0;
+      text-align: center;
+    }
+  }
 
-    .job {
+  .details {
+    @include box();
+    font-size: 16px;
+    line-height: 30px;
+    margin: 40px auto 0;
+    max-width: $max-width;
+    padding: 0 40px;
+    text-align: left;
+    width: 100%;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 24px;
+      margin: 40px 0;
+    }
+
+    h4 {
+      color: $bg-gold;
       font-size: 20px;
-      line-height: 40px;
-      margin: 80px 0;
-      width: 100%;
+      font-weight: 400;
 
       @include mobile {
-        font-size: 14px;
-        line-height: 24px;
-        margin: 40px 0;
-
-        & > p {
-          display: none;
-        }
-
-      }
-
-      h3 {
-        color: $bg-gold;
-        font-size: 24px;
-        font-weight: 400;
-        margin-bottom: 20px;
-      }
-
-      .details-btn {
-        color: $bg-gold;
-        cursor: pointer;
-        font-size: 20px;
-        letter-spacing: 2px;
-        line-height: 32px;
-        margin: 20px 0;
-        text-transform: uppercase;
-
-        @include mobile {
-          color: white;
-          font-size: 13px;
-        }
-
-        .details-x {
-          @include transition(transform 0.5s);
-          display: inline-block;
-          height: 25px;
-          margin-right: 20px;
-          position: relative;
-          width: 25px;
-          vertical-align: top;
-
-          &::before, &::after {
-            background-color: $gold;
-            content: "";
-            height: 3px;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-
-            @include mobile {
-              background-color: white;
-            }
-
-          }
-
-          &::after {
-            @include transform(rotate(90deg));
-          }
-
-        }
-
-      }
-
-      .details {
-        display: none;
-        margin-left: 45px;
-
-        p {
-          margin-bottom: 15px;
-        }
-
-        @include mobile {
-          margin-left: 0;
-        }
-
-        h4 {
-          color: $bg-gold;
-          font-size: 20px;
-          font-weight: 400;
-
-          @include mobile {
-            font-size: 18px;
-          }
-
-        }
-        ul {
-          margin: 15px 0;
-          li {
-            margin: 0;
-            padding-left: 15px;
-            position: relative;
-
-            &::before {
-              @include rounded(10px);
-              background-color: white;
-              content: "";
-              display: inline-block;
-              height: 5px;
-              left: 2px;
-              position: absolute;
-              top: 11px;
-              width: 5px;
-
-              @include mobile {
-                top: 8px;
-              }
-            }
-
-          }
-        }
-      }
-
-      &.active {
-        .details-btn .details-x {
-          @include transform(rotate(45deg));
-        }
-
-        .details {
-          display: block;
-        }
+        font-size: 18px;
       }
 
     }
 
+    p {
+      margin-bottom: 15px;
+      a {
+        color: white;
+      }
+    }
+
+    ul {
+      margin: 15px 0;
+      li {
+        margin: 0;
+        padding-left: 15px;
+        position: relative;
+
+        &::before {
+          @include rounded(10px);
+          background-color: white;
+          content: "";
+          display: inline-block;
+          height: 5px;
+          left: 2px;
+          position: absolute;
+          top: 11px;
+          width: 5px;
+
+          @include mobile {
+            top: 8px;
+          }
+        }
+
+      }
+    }
+
+    .columns {
+      columns: 2;
+      @include mobile {
+        columns: 1;
+      }
+    }
+
+  }
+
+  .team-photo {
+    margin: 40px auto 0;
+    max-width: 800px;
+    width: 100%;
+    &:hover {
+      content: url("/img/team/team-hover.jpg");
+    }
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
+
+  .button {
+    margin: 0 auto;
   }
 
 }

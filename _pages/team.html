@@ -85,24 +85,45 @@ style: team
 
   <h2><a href="#join" name="join">Who We Are (Our Culture)</a></h2>
 
-  <p class="details">
-    Datawheel, LLC is a Cambridge based startup focused on creating custom tools to analyze and visualize big data. We are a tight-knit family with a background in academia, design, and computer science. We’re growing and looking for highly motivated people to join our diverse family. If you fit the description of any of these positions, and would like to join our team, please reach out to us.
-  </p>
+  <div class="details">
 
-  <div id="job-list">
-    {% for job in jobs %}
-    <div class="job active">
-      <h3>{{ job.title }}</h3>
-      <!-- <div class="details-btn" data-ga-cat="team" data-ga-label="job-expand">
-        <span class="details-x"></span>Details
-      </div> -->
-      <div class="details">
-        {{ job.content }}
-      </div>
-      <a class="button" href="/contact" data-ga-cat="team" data-ga-label="apply-now">Apply Now</a>
+    <p>
+      Datawheel is a Cambridge based technology company focused on creating tools to integrate, distribute, and visualize big data. We are known for our national data integration projects, including <a href="https://datausa.io" target="_blank">Data USA</a> and <a href="https://datachile.io" target="_blank">DataChile</a>, and are a tight-knit international family composed of designers, analysts, and engineers. We are currently growing and looking for highly motivated people to join our team. If you fit the description of any of these positions, please reach out to us.
+    </p>
+
+    <div class="columns">
+      <h4>Personal Qualities</h4>
+      <ul>
+        <li>Self-starter, able to work independently</li>
+        <li>Familiar with working on a small fast-paced team</li>
+        <li>Willingness to learn and develop new technologies</li>
+        <li>Comfortable with direct honest feedback</li>
+      </ul>
+
+      <h4>Benefits</h4>
+      <ul>
+        <li>Healthcare, vision, and dental</li>
+        <li>401k matching</li>
+        <li>Tuition reimbursement</li>
+        <li>International Travel</li>
+      </ul>
     </div>
-    {% endfor %}
+
   </div>
+
+  <img class="team-photo" src="/img/team/team-static.jpg" />
+
+  <script>
+    preloadImages.push("/img/team/team-hover.jpg");
+  </script>
+
+  {% for job in jobs %}
+    <h3>{{ job.title }}</h3>
+    <div class="details">
+      {{ job.content }}
+    </div>
+    <a class="button" href="/apply" data-ga-cat="team" data-ga-label="apply-now">Apply Now</a>
+  {% endfor %}
 
 </section>
 
