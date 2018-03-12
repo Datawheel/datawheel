@@ -1,14 +1,24 @@
-&.team {
+&.jobs {
 
-  section.dark {
+  .gold + .light {
+    @media (max-width: 860px) {
+      margin-top: -83px;
+    }
+  }
+
+  section {
     text-align: center;
+
+    &.light h4 {
+      color: $bg-gold;
+    }
 
     h3 {
       @include box();
       color: $bg-gold;
       font-size: 24px;
       font-weight: 400;
-      margin: 70px auto 0;
+      margin: 20px auto 0 auto;
       max-width: $max-width;
       padding: 0 40px;
       text-align: left;
@@ -24,7 +34,7 @@
     @include box();
     font-size: 16px;
     line-height: 30px;
-    margin: 40px auto 0;
+    margin: 30px auto;
     max-width: $max-width;
     padding: 0 40px;
     text-align: left;
@@ -37,9 +47,9 @@
     }
 
     h4 {
-      color: $bg-gold;
       font-size: 20px;
       font-weight: 400;
+      margin-top: 20px;
 
       @include mobile {
         font-size: 18px;
@@ -63,7 +73,7 @@
 
         &::before {
           @include rounded(10px);
-          background-color: white;
+          background-color: $txt-gray;
           content: "";
           display: inline-block;
           height: 5px;
@@ -81,17 +91,22 @@
     }
 
     .columns {
-      columns: 2;
-      @include mobile {
-        columns: 1;
+      @media (min-width: 800px) {
+        columns: 2;
+        column-gap: 50px;
+        break-inside: avoid;
+
+        /* fix alignment issue */
+        > .column > *:first-child {
+          display: inline-block;
+        }
       }
     }
-
   }
 
   .team-photo {
-    margin: 40px auto 0;
-    max-width: 800px;
+    margin: 20px auto;
+    max-width: 860px;
     width: 100%;
     &:hover {
       content: url("/img/team/team-hover.jpg");
@@ -102,7 +117,7 @@
   }
 
   .button {
-    margin: 0 auto;
+    margin-top: 40px;
   }
 
 }
