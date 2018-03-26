@@ -1,6 +1,6 @@
 ---
 slug: manuel
-order: 9
+order: 14
 name: Manuel Aristarán
 role: Data Craftsman
 twitter: https://twitter.com/manuelaristaran
