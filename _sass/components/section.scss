@@ -6,6 +6,10 @@ section {
   &.light {
     background-color: $bg-gray;
     color: $txt-gray;
+
+    &:nth-of-type(odd) {
+      background-color: $bg-white;
+    }
   }
 
   &.dark {
