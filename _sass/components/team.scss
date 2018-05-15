@@ -11,7 +11,7 @@ $services: ("github", "twitter", "behance");
     text-align: center;
 
     &.alumnus {
-      max-width: 600px;
+      max-width: 800px;
     }
 
     @include mobile {
