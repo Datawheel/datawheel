@@ -13,9 +13,8 @@ style: team
 <section class="light">
 
   <div id="team-list">
-    {% assign team = site.team | sort: "order" %}
+    {% assign team = site.team | sort: "order" | where:"visible",true %}
     {% for person in team %}
-    {% if person.visible %}
     <div class="person" id="{{ person.slug }}">
       <div class="photo" data-ga-cat="team" data-ga-label="{{ person.slug }}">
         <div class="bio">{{ person.content }}</div>
@@ -32,7 +31,6 @@ style: team
       preloadImages.push("/img/team/{{ person.slug }}-hover.jpg");
       preloadImages.push("/img/team/{{ person.slug }}-gradient.jpg");
     </script>
-    {% endif %}
     {% endfor %}
   </div>
 

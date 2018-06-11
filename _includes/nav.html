@@ -2,7 +2,7 @@
   <a class="nav-btn" href="/about/" data-ga-cat="nav" data-ga-label="about"><li>About</li></a>
   <div class="nav-btn"><li class="sub-title">Portfolio</li>
     <ul class="sub-menu">
-      {% assign projects = site.portfolio | sort: "order"  %}
+      {% assign projects = site.portfolio | sort: "order" | where:"visible",true  %}
       {% for project in projects %}
       <a href="{{ project.url }}" data-ga-cat="nav" data-ga-label="{{ project.footer }}"><li>{% if project.shortname %}{{ project.shortname }}{% else %}{{ project.title }}{% endif %}</li></a>
       {% endfor %}

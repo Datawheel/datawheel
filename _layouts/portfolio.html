@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign projects = site.portfolio | sort: "order"  %}
+{% assign projects = site.portfolio | sort: "order" | where:"visible",true %}
 {% assign len = projects | size %}
 
 <section id="intro" style="background-image: url('/img/portfolio/{{ page.slug }}/header.jpg');">

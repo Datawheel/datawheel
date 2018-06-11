@@ -27,3 +27,4 @@ defaults:
     values:
       order: 100
       style: portfolio
+      visible: true
