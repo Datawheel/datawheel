@@ -8,6 +8,12 @@
     padding: 80px 40px;
     width: 100%;
 
+    @each $name, $color in $portfolio-colors {
+      &.#{$name} {
+        background-color: $color;
+      }
+    }
+
     @include tablet {
       @include flex-direction(column);
       padding: 40px 20px 20px;
@@ -185,15 +191,15 @@
         vertical-align: top;
       }
 
+      @each $name, $color in $portfolio-colors {
+        &.#{$name}-color {
+          color: $color;
+        }
+      }
+
       @include tablet {
         font-size: 18px;
         margin-left: 0;
-
-        @each $name, $color in $footer-colors {
-          &.#{$name}-color {
-            color: $color;
-          }
-        }
 
         img {
           display: none;

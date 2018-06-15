@@ -5,7 +5,7 @@ layout: default
 {% assign projects = site.portfolio | sort: "order" | where:"visible",true %}
 {% assign len = projects | size %}
 
-<section id="intro" style="background-image: url('/img/portfolio/{{ page.slug }}/header.jpg');">
+<section id="intro" class="{{ page.color }} intro" style="background-image: url('/img/portfolio/{{ page.slug }}/header.jpg');">
   <h1>{{ page.title }}</h1>
   <img class="image" src="/img/portfolio/{{ page.slug }}/logo.{% if page.logoFormat %}{{ page.logoFormat }}{% else %}png{% endif %}" />
   <div class="text">

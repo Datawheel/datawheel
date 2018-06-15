@@ -1,16 +1,7 @@
-$footer-colors: (
-  datausa: #33648C,
-  oec: #5BB9D0,
-  d3plus: #0D8140,
-  dataviva: #DB5E5F,
-  dataafrica: #3B4835,
-  datachile: #4b71b5
-);
-
 footer {
   background-color: $bg-gold;
 
-  @each $name, $color in $footer-colors {
+  @each $name, $color in $portfolio-colors {
     &.#{$name} {
       background-color: $color;
     }
