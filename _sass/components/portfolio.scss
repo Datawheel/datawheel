@@ -5,6 +5,7 @@
     @include flex();
     @include align-items(center);
     @include background-stretch();
+    min-height: 40vh;
     padding: 80px 40px;
     width: 100%;
 
@@ -19,7 +20,7 @@
       padding: 40px 20px 20px;
     }
 
-    & > h1 {
+    & .logo {
       color: white;
       display: none;
       font-size: 28px;

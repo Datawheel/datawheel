@@ -14,6 +14,7 @@ $nav-height-mbl: 64px;
 @import "helpers/colors";
 @import "helpers/vendor";
 @import "helpers/media";
+@import "helpers/utility";
 
 body {
   @include varela();
@@ -34,7 +35,7 @@ body {
   @import "components/section";
   @import "components/form";
 
-  @import "components/home-old";
+  // @import "components/home-old";
   @import "components/home";
   @import "components/about";
   @import "components/portfolio";
