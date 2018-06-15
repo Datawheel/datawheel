@@ -395,71 +395,35 @@
         }
       }
 
+      // generate thumbnail overlay
+      @each $name, $color in $portfolio-colors {
+        .#{$name}:after,
+        .#{$name} .project-title {
+          background-color: rgba($color, 0.75);
+        }
+      }
+
       .datausa {
         background-image: url('/img/portfolio/datausa/home.png');
-
-        &:after {
-          background-color: rgba(109, 155, 193, 0.6);
-        }
-
-        .project-title {
-          background-color: rgba(109, 155, 193, 0.6);
-        }
       }
       .datachile {
         background-image: url('/img/portfolio/datachile/home.jpg');
-
-        &:after {
-          background-color: rgba(#4b71b5, 0.6);
-        }
-
-        .project-title {
-          background-color: rgba(#4b71b5, 0.6);
-        }
       }
       .dataafrica {
         background-image: url('/img/portfolio/dataafrica/home.png');
-
-        &:after {
-          background-color: rgba(59, 72, 53, 0.6);
-        }
-
-        .project-title {
-          background-color: rgba(59, 72, 53, 0.6);
-        }
       }
       .dataviva {
         background-image: url('/img/portfolio/dataviva/home.png');
-
-        &:after {
-          background-color: rgba(229, 99, 100, 0.6);
-        }
-
-        .project-title {
-          background-color: rgba(229, 99, 100, 0.6);
-        }
       }
       .d3plus {
         background-image: url('/img/portfolio/d3plus/home.png');
-
-        &:after {
-          background-color: rgba(71, 142, 94, 0.6);
-        }
-
-        .project-title {
-          background-color: rgba(71, 142, 94, 0.6);
-        }
       }
       .oec {
         background-image: url('/img/portfolio/oec/home.png');
-
-        &:after {
-          background-color: rgba(77, 204, 235, 0.6);
-        }
-
-        .project-title {
-          background-color: rgba(77, 204, 235, 0.6);
-        }
+      }
+      .verizon {
+        background-image: url('/img/portfolio/verizon-dbir/home.jpg');
+        background-position: left top !important;
       }
 
       .project {
