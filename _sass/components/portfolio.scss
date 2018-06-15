@@ -88,7 +88,7 @@
       .award {
         display: inline-block;
         vertical-align: top;
-        img {
+        svg {
           width: 150px;
         }
       }
@@ -182,15 +182,29 @@
       font-size: 30px;
       margin-left: 20px;
       text-decoration: none;
-      img {
-        margin-left: 20px;
-        margin-top: 5px;
-        vertical-align: top;
+      transition: opacity 0.2s ease;
+
+      svg {
+        margin-left: 0.25em;
+        vertical-align: baseline;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover, &:focus {
+        opacity: 0.9;
+
+        & svg {
+          transform: translateX(0.25em);
+        }
       }
 
       @each $name, $color in $portfolio-colors {
         &.#{$name}-color {
           color: $color;
+
+          & path {
+            fill: $color;
+          }
         }
       }
 
@@ -198,7 +212,7 @@
         font-size: 18px;
         margin-left: 0;
 
-        img {
+        svg {
           display: none;
         }
 
@@ -222,33 +236,42 @@
         color: $txt-gray;
         font-size: 20px;
         text-decoration: none;
+        transition: opacity 0.2s ease;
 
-        img {
+        svg {
           margin-top: -3px;
           width: 18px;
           vertical-align: middle;
+          transition: transform 0.2s ease;
         }
 
-        &:first-child img {
+        &.prev svg {
           margin-right: 15px;
         }
 
-        &:last-child img {
+        &.nxt svg {
           margin-left: 15px;
+        }
+
+        &:hover, &:focus {
+          opacity: 0.9;
+
+          &.prev svg { transform: translateX(-0.25em); }
+          &.nxt svg { transform: translateX(0.25em); }
         }
 
         @include tablet {
           font-size: 12px;
 
-          img {
+          svg {
             width: 11px;
           }
 
-          &:first-child img {
+          &:first-child svg {
             margin-right: 10px;
           }
 
-          &:last-child img {
+          &:last-child svg {
             margin-left: 10px;
           }
 
