@@ -7,6 +7,11 @@ footer {
     }
   }
 
+  // overrides
+  &.cny {
+    background-color: #1C2736;
+  }
+
   .parting-words {
     font-size: 18px;
     color: $txt-gray;
