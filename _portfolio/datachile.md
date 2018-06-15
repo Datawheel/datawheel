@@ -2,6 +2,7 @@
 layout: portfolio
 order: 2
 title: DataChile
+titleHidden: true
 link: https://datachile.io/
 desc: "DataChile is a platform that integrates, visualizes and distributes Chilean public data. It's goal is to improve efficacy and efficiency of decision making by aggregating information from more than 15 disparate data sources to help reveal gaps in public services, identify industrial diversification opportunities, and to foster a better informed audience."
 color: datachile

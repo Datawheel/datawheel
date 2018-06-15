@@ -102,12 +102,8 @@
       margin: 120px auto 160px;
       width: 100%;
 
-      &.odd {
+      &:nth-of-type(odd) {
         @include flex-direction(row-reverse);
-
-        p {
-          text-align: right;
-        }
       }
 
       .screenshot {

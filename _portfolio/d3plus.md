@@ -2,6 +2,7 @@
 layout: portfolio
 order: 9
 title: D3plus
+titleHidden: true
 link: https://d3plus.org/
 desc: "As Datawheel began to take shape, it became clear that the existing tools for data visualization weren’t going to be enough. D3plus to the rescue. The open-source brainchild of Datawheel co-founders Alexander Simoes and Dave Landry, D3plus acts as an extension to the wildly popular D3 library. With D3plus, beautiful data visualizations are possible in only a few lines of code."
 color: d3plus
