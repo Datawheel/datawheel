@@ -63,8 +63,13 @@ footer {
       text-decoration: none;
 
       &:hover, &:focus {
-        opacity: 0.6;
+        opacity: 0.9;
+        text-decoration: underline;
       }
+    }
+
+    svg path {
+      fill: $txt-gray;
     }
 
     @include mobile {
@@ -104,7 +109,7 @@ footer {
         height: 45px;
 
         &:hover, &:focus {
-          opacity: 0.6;
+          opacity: 0.9;
         }
 
         &.github {

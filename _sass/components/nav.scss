@@ -105,14 +105,17 @@ nav, .hero-container {
       text-transform: uppercase;
 
       .sub-menu {
-        @include transition(transform $nav-timing, opacity $nav-timing);
+        @include transition(transform $nav-timing, opacity $nav-timing, box-shadow $nav-timing);
+        box-shadow: none;
         background-color: $bg-gray;
         display: block;
         height: 0;
-        left: -40%;
+        left: -20%;
         overflow: hidden;
+        padding-left: 20%;
+        padding-right: 20%;
         position: absolute;
-        text-align: center;
+        text-align: left;
         top: 38px;
         width: 180%;
         opacity: 0;
@@ -127,9 +130,9 @@ nav, .hero-container {
           margin-top: -8px;
           opacity: 0;
           overflow: hidden;
-          padding: 5px;
+          padding: 5px 0;
           text-decoration: none;
-          text-transform: capitalize;
+          text-transform: uppercase;
 
           &:hover {
             color: $gold;
@@ -138,10 +141,13 @@ nav, .hero-container {
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus,
+      &:focus-within {
         color: $gold;
 
         .sub-menu {
+          box-shadow: 0 2px 1em rgba($txt-gray, 0.25);
           height: auto;
           opacity: 1;
           padding-top: 0.5em;

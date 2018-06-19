@@ -58,7 +58,6 @@ form {
       outline: 0;
       padding: 5px 0;
       text-align: right;
-
     }
 
     input[type="text"] {
@@ -128,12 +127,16 @@ form {
     left: 18px;
   }
 
-  img {
+  svg {
     display: inline-block;
     margin-right: 5px;
     margin-top: -3px;
-    vertical-align: top;
+    vertical-align: middle;
     width: 10px;
+
+    & path {
+      fill: $bg-gray;
+    }
   }
 
   &:hover {
