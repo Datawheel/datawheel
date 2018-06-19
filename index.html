@@ -18,11 +18,11 @@ style: home
       <![endif]>
       <div class="overlay"></div>
 
-			<div class="tag-container">
-				<h2>From data to stories.</h2>
-			</div>
+	<div class="tag-container">
+		<h2>From data to stories.</h2>
+	</div>
 
-			<div class="down-arrow mbl"></div>
+	<div class="down-arrow mbl"></div>
 
   </div>
 
@@ -47,19 +47,19 @@ style: home
 		<div class="offering a">
 			<div class="badge"></div>
 			<p>
-				A web interface tailored to your unique dataset
+				A web interface tailored to your unique dataset
 			</p>
 		</div>
 		<div class="offering b">
 			<div class="badge"></div>
 			<p>
-				The merging of disparate datasets into a unified API
+				The merging of disparate datasets into a unified API
 			</p>
 		</div>
 		<div class="offering c">
 			<div class="badge"></div>
 			<p>
-				Apprenticeships to help you update and maintain your site
+				Apprenticeships to help you update and maintain your site
 			</p>
 		</div>
 		<div class="offering d">
@@ -71,10 +71,8 @@ style: home
 	</section>
 </article>
 
-<article class="parallax-window" data-parallax="scroll" data-image-src="/img/home/desk2.jpg" data-bleed="100" data-speed="0.5"></article>
-
 <article class="projects">
-	<h3>What We Make</h3>
+	<h3>What we make</h3>
 	<section>
 		<div class="row a">
 			<div class="project datausa">
@@ -105,9 +103,25 @@ style: home
 				<a class="project-title" href="/portfolio/cny-vitals/">CNY Vitals</a>
 			</div>
 		</div>
+	</section>
 </article>
 
-<article class="parallax-window mbl" data-parallax="scroll" data-image-src="/img/home/desk1.jpg" data-bleed="100" data-speed="0.5"></article>
+{% assign logos = "deloitte,mit,iad-bank,estee-lauder,verizon,steelcase,fapemig,fundep,antofagasta,corfo,entel-lab,minecon,direcon,asech,ifpri,cnycf,wasphi,government-of-argentina,authority-health,minas-gerais-government,funarbe" | split: ',' %}
+
+<article class="partners">
+	<h3>Who we work with</h3>
+	<ul class="logo-grid">
+		{% for logo in logos %}
+	  	<li class="logo-item">
+				<img class="logo-img"
+					src="/img/partners/{{logo}}-logo.svg"
+					onerror="this.src='/img/partners/png/{{logo}}-logo.png'; this.onerror=null;"
+					alt="{{logo}}"
+					draggable="false">
+			</li>
+		{% endfor %}
+	</ul>
+</article>
 
 <article class="contact sub-container">
 	<section class="dialogue-form">
@@ -139,10 +153,10 @@ style: home
             scrollwheel:  false,
             disableDefaultUI: true,
             scrollwheel: false,
-		    navigationControl: false,
-		    mapTypeControl: false,
-		    scaleControl: false,
-		    draggable: false,
+    				navigationControl: false,
+	    			mapTypeControl: false,
+	    			scaleControl: false,
+	    			draggable: false,
             styles:
 	           [{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#F0F0F1"}]},
 	           {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#FFCC66"},{"color":"#F0F0F1"}]},
