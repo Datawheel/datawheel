@@ -4,7 +4,7 @@
     <ul class="sub-menu">
       {% assign projects = site.portfolio | sort: "order" | where:"visible",true  %}
       {% for project in projects %}
-      <a href="{{ project.url }}" data-ga-cat="nav" data-ga-label="{{ project.footer }}"><li>{% if project.shortname %}{{ project.shortname }}{% else %}{{ project.title }}{% endif %}</li></a>
+      <li><a href="{{ project.url }}" data-ga-cat="nav" data-ga-label="{{ project.footer }}">{% if project.shortname %}{{ project.shortname }}{% else %}{{ project.title }}{% endif %}</a></li>
       {% endfor %}
     </ul>
   </div>

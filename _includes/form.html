@@ -81,7 +81,8 @@
   });
 
   $(document).ready(function() {
-    $(window).keydown(function(event){
+    // hijack enter key, but only when using forms
+    $("form *").keydown(function(event){
       if(event.keyCode === 13) {
         event.preventDefault();
         return false;
