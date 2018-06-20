@@ -74,7 +74,6 @@
           line-height: 24px;
         }
       }
-
     }
 
     .awards {
@@ -144,6 +143,10 @@
         position: relative;
         width: 100%;
 
+        @include desktop {
+          top: 10px; // account for screenshot chrome
+        }
+
         &::before {
           @include background-contain();
           background-image: url("/img/portfolio/titlebar.png");
@@ -157,6 +160,7 @@
         }
 
         img {
+          border-radius: 0 0 6px 6px;
           width: 100%;
         }
       }
@@ -188,25 +192,26 @@
       &.odd, &.even {
         @include tablet {
           @include flex-direction(column);
-          margin: 20px 20px 60px;
+          margin: 0;
+          padding: 20px;
+          box-sizing: border-box;
 
+          // screenshots shouldn't by flexy on stacked layout
           .screenshot {
-            max-width: none;
+            height: auto;
+            flex: none;
           }
 
           p {
             font-size: 14px;
             line-height: 24px;
-            margin-top: 20px;
+            margin: 15px 0;
             min-width: 0;
             text-align: left;
             width: 100%;
           }
-
         }
-
       }
-
     }
 
     #external-link {
@@ -245,11 +250,11 @@
         margin-left: 0;
 
         svg {
-          display: none;
+          width: 1em;
+          vertical-align: middle;
+          margin-top: -3px;
         }
-
       }
-
     }
 
     #portfolio-nav {
@@ -306,13 +311,8 @@
           &:last-child svg {
             margin-left: 10px;
           }
-
         }
-
       }
-
     }
-
   }
-
 }
