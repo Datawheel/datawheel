@@ -8,6 +8,9 @@
     min-height: 40vh;
     padding: 80px 40px;
     width: 100%;
+    // allow award positioning
+    overflow: visible;
+    position: relative;
 
     @each $name, $color in $portfolio-colors {
       &.#{$name} {
@@ -17,7 +20,7 @@
 
     @include tablet {
       @include flex-direction(column);
-      padding: 40px 20px 20px;
+      padding: 0 20px 20px 20px;
     }
 
     & .logo {
@@ -35,10 +38,11 @@
 
     .image {
       width: 300px;
+      max-width: 14rem;
 
       @include tablet {
-        margin: 40px 0;
-        width: 75%;
+        margin: 60px 0 20px 0;
+        width: 70%;
       }
     }
 
@@ -73,27 +77,55 @@
 
     }
 
-  }
-
-  .light {
-    position: relative;
-    text-align: center;
-
     .awards {
       left: 10px;
       position: absolute;
       top: 10px;
       z-index: 15;
 
-      .award {
-        display: inline-block;
-        vertical-align: top;
-        svg {
-          width: 150px;
+      // position below header on bigger screens
+      @include desktop {
+        top: 100%;
+        margin-left: 25px;
+        margin-top: 25px;
+      }
+
+      &.flush {
+        left: 0;
+        top: 0;
+        @include desktop {
+          top: 100%;
+          margin-left: 0;
+          margin-top: 0;
         }
       }
 
+      .award {
+        display: inline-block;
+        vertical-align: middle;
+
+        // keep award size reasonable
+        svg, img {
+          min-width: 50px;
+          width: 150px;
+          max-width: 12vw;
+        }
+
+        // adjust for blank space in image
+        img[src*="kantar.png"] {
+          margin-top: -1px;
+        }
+        img[src*="indigo-2018.png"] {
+          margin-top: -1px;
+          margin-left: -1px;
+        }
+      }
     }
+  }
+
+  .light {
+    position: relative;
+    text-align: center;
 
     .page {
       @include flex();

@@ -17,4 +17,5 @@ awards:
     link: http://www.informationisbeautifulawards.com/showcase/1186-data-usa
   - image: webby-2017.png
     link: http://www.webbyawards.com/winners/2017/websites/general-website/government-civil-innovation/data-usa/
+awardsPosition: flush
 ---

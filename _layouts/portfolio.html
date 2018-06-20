@@ -11,11 +11,8 @@ layout: default
     <h1 class="{% if page.titleHidden %}u-visually-hidden{% endif %}">{{ page.title }}</h1>
     <p>{{ page.desc }}</p>
   </div>
-</section>
-
-<section class="light">
   {% if page.awards %}
-  <div class="awards">
+  <div class="awards{% if page.awardsPosition %} {{ page.awardsPosition }}{% endif %}">
     {% for award in page.awards %}
     <a class="award" href="{{ award.link }}" target="_blank">
       <img src="/img/portfolio/{{ page.slug }}/{{ award.image }}" />
@@ -23,6 +20,9 @@ layout: default
     {% endfor %}
     </div>
   {% endif %}
+</section>
+
+<section class="light">
   {% for p in page.body %}
   <article class="page {% cycle 'odd', 'even' %}">
     <div class="screenshot">

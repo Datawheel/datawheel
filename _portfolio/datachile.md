@@ -16,4 +16,5 @@ body:
 awards:
   - image: indigo-2018.png
     link: https://www.indigoawards.com/winners/524
+awardsPosition: flush
 ---
