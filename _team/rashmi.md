@@ -2,9 +2,11 @@
 slug: rashmi  
 order: 20
 name: Rashmi Baheti
-role: Web Developer
+role: Junior Front-End Developer
+github: https://github.com/rbaheti
 # twitter: https://twitter.com/
-# github: https://github.com/
 ---
 
-Rashmi likes to drink tropical drinks
+Rashmi got her bachelor's degree in electronics engineering and later pivoted to software engineering. Recently she graduated from Lambda School as a full stack web developer. She enjoys building backend systems as well as beautiful web pages.
+<br /><br />
+In her free time, she enjoys gardening, baking, hiking and traveling.
