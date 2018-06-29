@@ -1,6 +1,6 @@
 ---
 slug: rashmi  
-order: 20
+order: 29
 name: Rashmi Baheti
 role: Junior Front-End Developer
 github: https://github.com/rbaheti

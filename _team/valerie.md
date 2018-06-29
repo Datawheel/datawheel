@@ -1,6 +1,6 @@
 ---
 slug: valerie
-order: 19
+order: 28
 name: Valerie Hande Tuzel
 role: Data Scientist
 # twitter: https://twitter.com/
