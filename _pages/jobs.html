@@ -5,7 +5,7 @@ style: jobs
 
 
 
-{% assign jobs = site.jobs | sort:"order" %}
+{% assign jobs = site.jobs | sort:"order" | where:"visible",true %}
 {% if jobs != "" %}
 <section class="gold">
 

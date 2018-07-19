@@ -1,6 +1,7 @@
 ---
 title: Machine Learning Specialist
 order: 3
+visible: false
 ---
 
 We are looking for someone with a strong mathematical background that is able to come up with robust solutions to difficult problems using the latest techniques in machine learning. Responsibilities will include developing traditional machine learning and deep learning models to help our clients leverage advanced analytical techniques to make the most of their data.

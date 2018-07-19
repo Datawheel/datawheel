@@ -18,13 +18,17 @@ defaults:
     values:
       order: 100
   - scope:
-      type: team
+      type: jobs
     values:
-      order: 100
       visible: true
   - scope:
       type: portfolio
     values:
       order: 100
       style: portfolio
+      visible: true
+  - scope:
+      type: team
+    values:
+      order: 100
       visible: true
