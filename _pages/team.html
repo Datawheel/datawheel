@@ -17,7 +17,9 @@ style: team
     {% for person in team %}
     <div class="person" id="{{ person.slug }}">
       <div class="photo" data-ga-cat="team" data-ga-label="{{ person.slug }}">
-        <div class="bio">{{ person.content }}</div>
+        <div class="bio">
+          <p>{{ person.content }}</p>
+        </div>
       </div>
       <div class="title">
         {% if person.behance %}<a href="{{ person.behance }}" class="behance" target="_blank" data-ga-cat="team" data-ga-label="{{ person.slug }}-behance"></a>{% endif %}
