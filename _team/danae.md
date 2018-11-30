@@ -2,7 +2,7 @@
 slug: danae
 order: 34
 name: Danae Catalán
-role: Designer
+role: Graphic Designer
 behance: https://www.behance.net/asteroide-61
 ---
 
