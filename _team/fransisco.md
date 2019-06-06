@@ -2,7 +2,7 @@
 slug: fransisco
 order: 23
 name: Francisco Abarzúa
-role: Full Stack Developer
+role: Full Stack Engineer
 twitter: https://twitter.com/frabarz
 github: https://github.com/frabarz
 ---

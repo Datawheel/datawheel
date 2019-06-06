@@ -2,7 +2,7 @@
 slug: samuel
 order: 41
 name: Samuel Osorio
-role: Industrial Engineer
+role: Full Stack Engineer
 ---
 
 Samuel is an industrial engineer from <abbr title="Catholic University of the Most Holy Conception">UCSC</abbr> in Chile who enjoys working with data in Python.<br /><br />

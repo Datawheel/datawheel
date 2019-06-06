@@ -2,7 +2,7 @@
 slug: eduardo
 order: 40
 name: Eduardo Vásquez
-role: Full-Stack Developer
+role: Full Stack Engineer
 github: https://github.com/EduardoVasTol
 ---
 
