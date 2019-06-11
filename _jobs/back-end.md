@@ -1,6 +1,6 @@
 ---
 title: Back-End Developer
-order: 2
+order: 1
 ---
 
 We are looking for someone proficient in Python (Pandas is a plus) and Rust, but also someone who is passionate about what they do and can bring that to the projects assigned to them. Main responsibilities would include cleaning, structuring, and ingesting client data into a usable format, as well as developing and maintaining a Rust-based Rest API for powering analytical queries over large datasets.
