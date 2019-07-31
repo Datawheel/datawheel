@@ -2,7 +2,7 @@
 slug: jimmy
 order: 14
 name: Jimmy Mullen
-role: Full Stack Engineer
+role: Lead Front-end Engineer
 github: https://github.com/jhmullen
 ---
 

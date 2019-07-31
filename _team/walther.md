@@ -2,7 +2,7 @@
 slug: walther
 order: 11
 name: Walther Chen
-role: Full Stack Software Developer
+role: Lead Back-end Engineer
 github: https://github.com/hwchen
 ---
 
