@@ -3,7 +3,7 @@ layout: portfolio
 order: 2.5
 title: Data Breach Investigations Report
 shortname: Verizon DBIR
-link: http://www.verizonenterprise.com/verizon-insights-lab/dbir/tool/
+link: https://verizon.datawheel.us/
 desc: "The Data Breach Investigations Report is an annual report published by Verizon. It makes data from around the world accessible so that information security practitioners can understand the threats they face."
 color: verizon
 badge: verizon-dbir
