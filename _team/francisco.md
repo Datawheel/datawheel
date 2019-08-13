@@ -1,5 +1,5 @@
 ---
-slug: fransisco
+slug: francisco
 order: 23
 name: Francisco Abarzúa
 role: Full Stack Engineer
