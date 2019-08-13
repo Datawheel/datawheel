@@ -1,5 +1,5 @@
 ---
-slug: cata
+slug: catalina
 order: 25
 name: Catalina Gobantes
 role: Project Development
