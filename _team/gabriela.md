@@ -1,5 +1,5 @@
 ---
-slug: gaby
+slug: gabriela
 order: 16
 name: Gabriela Pérez
 role: Visual Designer
