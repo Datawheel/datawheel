@@ -1,5 +1,5 @@
 ---
-slug: seba
+slug: sebastian
 order: 24
 name: Sebastián Melín
 role: Business Development Chile
