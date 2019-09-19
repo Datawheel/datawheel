@@ -4,7 +4,7 @@ order: 1
 title: Data USA
 titleHidden: true
 link: https://datausa.io/
-desc: Data USA is, to date, the largest and most comprehensive representation of U.S. data online. The website combines 8 publicly available government datasets to create clean, easy to navigate visualizations on everything from job markets to higher education and healthcare. For anyone from business executives to students, Data USA can be used as a platform to enhance understanding and inform decision making within the U.S.
+desc: Data USA is, to date, the largest and most comprehensive representation of U.S. data online. The website combines 21 publicly available government datasets to create clean, easy to navigate visualizations on everything from job markets to higher education and healthcare. For anyone from business executives to students, Data USA can be used as a platform to enhance understanding and inform decision making within the U.S.
 color: datausa
 badge: datausa
 slug: datausa
