@@ -1,6 +1,6 @@
 ---
 slug: walther
-order: 11
+order: 40
 name: Walther Chen
 role: Lead Back-end Engineer
 github: https://github.com/hwchen
